@@ -1,0 +1,202 @@
+/* ══════════════════════════════════════════════════
+   AngieMon — nav.css
+   Header · Desktop Nav · Hamburger · Mobile Overlay
+   ══════════════════════════════════════════════════ */
+
+/* ── Site Header ──────────────────────────────────── */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-nav);
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  transition: background var(--transition), box-shadow var(--transition);
+}
+
+/* backdrop-filter stays on a separate rule so it never
+   affects children with position:fixed (see mobile-nav) */
+.site-header--scrolled {
+  background: rgba(17, 17, 17, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 var(--gold-border);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* ── Logo ─────────────────────────────────────────── */
+.header__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.logo-mark {
+  color: var(--gold);
+  font-size: 1rem;
+  line-height: 1;
+  user-select: none;
+}
+
+.logo-text {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--ivory);
+  letter-spacing: 0.1em;
+  font-weight: 500;
+}
+
+/* ── Desktop Nav ──────────────────────────────────── */
+.header__nav { display: none; }
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.nav__link {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted-dark);
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition), background var(--transition);
+}
+
+.nav__link:hover { color: var(--ivory); }
+
+.nav__link--cta {
+  color: var(--gold);
+  border: 1.5px solid var(--gold-border);
+  padding: 0.5rem 1.25rem;
+}
+
+.nav__link--cta:hover {
+  background: var(--gold-glow);
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+
+/* ── Hamburger Button ─────────────────────────────── */
+.nav__toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: var(--z-nav);
+  position: relative;
+}
+
+.nav__toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--ivory);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+  transform-origin: center;
+}
+
+.nav__toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav__toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.nav__toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Mobile Nav (full-screen overlay) ────────────── */
+/*
+   IMPORTANT: must live OUTSIDE <header> in the DOM.
+   backdrop-filter on .site-header--scrolled creates a
+   new containing block, which would break position:fixed
+   on any child element.
+*/
+.mobile-nav {
+  position: fixed;
+  inset: 0;
+  z-index: 39;
+  background: rgba(17, 17, 17, 0.98);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-100%);
+  transition: transform 0.45s var(--ease-out);
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.mobile-nav[aria-hidden="false"] {
+  transform: translateY(0);
+  pointer-events: all;
+  visibility: visible;
+}
+
+.mobile-nav__list {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-top: var(--header-h);
+}
+
+.mobile-nav__link {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 8vw, 2.6rem);
+  color: var(--text-muted-dark);
+  letter-spacing: 0.06em;
+  font-weight: 400;
+  display: block;
+  transition: color var(--transition), letter-spacing var(--transition);
+}
+
+.mobile-nav__link:hover {
+  color: var(--ivory);
+  letter-spacing: 0.1em;
+}
+
+/* ── Mobile Nav CTA (agendar) ─────────────────────── */
+.mobile-nav__link--cta {
+  color: var(--gold);
+  border: 1.5px solid var(--gold-border);
+  padding: 0.75rem 2.5rem;
+  border-radius: var(--radius-xl);
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+  transition: background var(--transition), color var(--transition);
+}
+
+.mobile-nav__link--cta:hover {
+  background: var(--gold-glow);
+  letter-spacing: 0.14em;
+}
+
+/* ── Desktop overrides ────────────────────────────── */
+@media (min-width: 768px) {
+  .header__nav { display: block; }
+  .nav__toggle  { display: none; }
+  .mobile-nav   { display: none; }
+}

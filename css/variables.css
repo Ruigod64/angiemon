@@ -1,0 +1,78 @@
+/* ══════════════════════════════════════════════════
+   AngieMon — Design Tokens
+   Paleta: Carbón · Marfil · Dorado
+   ══════════════════════════════════════════════════ */
+
+:root {
+  /* ── Colores base ─────────────────────────────── */
+  --carbon:       #1a1a1a;
+  --carbon-deep:  #111111;
+  --carbon-mid:   #252525;
+  --carbon-soft:  #2e2e2e;
+
+  --ivory:        #f5f1e8;
+  --ivory-warm:   #ede9df;
+  --ivory-deep:   #e0dbd0;
+  --ivory-soft:   #faf8f4;
+
+  --gold:         #d4af37;
+  --gold-light:   #e8cc6a;
+  --gold-pale:    #f0e4b0;
+  --gold-dark:    #a8891e;
+  --gold-glow:    rgba(212, 175, 55, 0.18);
+  --gold-border:  rgba(212, 175, 55, 0.25);
+
+  /* ── Texto ────────────────────────────────────── */
+  --text-on-dark:       #f5f1e8;
+  --text-muted-dark:    rgba(245, 241, 232, 0.60);
+  --text-dim-dark:      rgba(245, 241, 232, 0.40);
+  --text-on-light:      #1a1a1a;
+  --text-muted-light:   #5a5347;
+  --text-dim-light:     #9a9080;
+
+  /* ── Tipografía ───────────────────────────────── */
+  --font-display: 'Cinzel', Georgia, serif;
+  --font-serif:   'Cormorant Garamond', Georgia, serif;
+  --font-sans:    'Raleway', system-ui, sans-serif;
+
+  /* ── Espaciado ────────────────────────────────── */
+  --space-xs:   0.5rem;
+  --space-sm:   1rem;
+  --space-md:   2rem;
+  --space-lg:   4rem;
+  --space-xl:   6rem;
+  --space-2xl:  8rem;
+
+  /* ── Layout ───────────────────────────────────── */
+  --container-max: 1100px;
+  --container-pad: clamp(1.25rem, 5vw, 2.5rem);
+  --header-h:      72px;
+
+  /* ── Bordes ───────────────────────────────────── */
+  --radius-sm:  6px;
+  --radius-md:  14px;
+  --radius-lg:  24px;
+  --radius-xl:  100px;
+
+  /* ── Sombras ──────────────────────────────────── */
+  --shadow-sm:   0 2px 12px rgba(0, 0, 0, 0.10);
+  --shadow-md:   0 8px 32px rgba(0, 0, 0, 0.18);
+  --shadow-lg:   0 20px 60px rgba(0, 0, 0, 0.26);
+  --shadow-xl:   0 32px 80px rgba(0, 0, 0, 0.34);
+  --shadow-gold: 0 8px 32px rgba(212, 175, 55, 0.32);
+  --shadow-gold-lg: 0 16px 48px rgba(212, 175, 55, 0.42);
+
+  /* ── Transiciones ─────────────────────────────── */
+  --ease:         cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out:     cubic-bezier(0.0,  0.0,  0.2,  1.0);
+  --transition:   0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-slow: 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* ── Z-Index ──────────────────────────────────── */
+  --z-base:    1;
+  --z-above:   10;
+  --z-overlay: 20;
+  --z-drawer:  30;
+  --z-nav:     40;
+  --z-modal:   50;
+}
