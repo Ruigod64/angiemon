@@ -11,7 +11,7 @@
   /* ── Grid: una columna, cards una debajo de otra ── */
   .tp-grid {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
+    gap: 0.9rem;
   }
 
   /* ── Card: rectángulo horizontal, altura libre ─── */
@@ -30,7 +30,7 @@
 
   /* ── Imagen: columna izquierda, llena la altura ── */
   .tp-card__img-wrap {
-    width: 220px;
+    width: 180px;
     flex-shrink: 0;
     aspect-ratio: unset;           /* override 4/3 de terapeutas.css */
     border-right: 1px solid rgba(212, 175, 55, 0.14);
@@ -39,14 +39,14 @@
   /* ── Body: columna derecha, crece con el contenido */
   .tp-card__body {
     flex: 1;
-    padding: 1.25rem 1.75rem;
-    gap: 0.75rem;
+    padding: 1rem 1.4rem;
+    gap: 0.55rem;
     overflow: visible;
   }
 
   /* Nombre */
   .tp-card__name {
-    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    font-size: clamp(0.9rem, 1.3vw, 1.05rem);
   }
 
   /* ── Restaurar todo el contenido oculto ─────────── */
@@ -57,8 +57,8 @@
     -webkit-line-clamp: unset;
     -webkit-box-orient: unset;
     overflow: visible;
-    font-size: 0.88rem;
-    line-height: 1.75;
+    font-size: 0.82rem;
+    line-height: 1.7;
   }
   .tp-card__desc + .tp-card__desc {
     display: block;
@@ -91,8 +91,8 @@
   .tp-card__cta .btn--gold,
   .tp-card__cta .btn--outline-light {
     width: auto;
-    padding: 0.6rem 1.25rem;
-    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
   }
 
 }
@@ -111,12 +111,12 @@
   }
 
   .tp-card__img-wrap {
-    width: 260px;
+    width: 210px;
   }
 
   .tp-card__body {
-    padding: 1.5rem 2rem;
-    gap: 0.85rem;
+    padding: 1.15rem 1.6rem;
+    gap: 0.65rem;
   }
 
 }
