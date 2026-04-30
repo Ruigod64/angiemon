@@ -1,0 +1,122 @@
+/* ══════════════════════════════════════════════════
+   AngieMon — tp-cards-desktop.css
+   Cards horizontales en PC: imagen izquierda,
+   TODO el contenido visible a la derecha.
+   Sin altura fija — la card crece con el texto.
+   Cargado después de terapeutas.css
+   ══════════════════════════════════════════════════ */
+
+@media (min-width: 860px) {
+
+  /* ── Grid: una columna, cards una debajo de otra ── */
+  .tp-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* ── Card: rectángulo horizontal, altura libre ─── */
+  .tp-card {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  /* Reset featured — igual que las demás */
+  .tp-card--featured {
+    grid-column: auto;
+    max-width: none;
+    margin: 0;
+    width: 100%;
+  }
+
+  /* ── Imagen: columna izquierda, llena la altura ── */
+  .tp-card__img-wrap {
+    width: 300px;
+    flex-shrink: 0;
+    aspect-ratio: unset;           /* override 4/3 de terapeutas.css */
+    border-right: 1px solid rgba(212, 175, 55, 0.14);
+  }
+
+  /* ── Body: columna derecha, crece con el contenido */
+  .tp-card__body {
+    flex: 1;
+    padding: 2rem 2.5rem;
+    gap: 1.25rem;
+    overflow: visible;
+  }
+
+  /* Nombre */
+  .tp-card__name {
+    font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+  }
+
+  /* ── Restaurar todo el contenido oculto ─────────── */
+
+  /* Ambos párrafos de descripción */
+  .tp-card__desc {
+    display: block;
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: unset;
+    overflow: visible;
+    font-size: 0.95rem;
+    line-height: 1.82;
+  }
+  .tp-card__desc + .tp-card__desc {
+    display: block;
+  }
+
+  /* Indicada para */
+  .tp-card__ideal {
+    display: block;
+  }
+
+  /* Quote */
+  .tp-card__quote {
+    display: block;
+  }
+
+  /* Servicios */
+  .tp-card__services {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* CTA */
+  .tp-card__cta {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: auto;
+    padding-top: 0.75rem;
+  }
+
+  .tp-card__cta .btn--gold,
+  .tp-card__cta .btn--outline-light {
+    width: auto;
+    padding: 0.8rem 1.75rem;
+    font-size: 0.82rem;
+  }
+
+}
+
+/* ── Wide (≥ 1100px): imagen ligeramente más ancha ── */
+@media (min-width: 1100px) {
+
+  .tp-grid {
+    gap: 2.25rem;
+  }
+
+  .tp-card--featured {
+    grid-column: auto;
+    max-width: none;
+    margin: 0;
+  }
+
+  .tp-card__img-wrap {
+    width: 340px;
+  }
+
+  .tp-card__body {
+    padding: 2.25rem 3rem;
+    gap: 1.35rem;
+  }
+
+}
