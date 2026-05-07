@@ -884,6 +884,72 @@
   color: var(--text-muted-light);
 }
 
+/* ── SERVICIO FONDO COMPLETO ─────────────────────── */
+.servicio-split--bg {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background: var(--carbon-deep);
+}
+
+.servicio-split__bg {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  line-height: 0;
+}
+
+.servicio-split__bg-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0.55;
+  transition: transform 0.8s var(--ease);
+}
+
+.servicio-split--bg:hover .servicio-split__bg-img {
+  transform: scale(1.04);
+}
+
+.servicio-split__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(17, 17, 17, 0.4) 0%,
+    rgba(17, 17, 17, 0.65) 100%
+  );
+}
+
+.servicio-split--bg .servicio-split__content {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-xl) var(--container-pad);
+  gap: 1.25rem;
+}
+
+.servicio-split--bg .servicio-split__heading {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  color: var(--ivory);
+  text-shadow: 0 4px 32px rgba(0, 0, 0, 0.5);
+}
+
+.servicio-split--bg .servicio-split__heading em {
+  color: var(--gold-light);
+}
+
+.servicio-split--bg .servicio-split__desc {
+  color: var(--text-muted-dark);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
 /* ── ❻ CÍRCULO DE MUJERES ────────────────────────── */
 .circulo {
   position: relative;
@@ -1314,6 +1380,10 @@
   .servicio-split {
     grid-template-columns: 1fr 1fr;
     min-height: 560px;
+  }
+
+  .servicio-split--bg {
+    display: block;
   }
 
   .servicio-split__img-wrap {
