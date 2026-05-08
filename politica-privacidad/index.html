@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AngieMon — Política de Privacidad. Conoce cómo recopilamos, protegemos y utilizamos tu información personal." />
+  <meta name="theme-color" content="#1a1a1a" />
+
+  <meta property="og:title" content="Política y Privacidad — AngieMon" />
+  <meta property="og:description" content="Conoce cómo protegemos y tratamos tu información personal en angiemon.com." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.angiemon.com/política-y-privacidad" />
+
+  <title>Política y Privacidad — AngieMon · Código Cuántico</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Raleway:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CSS: reset → tokens → nav → componentes → página -->
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/nav.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="css/politica-privacidad.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════
+       HEADER / NAV
+       ══════════════════════════════════════════════ -->
+  <header class="site-header" id="site-header" role="banner">
+    <div class="container header__inner">
+
+      <a href="../" class="header__logo" aria-label="AngieMon — Ir al inicio">
+        <span class="logo-mark" aria-hidden="true">✦</span>
+        <span class="logo-text">AngieMon</span>
+      </a>
+
+      <nav class="header__nav" aria-label="Navegación principal">
+        <ul class="nav__list" role="list">
+          <li><a href="../#bienvenida"      class="nav__link">Inicio</a></li>
+          <li><a href="../programas/"       class="nav__link">Programas</a></li>
+          <li><a href="../terapeutas/"      class="nav__link">Terapeutas</a></li>
+          <li><a href="../#terapias-online" class="nav__link">Terapias</a></li>
+          <li><a href="../#contacto"        class="nav__link nav__link--cta">Agendar</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav__toggle" id="nav-toggle"
+              aria-expanded="false" aria-controls="mobile-nav"
+              aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Mobile overlay nav (outside header to avoid backdrop-filter stacking context) -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Menú móvil" aria-hidden="true">
+    <ul class="mobile-nav__list" role="list">
+      <li><a href="../#bienvenida"      class="mobile-nav__link">Inicio</a></li>
+      <li><a href="../programas/"       class="mobile-nav__link">Programas</a></li>
+      <li><a href="../terapeutas/"      class="mobile-nav__link">Terapeutas</a></li>
+      <li><a href="../#terapias-online" class="mobile-nav__link">Terapias</a></li>
+      <li><a href="../#contacto"        class="mobile-nav__link mobile-nav__link--cta">Agendar Sesión</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- ══════════════════════════════════════════════
+       HERO
+       ══════════════════════════════════════════════ -->
+  <section class="pp-hero" aria-label="Política de Privacidad">
+    <div class="pp-hero__bg" aria-hidden="true"></div>
+    <div class="container pp-hero__content">
+      <p class="section-label section-label--light reveal">Legal · Transparencia</p>
+      <h1 class="pp-hero__title reveal">
+        Política<br/><em>de Privacidad</em>
+      </h1>
+      <p class="pp-hero__update reveal">
+        <span class="pp-hero__update-dot" aria-hidden="true">✦</span>
+        Última actualización: 2023–2026
+      </p>
+      <p class="pp-hero__intro reveal">
+        En <strong>angiemon.com</strong> la privacidad y seguridad de tus datos personales
+        son de suma importancia para nosotros. Esta política explica cómo recopilamos,
+        utilizamos, protegemos y compartimos la información que nos proporcionas.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       CONTENIDO PRINCIPAL
+       ══════════════════════════════════════════════ -->
+  <main id="main-content">
+    <div class="pp-layout container">
+
+      <!-- ── Tabla de Contenido (sticky sidebar) ── -->
+      <aside class="pp-toc" aria-label="Tabla de contenido">
+        <div class="pp-toc__inner">
+          <p class="pp-toc__label">Contenido</p>
+          <nav aria-label="Secciones de la política de privacidad">
+            <ol class="pp-toc__list" role="list">
+              <li><a class="pp-toc__link" href="#s1">Información que recopilamos</a></li>
+              <li><a class="pp-toc__link" href="#s2">Cómo utilizamos tu información</a></li>
+              <li><a class="pp-toc__link" href="#s3">Protección de tu información</a></li>
+              <li><a class="pp-toc__link" href="#s4">Compartición de información</a></li>
+              <li><a class="pp-toc__link" href="#s5">Cookies y tecnologías similares</a></li>
+              <li><a class="pp-toc__link" href="#s6">Tus derechos</a></li>
+              <li><a class="pp-toc__link" href="#s7">Retención de datos</a></li>
+              <li><a class="pp-toc__link" href="#s8">Cambios a esta política</a></li>
+              <li><a class="pp-toc__link" href="#s9">Contacto</a></li>
+            </ol>
+          </nav>
+          <a href="../#contacto" class="pp-toc__cta" aria-label="Contactar a AngieMon">
+            ¿Tienes dudas?
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </aside>
+
+
+      <!-- ── Secciones ── -->
+      <article class="pp-content" aria-label="Contenido de la Política de Privacidad">
+
+        <!-- 1 -->
+        <section class="pp-section reveal" id="s1" aria-labelledby="s1-title">
+          <div class="pp-section__number" aria-hidden="true">01</div>
+          <div class="pp-section__body">
+            <h2 class="pp-section__title" id="s1-title">Información que recopilamos</h2>
+            <p class="pp-section__lead">
+              Recopilamos datos personales y de navegación con el objetivo de brindarte
+              una experiencia óptima en nuestra página y servicios. Estos datos incluyen:
+            </p>
+            <ul class="pp-list">
+              <li>
+                <strong>Información personal:</strong> Nombre, dirección de correo electrónico,
+                número de teléfono u otros datos que compartas al registrarte en talleres,
+                cursos o boletines.
+              </li>
+              <li>
+                <strong>Información técnica:</strong> Dirección IP, tipo de navegador,
+                sistema operativo y patrones de navegación, recopilados mediante cookies
+                y tecnologías similares.
+              </li>
+              <li>
+                <strong>Información adicional:</strong> Datos que proporcionas voluntariamente
+                en encuestas, formularios o consultas.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <div class="pp-divider" aria-hidden="true"></div>
+
+        <!-- 2 -->
+        <section class="pp-section reveal" id="s2" aria-labelledby="s2-title">
+          <div class="pp-section__number" aria-hidden="true">02</div>
+          <div class="pp-section__body">
+            <h2 class="pp-section__title" id="s2-title">Cómo utilizamos tu información</h2>
+            <p class="pp-section__lead">
+              Los datos recopilados se utilizan para los siguientes fines:
+            </p>
+            <ul class="pp-list">
+              <li>Gestionar tu registro en talleres, cursos o programas.</li>
+              <li>
+                Enviar comunicaciones relevantes sobre nuestros servicios, incluyendo
+                recordatorios, actualizaciones, promociones o noticias.
+              </li>
+              <li>
+                Personalizar tu experiencia de usuario, adaptando el contenido
+                a tus intereses y necesidades.
+              </li>
+              <li>
+                Mejorar nuestros servicios mediante el análisis de datos
+                y la retroalimentación proporcionada por los usuarios.
+              </li>
+              <li>Cumplir con obligaciones legales o regulatorias.</li>
+            </ul>
+            <p class="pp-note">
+              No utilizaremos tus datos para fines distintos a los mencionados
+              sin tu consentimiento explícito.
+            </p>
+          </div>
+        </section>
+
+        <div class="pp-divider" aria-hidden="true"></div>
+
+        <!-- 3 -->
+        <section class="pp-section reveal" id="s3" aria-labelledby="s3-title">
+          <div class="pp-section__number" aria-hidden="true">03</div>
+          <div class="pp-section__body">
+            <h2 class="pp-section__title" id="s3-title">Protección de tu información</h2>
+            <p class="pp-section__lead">
+              La seguridad de tus datos es una prioridad para nosotros. Hemos implementado
+              medidas técnicas, administrativas y organizativas que protegen tu información
+              contra accesos no autorizados, pérdidas, alteraciones o divulgaciones indebidas.
+            </p>
+            <ul class="pp-list pp-list--shield">
+              <li>Encriptación de datos sensibles.</li>
+              <li>Protocolos seguros de transferencia de datos (SSL).</li>
+              <li>Acceso restringido únicamente al personal autorizado.</li>
+            </ul>
+          </div>
+        </section>
+
+        <div class="pp-divider" aria-hidden="true"></div>
+
+        <!-- 4 -->
+        <section class="pp-section reveal" id="s4" aria-labelledby="s4-title">
+          <div class="pp-section__number" aria-hidden="true">04</div>
+          <div class="pp-section__body">
+            <h2 class="pp-section__title" id="s4-title">Compartición de información</h2>
+            <p class="pp-section__lead">
+              Nos comprometemos a no vender, alquilar ni compartir tu información personal
+              con terceros, excepto en los siguientes casos:
+            </p>
+            <ul class="pp-list">
+              <li>
+                Proveedores de servicios necesarios para la ejecución de nuestras actividades
+                (por ejemplo, plataformas de pago, servicios de correo electrónico).
+              </li>
+              <li>Cumplimiento de requisitos legales, regulatorios o judiciales.</li>
+              <li>
+                Con tu consentimiento explícito, para fines específicos
+                que se te comunicarán previamente.
+              </li>
+            </ul>
+            <p class="pp-note">
+              Estos terceros están obligados a proteger tu información con el mismo
+              nivel de cuidado que nosotros.
+            </p>
+          </div>
+        </section>
+
+        <div class="pp-divider" aria-hidden="true"></div>
+
+        <!-- 5 -->
+        <section class="pp-section reveal" id="s5" aria-labelledby="s5-title">
+          <div class="pp-section__number" aria-hidden="true">05</div>
+          <div class="pp-section__body">
+            <h2 class="pp-section__title" id="s5-title">Uso de cookies y tecnologías similares</h2>
+            <p class="pp-section__lead">
+              En nuestra página utilizamos cookies y tecnologías similares para:
+            </p>
+            <ul class="pp-list">
+              <li>Analizar el tráfico web y mejorar la experiencia del usuario.</li>
+              <li>Ofrecer contenido personalizado y anuncios relevantes.</li>
+              <li>Recordar tus preferencias en futuras visitas.</li>
+            </ul>
+            <p class="pp-note">
+              Puedes gestionar las cookies desde la configuración de tu navegador.
+              Sin embargo, desactivarlas podría limitar algunas funcionalidades de nuestra página.
+            </p>
+          </div>
+        </section>
+
+        <div class="pp-divider" aria-hidden="true"></div>
+
+        <!-- 6 -->
+        <section class="pp-section reveal" id="s6" aria-labelledby="s6-title">
+          <div class="pp-section__number" aria-hidden="true">06</div>
+          <div class="pp-section__body">
+            <h2 class="pp-section__title" id="s6-title">Tus derechos</h2>
+            <p class="pp-section__lead">
+              Como usuario, tienes pleno control sobre tu información personal:
+            </p>
+            <ul class="pp-rights-list">
+              <li>
+                <span class="pp-rights__tag">Acceso</span>
+                Solicitar detalles sobre los datos personales que poseemos sobre ti.
+              </li>
+              <li>
+                <span class="pp-rights__tag">Rectificación</span>
+                Corregir cualquier dato inexacto o incompleto.
+              </li>
+              <li>
+                <span class="pp-rights__tag">Eliminación</span>
+                Solicitar la eliminación de tus datos personales, salvo cuando exista
+                una obligación legal para conservarlos.
+              </li>
+              <li>
+                <span class="pp-rights__tag">Oposición</span>
+                Restringir o limitar el uso de tus datos para determinados fines.
+              </li>
+              <li>
+                <span class="pp-rights__tag">Retiro</span>
+                Retirar tu consentimiento para el tratamiento de datos en cualquier momento.
+              </li>
+            </ul>
+            <p class="pp-note">
+              Para ejercer cualquiera de estos derechos, contáctanos en:
+              <a href="mailto:soporte@angiemon.com" class="pp-link">soporte@angiemon.com</a>
+            </p>
+          </div>
+        </section>
+
+        <div class="pp-divider" aria-hidden="true"></div>
+
+        <!-- 7 -->
+        <section class="pp-section reveal" id="s7" aria-labelledby="s7-title">
+          <div class="pp-section__number" aria-hidden="true">07</div>
+          <div class="pp-section__body">
+            <h2 class="pp-section__title" id="s7-title">Retención de datos</h2>
+            <p class="pp-section__lead">
+              Conservaremos tu información personal solo durante el tiempo necesario
+              para cumplir con los fines descritos en esta política, salvo que la ley
+              exija o permita un período de retención más largo.
+            </p>
+          </div>
+        </section>
+
+        <div class="pp-divider" aria-hidden="true"></div>
+
+        <!-- 8 -->
+        <section class="pp-section reveal" id="s8" aria-labelledby="s8-title">
+          <div class="pp-section__number" aria-hidden="true">08</div>
+          <div class="pp-section__body">
+            <h2 class="pp-section__title" id="s8-title">Cambios a esta política</h2>
+            <p class="pp-section__lead">
+              Nos reservamos el derecho de modificar esta Política de Privacidad en
+              cualquier momento para adaptarnos a cambios legales, tecnológicos o de
+              nuestras prácticas empresariales. Cualquier actualización será publicada
+              en esta página con la fecha de revisión correspondiente.
+            </p>
+            <p class="pp-section__text">
+              Te recomendamos revisar esta política periódicamente para estar al tanto
+              de las actualizaciones.
+            </p>
+          </div>
+        </section>
+
+        <div class="pp-divider" aria-hidden="true"></div>
+
+        <!-- 9 -->
+        <section class="pp-section reveal" id="s9" aria-labelledby="s9-title">
+          <div class="pp-section__number" aria-hidden="true">09</div>
+          <div class="pp-section__body">
+            <h2 class="pp-section__title" id="s9-title">Contacto</h2>
+            <p class="pp-section__lead">
+              Si tienes preguntas, comentarios o inquietudes sobre esta Política de
+              Privacidad, no dudes en ponerte en contacto con nosotros. Estamos aquí
+              para garantizar que tu experiencia en <strong>angiemon.com</strong>
+              sea segura y satisfactoria.
+            </p>
+            <div class="pp-contact-cards" role="list">
+              <a class="pp-contact-card" href="mailto:info@angiemon.com" role="listitem">
+                <span class="pp-contact-card__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="1.5"
+                       stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                  </svg>
+                </span>
+                <span class="pp-contact-card__label">Información general</span>
+                <span class="pp-contact-card__email">info@angiemon.com</span>
+              </a>
+              <a class="pp-contact-card" href="mailto:soporte@angiemon.com" role="listitem">
+                <span class="pp-contact-card__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="1.5"
+                       stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                  </svg>
+                </span>
+                <span class="pp-contact-card__label">Soporte y privacidad</span>
+                <span class="pp-contact-card__email">soporte@angiemon.com</span>
+              </a>
+              <a class="pp-contact-card" href="mailto:contacto@angiemon.com" role="listitem">
+                <span class="pp-contact-card__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="1.5"
+                       stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
+                </span>
+                <span class="pp-contact-card__label">Contacto directo</span>
+                <span class="pp-contact-card__email">contacto@angiemon.com</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+  </main>
+
+
+  <!-- ══════════════════════════════════════════════
+       FOOTER
+       ══════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+
+      <div class="footer__brand">
+        <p class="footer__logo">
+          <span aria-hidden="true">✦</span> AngieMon
+        </p>
+        <p class="footer__tagline">Código Cuántico · Conciencia que Transforma</p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Servicios en el pie de página">
+        <h3 class="footer__nav-title">Servicios</h3>
+        <ul class="footer__nav-list" role="list">
+          <li><a href="../programas/">Programas</a></li>
+          <li><a href="../terapeutas/">Terapias Holísticas</a></li>
+          <li><a href="../terapeutas/">Terapias de Pareja</a></li>
+          <li><a href="../terapeutas/">Círculo de Mujeres</a></li>
+          <li><a href="../terapeutas/">Psicoterapia</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__nav" aria-label="Recursos en el pie de página">
+        <h3 class="footer__nav-title">Recursos</h3>
+        <ul class="footer__nav-list" role="list">
+          <li><a href="../meditaciones/">Meditaciones</a></li>
+          <li><a href="../podcast/">Podcast</a></li>
+          <li><a href="../libros/">Libros</a></li>
+          <li><a href="../canciones/">Canciones</a></li>
+          <li><a href="../talleres-gratuitos/">Talleres Gratuitos</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__contact">
+        <h3 class="footer__nav-title">Conecta</h3>
+        <p class="footer__contact-item">
+          <a href="mailto:soporte@angiemon.com">soporte@angiemon.com</a>
+        </p>
+        <p class="footer__contact-item">
+          <a href="mailto:info@angiemon.com">info@angiemon.com</a>
+        </p>
+        <div class="footer__social" role="list" aria-label="Redes sociales">
+          <a class="social-link" href="https://www.instagram.com/terapeuta.angiemon/" role="listitem"
+             aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+          <a class="social-link" href="https://www.facebook.com/AngieMontelongo" role="listitem"
+             aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a class="social-link" href="https://www.youtube.com/@AngieMon" role="listitem"
+             aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p class="footer__copy">
+          © 2020–2026 <strong style="color:var(--gold)">ANGIEMON</strong> ·
+          <strong style="color:var(--gold)">CÓDIGO CUÁNTICO</strong> ·
+          <strong style="color:var(--gold)">IMPACTO DIGITAL</strong>
+          &mdash; Todos los derechos reservados.
+        </p>
+        <div class="footer__legal">
+          <a href="../politica-privacidad/" aria-current="page">Política y Privacidad</a>
+          <a href="../preguntas-frecuentes/">Preguntas Frecuentes</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ══════════════════════════════════════════════
+       SCRIPTS
+       ══════════════════════════════════════════════ -->
+  <script src="../js/main.js" defer></script>
+  <script src="js/politica-privacidad.js" defer></script>
+</body>
+</html>
