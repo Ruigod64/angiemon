@@ -571,6 +571,293 @@ h1, h2, h3 { font-family: 'Cinzel', serif; }
 .f-str { color: var(--text); font-weight: 600; }
 
 
+/* ── CARTAS DEL GRIMORIO ── */
+.cartas-section {
+    position: relative;
+    overflow: hidden;
+    background:
+        /* trama manuscrito diagonal ↗ */
+        repeating-linear-gradient(
+            135deg,
+            transparent 0px, transparent 38px,
+            rgba(122,85,20,.055) 38px, rgba(122,85,20,.055) 39px
+        ),
+        /* trama manuscrito diagonal ↘ */
+        repeating-linear-gradient(
+            45deg,
+            transparent 0px, transparent 38px,
+            rgba(122,85,20,.04) 38px, rgba(122,85,20,.04) 39px
+        ),
+        /* líneas horizontales tenues */
+        repeating-linear-gradient(
+            180deg,
+            transparent 0px, transparent 52px,
+            rgba(100,65,10,.03) 52px, rgba(100,65,10,.03) 53px
+        ),
+        /* gradiente central pergamino cálido */
+        radial-gradient(ellipse 110% 80% at 50% 50%,
+            #f0dfa0 0%, #e4cc82 25%, #d4b060 50%, #c09040 75%, #a87030 100%),
+        /* base oscura en bordes para fade */
+        linear-gradient(180deg, #0d0820 0%, #0d0820 100%);
+}
+
+/* fade oscuro top/bottom para integrarse con el resto de la página */
+.cartas-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg,
+            #0d0820 0%,
+            transparent 12%,
+            transparent 88%,
+            #0d0820 100%),
+        /* manchas de tinta envejecida */
+        radial-gradient(ellipse 35% 25% at 8%  20%,  rgba(80,45,5,.28),  transparent 60%),
+        radial-gradient(ellipse 25% 30% at 92% 75%,  rgba(60,30,5,.22),  transparent 60%),
+        radial-gradient(ellipse 40% 20% at 55% 88%,  rgba(90,55,10,.18), transparent 55%),
+        radial-gradient(ellipse 30% 25% at 78% 12%,  rgba(70,40,8,.20),  transparent 55%),
+        radial-gradient(ellipse 20% 15% at 30% 50%,  rgba(100,60,10,.1), transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* borde interior tipo papel enmarcado */
+.cartas-section::after {
+    content: '';
+    position: absolute;
+    inset: 18px;
+    border: 1px solid rgba(122,85,20,.3);
+    box-shadow:
+        inset 0 0 0 4px rgba(200,160,60,.12),
+        inset 0 0 0 8px rgba(122,85,20,.07),
+        0 0 60px rgba(160,110,30,.15);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.cartas-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.cartas-section .section-label { color: #7a4f10; }
+.cartas-section .section-title { color: #2e1a04; }
+.cartas-section .section-title .gold { color: #8b5e10; }
+.cartas-section .divider::before,
+.cartas-section .divider::after { background: linear-gradient(to right, transparent, rgba(122,85,20,.5), transparent); }
+.cartas-section .divider span { color: #8b5e10; }
+
+.cartas-intro {
+    text-align: center;
+    font-style: italic;
+    color: #5a3a0a;
+    font-size: clamp(.95rem, 1.7vw, 1.15rem);
+    max-width: 520px;
+    margin: 0 auto 3.5rem;
+    line-height: 1.9;
+}
+
+.cartas-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.cartas-section .container {
+    max-width: 1360px;
+}
+
+/* ── Carta individual ── */
+.carta-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform .35s cubic-bezier(.22,.61,.36,1), box-shadow .35s ease;
+    background:
+        radial-gradient(ellipse at 30% 20%, rgba(230,200,130,.22), transparent 55%),
+        linear-gradient(170deg, #f2e4b6 0%, #e6d090 35%, #d4b86a 70%, #c5a24e 100%);
+    box-shadow:
+        0 0 0 1px rgba(122,92,30,.5),
+        0 0 0 4px rgba(242,228,182,.35),
+        0 0 0 5px rgba(122,92,30,.28),
+        0 8px 35px rgba(0,0,0,.7),
+        inset 0 1px 0 rgba(255,245,200,.4),
+        inset 0 -1px 0 rgba(100,70,10,.3);
+    aspect-ratio: 5 / 9.5;
+}
+
+/* inner border ornate */
+.carta-card::before {
+    content: '';
+    position: absolute;
+    inset: 7px;
+    border: 1px solid rgba(122,92,30,.38);
+    border-radius: 1px;
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* corner glyph */
+.carta-card::after {
+    content: '✦';
+    position: absolute;
+    bottom: 8px;
+    right: 9px;
+    font-size: .52rem;
+    color: rgba(122,92,30,.55);
+    z-index: 4;
+    line-height: 1;
+}
+
+.carta-card:hover {
+    transform: translateY(-8px) rotate(.5deg);
+    box-shadow:
+        0 0 0 1px rgba(201,168,76,.75),
+        0 0 0 4px rgba(242,228,182,.45),
+        0 0 0 5px rgba(201,168,76,.38),
+        0 20px 60px rgba(0,0,0,.75),
+        0 0 40px rgba(201,168,76,.12),
+        inset 0 1px 0 rgba(255,245,200,.5),
+        inset 0 -1px 0 rgba(100,70,10,.3);
+}
+
+/* ── Área ilustración ── */
+.carta-ilustracion {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background:
+        repeating-linear-gradient(
+            135deg,
+            transparent 0px,
+            transparent 28px,
+            rgba(122,92,30,.04) 28px,
+            rgba(122,92,30,.04) 29px
+        ),
+        repeating-linear-gradient(
+            45deg,
+            transparent 0px,
+            transparent 28px,
+            rgba(122,92,30,.03) 28px,
+            rgba(122,92,30,.03) 29px
+        ),
+        linear-gradient(180deg, rgba(200,165,80,.1) 0%, rgba(180,140,50,.05) 100%);
+    border-bottom: 1px solid rgba(122,92,30,.25);
+    min-height: 0;
+}
+
+/* aged ink stains */
+.carta-ilustracion::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 60% 40% at 15% 80%, rgba(100,70,10,.07), transparent 50%),
+        radial-gradient(ellipse 40% 50% at 85% 15%, rgba(100,70,10,.05), transparent 50%);
+    pointer-events: none;
+}
+
+.carta-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    filter: sepia(.25) contrast(1.05) brightness(.95);
+    transition: filter .4s ease, transform .4s ease;
+}
+
+.carta-card:hover .carta-img {
+    filter: sepia(.1) contrast(1.08) brightness(1);
+    transform: scale(1.03);
+}
+
+.carta-symbol {
+    width: 65%;
+    height: 65%;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 0 6px rgba(122,92,30,.15));
+}
+
+/* ── Cuerpo texto ── */
+.carta-cuerpo {
+    padding: .85rem .9rem .95rem;
+    flex-shrink: 0;
+    background:
+        linear-gradient(180deg, rgba(180,140,50,.08) 0%, rgba(160,120,30,.15) 100%);
+    position: relative;
+}
+
+/* worn bottom edge */
+.carta-cuerpo::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 8%; right: 8%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(122,92,30,.4) 30%, rgba(122,92,30,.4) 70%, transparent);
+}
+
+.carta-num {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: .52rem;
+    letter-spacing: .35em;
+    color: rgba(100,70,15,.6);
+    margin-bottom: .2rem;
+    text-transform: uppercase;
+}
+
+.carta-titulo {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(.68rem, 1.1vw, .82rem);
+    font-weight: 600;
+    color: #3a2808;
+    margin-bottom: .3rem;
+    line-height: 1.25;
+    letter-spacing: .03em;
+}
+
+.carta-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(.7rem, 1vw, .8rem);
+    color: #5c3d0e;
+    line-height: 1.55;
+    font-style: italic;
+    opacity: .9;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+    .cartas-grid { grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+}
+
+@media (max-width: 768px) {
+    .cartas-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .carta-card { aspect-ratio: 5 / 8.5; }
+}
+
+@media (max-width: 400px) {
+    .cartas-grid { gap: .75rem; }
+}
+
 /* ── FOOTER ── */
 footer {
     text-align: center;
