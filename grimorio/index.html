@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grimorio Lunar – Ebook Mágico de las 13 Lunas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Josefin+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="grimorio.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+<!-- SVG SPRITE — all icons used throughout the page -->
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none">
+
+  <!-- ✨ SPARKLE -->
+  <symbol id="ico-sparkle" viewBox="0 0 24 24">
+    <path d="M12 2.5L13.15 9.2L19.5 10.3L13.15 11.7L12 18.2L10.85 11.7L4.5 10.3L10.85 9.2Z"
+          fill="currentColor" fill-opacity=".2" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="20" cy="4" r=".9" fill="currentColor"/>
+    <circle cx="4.5" cy="19.5" r=".7" fill="currentColor"/>
+  </symbol>
+
+  <!-- 💫 DIZZY / STAR -->
+  <symbol id="ico-dizzy" viewBox="0 0 24 24">
+    <path d="M10 7L11.3 11L15.5 11.4L12.4 14.2L13.4 18.3L10 16.1L6.6 18.3L7.6 14.2L4.5 11.4L8.7 11Z"
+          fill="currentColor" fill-opacity=".2" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M16 3.5L20.5 2.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M17.5 7L21.5 6.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- 🌕 FULL MOON -->
+  <symbol id="ico-moon-full" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"
+            fill="currentColor" fill-opacity=".22"/>
+    <ellipse cx="9.5" cy="9" rx="2.2" ry="1.4"
+             fill="currentColor" fill-opacity=".18" transform="rotate(-20,9.5,9)"/>
+    <ellipse cx="14.5" cy="14.5" rx="1.6" ry="1"
+             fill="currentColor" fill-opacity=".13" transform="rotate(15,14.5,14.5)"/>
+  </symbol>
+
+  <!-- 🌙 CRESCENT MOON -->
+  <symbol id="ico-moon-crescent" viewBox="0 0 24 24">
+    <path d="M20.354 15.354A9 9 0 0 1 8.646 3.646 9.003 9.003 0 0 0 12 21a9.003 9.003 0 0 0 8.354-5.646Z"
+          stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+          fill="currentColor" fill-opacity=".2"/>
+  </symbol>
+
+  <!-- 🌑 NEW MOON -->
+  <symbol id="ico-moon-new" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"
+            fill="currentColor" fill-opacity=".75"/>
+  </symbol>
+
+  <!-- 🌒 WAXING CRESCENT -->
+  <symbol id="ico-moon-waxing-crescent" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"
+            fill="currentColor" fill-opacity=".08"/>
+    <path d="M12 3A9 9 0 0 1 12 21A6 9 0 0 1 12 3Z"
+          fill="currentColor" fill-opacity=".65"/>
+  </symbol>
+
+  <!-- 🌓 FIRST QUARTER -->
+  <symbol id="ico-moon-first-quarter" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"
+            fill="currentColor" fill-opacity=".08"/>
+    <path d="M12 3A9 9 0 0 1 12 21Z" fill="currentColor" fill-opacity=".65"/>
+  </symbol>
+
+  <!-- 🌔 WAXING GIBBOUS -->
+  <symbol id="ico-moon-waxing-gibbous" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"
+            fill="currentColor" fill-opacity=".08"/>
+    <path d="M12 3A9 9 0 0 1 12 21A4.5 9 0 0 0 12 3Z"
+          fill="currentColor" fill-opacity=".65"/>
+  </symbol>
+
+  <!-- 🌖 WANING GIBBOUS -->
+  <symbol id="ico-moon-waning-gibbous" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"
+            fill="currentColor" fill-opacity=".08"/>
+    <path d="M12 3A9 9 0 0 0 12 21A4.5 9 0 0 1 12 3Z"
+          fill="currentColor" fill-opacity=".65"/>
+  </symbol>
+
+  <!-- 🌗 LAST QUARTER -->
+  <symbol id="ico-moon-last-quarter" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"
+            fill="currentColor" fill-opacity=".08"/>
+    <path d="M12 3A9 9 0 0 0 12 21Z" fill="currentColor" fill-opacity=".65"/>
+  </symbol>
+
+  <!-- 🌘 WANING CRESCENT -->
+  <symbol id="ico-moon-waning-crescent" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"
+            fill="currentColor" fill-opacity=".08"/>
+    <path d="M12 3A9 9 0 0 0 12 21A6 9 0 0 0 12 3Z"
+          fill="currentColor" fill-opacity=".65"/>
+  </symbol>
+
+  <!-- 🕯️ CANDLE -->
+  <symbol id="ico-candle" viewBox="0 0 24 24">
+    <rect x="9" y="10" width="6" height="11" rx="1"
+          stroke="currentColor" stroke-width="1.5" fill="currentColor" fill-opacity=".12"/>
+    <line x1="12" y1="10" x2="12" y2="7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M12 7.5C11.2 5.5 9.5 4.5 10 2.8C10.6 1 12.8 1.5 12.5 3.2C13.5 2 15 3 13.8 4.5C15 4.5 15.2 6.2 14.2 7C13.5 7.6 12.2 7.8 12 7.5Z"
+          stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"
+          fill="currentColor" fill-opacity=".35"/>
+  </symbol>
+
+  <!-- 💎 GEM -->
+  <symbol id="ico-gem" viewBox="0 0 24 24">
+    <path d="M12 22L2 9.5L7.5 3H16.5L22 9.5Z"
+          stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"
+          fill="currentColor" fill-opacity=".15"/>
+    <polyline points="2,9.5 12,22 22,9.5"
+              stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" fill="none"/>
+    <polyline points="7.5,3 10,9.5 12,3 14,9.5 16.5,3"
+              stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" fill="none"/>
+    <line x1="2" y1="9.5" x2="22" y2="9.5" stroke="currentColor" stroke-width="1.1"/>
+  </symbol>
+
+  <!-- 🌿 HERB -->
+  <symbol id="ico-herb" viewBox="0 0 24 24">
+    <path d="M12 21C12 16.5 10.5 13.5 8.5 10.5"
+          stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M8.5 10.5C6.5 7.5 3.5 6.5 3 3.5C6 3.5 9 6 8.5 10.5Z"
+          stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"
+          fill="currentColor" fill-opacity=".2"/>
+    <path d="M8.5 10.5C10.5 7.5 13.5 6.5 14 3.5C11 3.5 8 6 8.5 10.5Z"
+          stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"
+          fill="currentColor" fill-opacity=".2"/>
+    <path d="M8.5 10.5C10 8.5 12 8 13 6C11.5 5.5 9.5 7 8.5 10.5Z"
+          fill="currentColor" fill-opacity=".32" stroke="none"/>
+  </symbol>
+
+  <!-- 🔮 CRYSTAL BALL / ORB -->
+  <symbol id="ico-orb" viewBox="0 0 24 24">
+    <path d="M8 21H16M9.5 21L10.5 18.5H13.5L14.5 21"
+          stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="12" cy="10.5" r="7.5" stroke="currentColor" stroke-width="1.5"
+            fill="currentColor" fill-opacity=".12"/>
+    <path d="M9 8C9.5 7 10.5 6.5 11.5 6.5"
+          stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity=".5"/>
+    <circle cx="14" cy="8" r="1.1" fill="currentColor" fill-opacity=".45"/>
+    <circle cx="11" cy="12" r=".7" fill="currentColor" fill-opacity=".3"/>
+  </symbol>
+
+  <!-- 🌸 FLOWER -->
+  <symbol id="ico-flower" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="1.5"
+            fill="currentColor" fill-opacity=".45"/>
+    <ellipse cx="12" cy="6.8" rx="2" ry="3.5"
+             stroke="currentColor" stroke-width="1.2" fill="currentColor" fill-opacity=".14"
+             transform="rotate(0,12,12)"/>
+    <ellipse cx="12" cy="6.8" rx="2" ry="3.5"
+             stroke="currentColor" stroke-width="1.2" fill="currentColor" fill-opacity=".14"
+             transform="rotate(60,12,12)"/>
+    <ellipse cx="12" cy="6.8" rx="2" ry="3.5"
+             stroke="currentColor" stroke-width="1.2" fill="currentColor" fill-opacity=".14"
+             transform="rotate(120,12,12)"/>
+    <ellipse cx="12" cy="6.8" rx="2" ry="3.5"
+             stroke="currentColor" stroke-width="1.2" fill="currentColor" fill-opacity=".14"
+             transform="rotate(180,12,12)"/>
+    <ellipse cx="12" cy="6.8" rx="2" ry="3.5"
+             stroke="currentColor" stroke-width="1.2" fill="currentColor" fill-opacity=".14"
+             transform="rotate(240,12,12)"/>
+    <ellipse cx="12" cy="6.8" rx="2" ry="3.5"
+             stroke="currentColor" stroke-width="1.2" fill="currentColor" fill-opacity=".14"
+             transform="rotate(300,12,12)"/>
+  </symbol>
+
+  <!-- 🔥 FLAME -->
+  <symbol id="ico-flame" viewBox="0 0 24 24">
+    <path d="M12 22C7.5 22 4.5 19 4.5 15.5C4.5 11.5 7 8.5 9 6.5C8.5 9.5 10 11 10.5 11C10.5 8 11.5 5 13.5 3C13.5 6.5 15.5 8 15.5 11.5C17 10 17 8.5 16.5 7C19 10 19.5 13 19.5 14.5C19.5 18.5 16.5 22 12 22Z"
+          stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"
+          fill="currentColor" fill-opacity=".2"/>
+    <path d="M12 19C10 19 9 17.5 9 16C9 14 10.5 12.5 12 12C11.5 14 12.5 14.5 13 15C13 13 13.5 12 14.5 11.5C15 13 15 15 14.5 16C15.5 15 15.5 13.5 15 12.5C16.5 14 16.5 15.5 15.5 17C14.5 18.5 13 19 12 19Z"
+          fill="currentColor" fill-opacity=".5" stroke="none"/>
+  </symbol>
+
+  <!-- 🌌 GALAXY -->
+  <symbol id="ico-galaxy" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"
+            fill="currentColor" fill-opacity=".07"/>
+    <path d="M12 12C13.5 9 17 8 18 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+    <path d="M12 12C10.5 15 7 16 6 18" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+    <path d="M12 12C9 11 7 8.5 6 7" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity=".65"/>
+    <path d="M12 12C15 13 17 15.5 18 17" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity=".65"/>
+    <circle cx="12" cy="12" r="1.8" fill="currentColor" fill-opacity=".8"/>
+    <circle cx="7" cy="7" r=".6" fill="currentColor" fill-opacity=".7"/>
+    <circle cx="17" cy="8" r=".5" fill="currentColor" fill-opacity=".6"/>
+    <circle cx="16.5" cy="16.5" r=".6" fill="currentColor" fill-opacity=".7"/>
+  </symbol>
+
+  <!-- 🌟 GLOWING STAR -->
+  <symbol id="ico-star-glow" viewBox="0 0 24 24">
+    <path d="M12 2L13.6 8.5L20 7L15.5 12L20 17L13.6 15.5L12 22L10.4 15.5L4 17L8.5 12L4 7L10.4 8.5Z"
+          stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"
+          fill="currentColor" fill-opacity=".18"/>
+    <line x1="12" y1="1" x2="12" y2="2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <line x1="12" y1="21.5" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <line x1="1" y1="12" x2="2.5" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <line x1="21.5" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- 📖 OPEN BOOK -->
+  <symbol id="ico-book" viewBox="0 0 24 24">
+    <path d="M3 5.5C3 5 3.45 4.5 4 4.5C6 4.5 9 5.5 12 7.5L12 20.5C9 18.5 6 17.5 4 17.5C3.45 17.5 3 17 3 16.5Z"
+          stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"
+          fill="currentColor" fill-opacity=".12"/>
+    <path d="M21 5.5C21 5 20.55 4.5 20 4.5C18 4.5 15 5.5 12 7.5L12 20.5C15 18.5 18 17.5 20 17.5C20.55 17.5 21 17 21 16.5Z"
+          stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"
+          fill="currentColor" fill-opacity=".12"/>
+    <line x1="12" y1="7.5" x2="12" y2="20.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <path d="M6 10C8 10.5 10 10.5 11 11" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity=".45"/>
+    <path d="M6 13.5C8 14 10 14 11 14.5" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity=".45"/>
+    <path d="M13 11C14 10.5 16 10.5 18 10" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity=".45"/>
+    <path d="M13 14.5C14 14 16 14 18 13.5" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity=".45"/>
+  </symbol>
+
+</svg>
+
+<canvas id="stars-canvas"></canvas>
+
+
+<!-- HERO -->
+<section id="hero">
+    <video id="hero-video" autoplay muted loop playsinline>
+        <source src="../assets/videos/grimorio.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <p class="hero-eyebrow">✦ Ebook Mágico &nbsp;·&nbsp; Magia Ancestral &nbsp;·&nbsp; 13 Lunas ✦</p>
+        <h1 class="hero-title">Grimorio<br>Lunar</h1>
+        <p class="hero-subtitle">Ebook Mágico de las 13 Lunas</p>
+        <div class="moon-row-hero">
+            <span>🌑</span><span>🌒</span><span>🌓</span><span>🌔</span>
+            <span>🌕</span><span>🌖</span><span>🌗</span><span>🌘</span>
+        </div>
+        <p class="hero-desc">✨ No todos los libros se leen… algunos se viven.</p>
+        <a href="https://hotmart.com/es/marketplace/productos/hagsxd-grimorio-lunar-4jmdn/L101821733G?sck=HOTMART_PRODUCT_PAGE"
+           target="_blank" rel="noopener" class="btn-cta">✨ Quiero mi Grimorio Lunar</a>
+    </div>
+</section>
+
+<!-- QUÉ ES -->
+<section class="section" style="background:linear-gradient(180deg,var(--bg-deep),var(--bg-purple));">
+    <div class="container">
+        <p class="section-label fade-up">Portal del Conocimiento Ancestral</p>
+        <h2 class="section-title fade-up">¿Qué es el Grimorio Lunar de<br><span class="gold">Magia Ancestral?</span></h2>
+        <p class="section-label fade-up" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;text-transform:none;letter-spacing:.12em;color:var(--text-soft);">Grimorio Lunar – Ebook mágico de las 13 lunas</p>
+        <div class="divider fade-up"><span><svg class="icon" aria-hidden="true"><use href="#ico-moon-full"/></svg></span></div>
+        <div class="intro-text fade-up">
+            <p><span class="hl"><svg class="icon" aria-hidden="true"><use href="#ico-sparkle"/></svg> No todos los libros se leen… algunos se viven.</span></p>
+            <p>El Grimorio Lunar es más que un manuscrito: es un <span class="cll">portal sagrado</span> con más de 500 páginas donde la magia, la sabiduría ancestral y la conexión espiritual se entrelazan para guiarte en tu camino de despertar.</p>
+            <p class="cll">si sientes el llamado entonces este grimorio no llegó a ti por casualidad.</p>
+            <p>La Luna te ha llamado, y ahora este libro se convierte en el <em>puente que une tus sueños, tus ciclos y tu poder interior</em> con la fuerza del universo.</p>
+            <p>Imagina tener en tus manos una obra que no solo explica con claridad paso a paso, sino que activa tu energía, expande tu conciencia y despierta tu intuición. Cada página está escrita para ayudarte a abrir memorias dormidas en tu alma, recordándote quién eres y lo que siempre estuvo dentro de ti: <span class="hl">Tu Magia pura, auténtica y transformadora y tu poder creador.</span></p>
+        </div>
+    </div>
+</section>
+
+<!-- LO QUE DESCUBRIRÁS -->
+<section class="section" style="background:var(--bg-dark);">
+    <div class="container">
+        <p class="section-label fade-up">El Contenido del Grimorio</p>
+        <h2 class="section-title fade-up"><svg class="icon" aria-hidden="true"><use href="#ico-sparkle"/></svg> Lo que descubrirás dentro del<br><span class="gold">Grimorio Lunar <svg class="icon" aria-hidden="true"><use href="#ico-dizzy"/></svg></span></h2>
+        <div class="discover-grid">
+            <div class="discover-card fade-up">
+                <svg class="card-icon icon" aria-hidden="true"><use href="#ico-moon-full"/></svg>
+                <h3 class="card-title">El significado sagrado de cada luna</h3>
+                <p class="card-text">Cada fase lunar guarda un mensaje y una vibración única. Aprenderás a reconocer cómo la luna nueva abre portales de siembra, cómo la luna llena expande tu poder y cómo cada transición lunar influye en tu destino, tus emociones y hasta en los ciclos más íntimos de tu vida. Serás capaz de sincronizar tus pasos con el pulso del universo.</p>
+            </div>
+            <div class="discover-card fade-up">
+                <svg class="card-icon icon" aria-hidden="true"><use href="#ico-candle"/></svg>
+                <h3 class="card-title">Velomancia: la magia de las velas</h3>
+                <p class="card-text">Las velas son más que fuego: son oráculos de luz que hablan en su flama, en su humo y en sus formas. Descubrirás cómo leerlas y utilizarlas para abrir caminos, disolver bloqueos, limpiar energías pesadas y atraer prosperidad. Cada color, cada forma y cada chispa encierra un secreto ancestral que ahora estará en tus manos.</p>
+            </div>
+            <div class="discover-card fade-up">
+                <svg class="card-icon icon" aria-hidden="true"><use href="#ico-gem"/></svg>
+                <h3 class="card-title">Cristales y piedras sagradas</h3>
+                <p class="card-text">No son simples minerales, son guardianes de la Tierra con memorias milenarias. Este grimorio te revelará cuáles piedras utilizar para atraer amor verdadero, cuáles para proteger tu energía, cuáles expanden tu abundancia y cuáles te devuelven la claridad mental. Aprenderás a programarlas y a trabajar con ellas como aliadas mágicas en tu día a día.</p>
+            </div>
+            <div class="discover-card fade-up">
+                <svg class="card-icon icon" aria-hidden="true"><use href="#ico-herb"/></svg>
+                <h3 class="card-title">La magia de las plantas</h3>
+                <p class="card-text">Desde tiempos ancestrales, las hierbas han sido medicina, magia y puente entre mundos. Conocerás secretos de plantas sagradas para limpiar espacios, sanar heridas emocionales, elevar tu vibración y reconectar con la fuerza primitiva de la Madre Tierra. Cada hoja y cada raíz se convierte en un canal de sabiduría viva.</p>
+            </div>
+            <div class="discover-card fade-up">
+                <svg class="card-icon icon" aria-hidden="true"><use href="#ico-orb"/></svg>
+                <h3 class="card-title">Hechizos y conjuros poderosos</h3>
+                <p class="card-text">La magia no tiene por qué ser complicada. Aquí encontrarás conjuros claros y detallados, paso a paso, para atraer lo que deseas y transformar lo que ya no sirve en tu vida. Amor, protección, abundancia, claridad: cada hechizo está diseñado con intención y cuidado, listo para que lo actives con tu propia energía.</p>
+            </div>
+            <div class="discover-card fade-up">
+                <svg class="card-icon icon" aria-hidden="true"><use href="#ico-flower"/></svg>
+                <h3 class="card-title">El rito del útero y el sagrado femenino</h3>
+                <p class="card-text">Un viaje profundo hacia la raíz de tu poder creador. Este ritual te conecta con tu útero como templo, te ayuda a sanar memorias guardadas en tu linaje y a reconciliarte con la energía femenina que habita en ti. Es una práctica de liberación, reconexión y despertar que honra tu esencia y tu herencia sagrada.</p>
+            </div>
+            <div class="discover-card fade-up">
+                <svg class="card-icon icon" aria-hidden="true"><use href="#ico-moon-crescent"/></svg>
+                <h3 class="card-title">Fases lunares y arquetipos femeninos</h3>
+                <p class="card-text">La Luna refleja en ti a la Doncella, la Madre, la Hechicera y la Anciana. Este grimorio te mostrará cómo vivir en sincronía con cada una de estas energías, reconociendo sus dones, sus fuerzas y sus aprendizajes. Descubrirás cómo tu ciclo interno está unido al ciclo lunar y cómo esa conexión potencia tu poder personal.</p>
+            </div>
+            <div class="discover-card fade-up">
+                <svg class="card-icon icon" aria-hidden="true"><use href="#ico-dizzy"/></svg>
+                <h3 class="card-title">Decretos y protocolos de abundancia</h3>
+                <p class="card-text">La palabra es magia. Los decretos son llaves que abren realidades. Aquí encontrarás fórmulas, frases y protocolos rituales diseñados para limpiar tus bloqueos internos y activar la prosperidad en todas sus formas: económica, emocional, espiritual. Aprenderás a invocar la abundancia desde la certeza y no desde la carencia.</p>
+            </div>
+            <div class="discover-card fade-up">
+                <svg class="card-icon icon" aria-hidden="true"><use href="#ico-flame"/></svg>
+                <h3 class="card-title">Rituales de limpieza y protección</h3>
+                <p class="card-text">Tu energía, tu hogar y tu espíritu necesitan cuidado. En este apartado descubrirás rituales ancestrales para limpiar cargas negativas, cortar lazos dañinos y protegerte a ti y a tu espacio con fuerza y claridad. Son prácticas que actúan como un escudo invisible, devolviéndote paz y seguridad.</p>
+            </div>
+            <div class="discover-card fade-up">
+                <svg class="card-icon icon" aria-hidden="true"><use href="#ico-sparkle"/></svg>
+                <h3 class="card-title">El secreto de la manifestación</h3>
+                <p class="card-text">Manifestar no es desear: es alinear tu intención con el universo. Este grimorio te revela, paso a paso, cómo convertir tus pensamientos en realidades, cómo enfocar tu energía y cómo vibrar en sintonía con lo que quieres atraer. Es la llave para transformar tu vida y abrirte a nuevas posibilidades.</p>
+            </div>
+        </div>
+        <div class="divider fade-up" style="margin-top:3rem;"><span>✦</span></div>
+        <p class="fade-up" style="text-align:center;color:var(--text-soft);font-style:italic;font-size:1.1rem;max-width:700px;margin:0 auto 3rem;"><svg class="icon" aria-hidden="true"><use href="#ico-gem"/></svg> Cada apartado de este Grimorio Lunar está diseñado para ser un espejo de tu poder y un recordatorio de la magia que ya habita en ti. No solo aprenderás teorías: vivirás un viaje iniciático hacia tu transformación.</p>
+    </div>
+</section>
+
+<!-- CTA BANNER 1 -->
+<section class="section" style="padding:60px 0;background:var(--bg-purple);position:relative;z-index:1;">
+    <div class="container">
+        <div class="cta-banner fade-up">
+            <h3>Despierta tu magia ancestral</h3>
+            <p>527 páginas de sabiduría lunar esperan por ti — hoy a precio de lanzamiento.</p>
+            <a href="https://hotmart.com/es/marketplace/productos/hagsxd-grimorio-lunar-4jmdn/L101821733G?sck=HOTMART_PRODUCT_PAGE"
+               target="_blank" rel="noopener" class="btn-cta">✦ Quiero despertar mi magia — $14,99 USD</a>
+        </div>
+    </div>
+</section>
+
+<!-- POR QUÉ ES ÚNICO -->
+<section class="section" style="background:linear-gradient(180deg,var(--bg-dark),var(--bg-purple));">
+    <div class="container">
+        <p class="section-label fade-up">Lo que lo hace diferente</p>
+        <h2 class="section-title fade-up"><svg class="icon" aria-hidden="true"><use href="#ico-star-glow"/></svg> ¿Por qué este grimorio<br><span class="gold">es único?</span></h2>
+        <div class="divider fade-up"><span><svg class="icon" aria-hidden="true"><use href="#ico-moon-crescent"/></svg></span></div>
+        <div class="unique-box fade-up">
+            <p>Porque no es un Ebook más. Es un <strong style="color:var(--text);">legado espiritual</strong> cuidadosamente tejido con prácticas ancestrales, rituales claros y enseñanzas profundas que se adaptan a tu vida actual.</p>
+            <p>Aquí no hay complicaciones, sino caminos abiertos para que integres la magia blanca en tu día a día con facilidad y amor. El Grimorio Lunar es un altar en forma de libro.</p>
+            <p>Cada vez que lo abras, <em>la Luna hablará contigo.</em></p>
+            <p>Cada vez que lo leas, <em>sentirás que algo dentro de ti despierta.</em></p>
+            <p>No importa si eres principiante, terapeuta holística o si llevas años en la senda espiritual: este grimorio se convertirá en tu compañero, en tu guía para amplificar tu mapa de poder.</p>
+        </div>
+    </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" style="background:var(--bg-purple);">
+    <div class="container">
+        <p class="section-label fade-up">Oferta de Lanzamiento</p>
+        <h2 class="section-title fade-up"><svg class="icon" aria-hidden="true"><use href="#ico-flame"/></svg> El valor de la magia<br><span class="gold">que contiene</span></h2>
+        <div class="divider fade-up"><span>◈</span></div>
+        <p class="fade-up" style="text-align:center;color:var(--text-soft);font-style:italic;font-size:1.1rem;max-width:600px;margin:0 auto 3rem;">Con 527 páginas repletas de conocimiento, prácticas, rituales y secretos ancestrales, el Grimorio Lunar tiene un valor que supera los 49 USD.</p>
+        <div class="pricing-box fade-up">
+            <div class="pages-badge"><svg class="icon" aria-hidden="true"><use href="#ico-book"/></svg> 527 páginas &nbsp;·&nbsp; Listo para imprimir</div>
+            <p class="price-old">Valor real: $49 USD</p>
+            <p class="price-now"><span class="price-sup">$</span>14,99</p>
+            <p class="price-label">✦ Precio especial de lanzamiento ✦</p>
+            <p class="price-note">Un precio simbólico para el tesoro espiritual que recibirás.<br>Un regalo para quienes escuchan el llamado de la Luna y deciden actuar hoy.</p>
+            <a href="https://hotmart.com/es/marketplace/productos/hagsxd-grimorio-lunar-4jmdn/L101821733G?sck=HOTMART_PRODUCT_PAGE"
+               target="_blank" rel="noopener" class="btn-cta" style="font-size:1rem;padding:1.2rem 3.5rem;">
+                <svg class="icon" aria-hidden="true"><use href="#ico-moon-full"/></svg> Haz tuyo el Grimorio Lunar
+            </a>
+            <p class="price-fine">Acceso inmediato · PDF descargable · Pago seguro</p>
+        </div>
+    </div>
+</section>
+
+<!-- ESTA ES TU SEÑAL -->
+<section class="section" style="background:linear-gradient(180deg,var(--bg-purple),var(--bg-deep));">
+    <div class="container">
+        <p class="section-label fade-up">Tu momento ha llegado</p>
+        <h2 class="section-title fade-up"><svg class="icon" aria-hidden="true"><use href="#ico-dizzy"/></svg> Esta es tu señal</h2>
+        <div class="divider fade-up"><span><svg class="icon" aria-hidden="true"><use href="#ico-moon-full"/></svg></span></div>
+        <div class="signal-text fade-up">
+            <p>Si has llegado hasta aquí, no es casualidad.</p>
+            <p class="signal-hl">El Grimorio Lunar te eligió.</p>
+            <p>No postergues lo que tu corazón ya decidió.</p>
+            <p>Cada página te espera para despertar tu poder, honrar tu esencia y guiarte hacia la vida que mereces.</p>
+            <p class="signal-hl"><svg class="icon" aria-hidden="true"><use href="#ico-moon-crescent"/></svg> La magia no se piensa, se siente.</p>
+            <p class="signal-hl"><svg class="icon" aria-hidden="true"><use href="#ico-moon-full"/></svg> La Luna ya te llamó.</p>
+            <p class="signal-hl"><svg class="icon" aria-hidden="true"><use href="#ico-sparkle"/></svg> El momento es ahora.</p>
+            <p><svg class="icon" aria-hidden="true"><use href="#ico-book"/></svg> Grimorio listo para imprimir</p>
+            <p><svg class="icon" aria-hidden="true"><use href="#ico-flame"/></svg> Haz tuyo el Grimorio Lunar, despierta tus dones y permite que las trece Lunas guíen tu camino, y te recuerden tu verdadero propósito.</p>
+        </div>
+        <div style="text-align:center;margin-top:3rem;" class="fade-up">
+            <a href="https://hotmart.com/es/marketplace/productos/hagsxd-grimorio-lunar-4jmdn/L101821733G?sck=HOTMART_PRODUCT_PAGE"
+               target="_blank" rel="noopener" class="btn-cta"><svg class="icon" aria-hidden="true"><use href="#ico-sparkle"/></svg> Sí, escucho el llamado</a>
+        </div>
+    </div>
+</section>
+
+<!-- PORTAL SEPARATOR -->
+<section class="portal-section fade-in">
+    <div class="moon-row">
+        <svg class="icon" aria-hidden="true"><use href="#ico-moon-new"/></svg>
+        <svg class="icon" aria-hidden="true"><use href="#ico-moon-waxing-crescent"/></svg>
+        <svg class="icon" aria-hidden="true"><use href="#ico-moon-first-quarter"/></svg>
+        <svg class="icon" aria-hidden="true"><use href="#ico-moon-waxing-gibbous"/></svg>
+        <svg class="icon" aria-hidden="true"><use href="#ico-moon-full"/></svg>
+        <svg class="icon" aria-hidden="true"><use href="#ico-moon-waning-gibbous"/></svg>
+        <svg class="icon" aria-hidden="true"><use href="#ico-moon-last-quarter"/></svg>
+        <svg class="icon" aria-hidden="true"><use href="#ico-moon-waning-crescent"/></svg>
+    </div>
+    <h2 class="portal-title">El Grimorio Lunar</h2>
+    <p class="portal-sub">No es un libro. Es un portal.</p>
+    <div class="portal-body">
+        <p>con más de 500 páginas de conocimiento ancestral</p>
+        <p>Un viaje sagrado a través de los ciclos de la luna para despertar la sabiduría que duerme en tu interior. Aquí encontrarás conciencia, ritual, autoconocimiento y conexión profunda con la magia ancestral.</p>
+        <p>Cada página es un espejo.</p>
+        <p>Cada luna, una iniciación.</p>
+        <p>Cada palabra, una llave hacia tu poder, intuitivo y creador.</p>
+        <p>Si sientes que algo en ti está despertando…</p>
+        <p style="color:var(--gold-light);">Este Grimorio no llega por casualidad. <svg class="icon" aria-hidden="true"><use href="#ico-dizzy"/></svg></p>
+    </div>
+</section>
+
+<!-- INICIACIÓN AL TIEMPO SAGRADO -->
+<section class="section" style="background:rgba(13,10,34,.9);">
+    <div class="container">
+        <p class="section-label fade-up">Iniciación al Tiempo Sagrado</p>
+        <h2 class="section-title fade-up"><svg class="icon" aria-hidden="true"><use href="#ico-moon-crescent"/></svg> Grimorio Lunar Mágico<br><span class="gold">de las 13 Lunas</span></h2>
+        <div class="divider fade-up"><span>🜂</span></div>
+        <div class="big-quote fade-up" style="margin-bottom:3rem;">
+            <p>Este no es un libro, es un grimorio mágico</p>
+            <p>Es un umbral.</p>
+            <p>No se busca.</p>
+            <p><em>El te encuentra.</em></p>
+            <br>
+            <p>Porque cuando el alma está lista para recordar…<br>el conocimiento aparece.</p>
+            <br>
+            <p>El Grimorio Lunar es una iniciación al tiempo natural.</p>
+            <p>Un sendero reservado para quienes ya no desean vivir bajo el ritmo artificial del mundo,<br>sino bajo el pulso vivo de la Luna, la Tierra y el corazón cósmico.</p>
+            <br>
+            <p>Aquí no aprenderás información.</p>
+            <p><em>Aquí activarás memoria.</em></p>
+        </div>
+        <h3 class="section-title fade-up" style="font-size:1.25rem;"><svg class="icon" aria-hidden="true"><use href="#ico-orb"/></svg> Este Grimorio despierta lo que ya vive en ti.</h3>
+        <p class="fade-up" style="text-align:center;color:var(--text-soft);font-style:italic;margin-bottom:2.5rem;">Durante 13 lunas recorrerás un ciclo completo de transformación:</p>
+        <div class="moon-journey fade-up">
+            <div class="moon-step"><svg class="moon-step-ico icon" aria-hidden="true"><use href="#ico-moon-new"/></svg><span class="moon-step-txt">Morirás a lo que ya no eres.</span></div>
+            <div class="moon-step"><svg class="moon-step-ico icon" aria-hidden="true"><use href="#ico-moon-waxing-crescent"/></svg><span class="moon-step-txt">Escucharás la voz que olvidaste.</span></div>
+            <div class="moon-step"><svg class="moon-step-ico icon" aria-hidden="true"><use href="#ico-moon-first-quarter"/></svg><span class="moon-step-txt">Abrirás portales internos sellados por el miedo.</span></div>
+            <div class="moon-step"><svg class="moon-step-ico icon" aria-hidden="true"><use href="#ico-moon-waxing-gibbous"/></svg><span class="moon-step-txt">Activarás tu propósito.</span></div>
+            <div class="moon-step"><svg class="moon-step-ico icon" aria-hidden="true"><use href="#ico-moon-full"/></svg><span class="moon-step-txt">Recordarás tu linaje estelar.</span></div>
+            <div class="moon-step"><svg class="moon-step-ico icon" aria-hidden="true"><use href="#ico-moon-waning-gibbous"/></svg><span class="moon-step-txt">Liberarás memorias antiguas.</span></div>
+            <div class="moon-step"><svg class="moon-step-ico icon" aria-hidden="true"><use href="#ico-moon-last-quarter"/></svg><span class="moon-step-txt">Trascenderás versiones pasadas.</span></div>
+        </div>
+        <div class="big-quote fade-up" style="margin-top:2rem;">
+            <p>Cada luna es una puerta.</p>
+            <p>Cada día, un código.</p>
+            <p><em>Cada ritual, una activación energética.</em></p>
+        </div>
+    </div>
+</section>
+
+<!-- OPERATIVO -->
+<section class="section" style="background:var(--bg-dark);">
+    <div class="container">
+        <p class="section-label fade-up">Contenido Operativo</p>
+        <h2 class="section-title fade-up">🜂 Lo que contiene no es<br><span class="gold">simbólico… es operativo.</span></h2>
+        <div class="divider fade-up"><span>◈</span></div>
+        <ul class="op-list fade-up">
+            <li>Ceremonias de activación galáctica</li>
+            <li>Sellos de intención y decretos vibracionales</li>
+            <li>Trabajo con los cuatro elementos</li>
+            <li>Rituales de propósito y alineación</li>
+            <li>Escritura iniciática</li>
+            <li>Anclajes energéticos</li>
+            <li>Sincronización con el calendario natural de 13 lunas</li>
+        </ul>
+        <div class="big-quote fade-up" style="margin-top:3rem;">
+            <p>Este diario no se lee en piloto automático.</p>
+            <p>Se practica con conciencia.</p>
+            <p>Se honra con presencia.</p>
+            <p><em>Se atraviesa con valentía.</em></p>
+        </div>
+    </div>
+</section>
+
+<!-- NO TODAS ESTÁN LISTAS -->
+<section class="section" style="background:linear-gradient(180deg,var(--bg-dark),var(--bg-purple));">
+    <div class="container">
+        <p class="section-label fade-up">¿Es para ti?</p>
+        <h2 class="section-title fade-up"><svg class="icon" aria-hidden="true"><use href="#ico-galaxy"/></svg> No todas están listas.</h2>
+        <div class="divider fade-up"><span><svg class="icon" aria-hidden="true"><use href="#ico-moon-crescent"/></svg></span></div>
+        <p class="fade-up" style="text-align:center;color:var(--text-soft);font-style:italic;font-size:1.1rem;margin-bottom:2rem;">Este Grimorio es para la mujer que:</p>
+        <ul class="forwho-list fade-up">
+            <li>Ya atravesó su noche oscura.</li>
+            <li>Siente que el tiempo lineal ya no la contiene.</li>
+            <li>Está dispuesta a mirarse sin máscaras.</li>
+            <li>Está lista para convertirse en guardiana de su propio ciclo.</li>
+        </ul>
+        <div class="big-quote fade-up" style="margin-top:3rem;">
+            <p>Si sientes una mezcla de emoción y respeto…</p>
+            <p>es porque reconoces que esto no es entretenimiento espiritual.</p>
+            <p><em>Es un pacto contigo misma.</em></p>
+        </div>
+    </div>
+</section>
+
+<!-- DECLARACIÓN -->
+<section class="section" style="background:var(--bg-purple);">
+    <div class="container">
+        <p class="section-label fade-up">El Umbral</p>
+        <h2 class="section-title fade-up"><svg class="icon" aria-hidden="true"><use href="#ico-sparkle"/></svg> Iniciar este grimorio mágico<br><span class="gold">es decir:</span></h2>
+        <div class="divider fade-up"><span>✦</span></div>
+        <div class="declaration-box fade-up">
+            <div class="declaration-text">
+                <p><span class="dg">"Renuncio al tiempo impuesto.</span></p>
+                <p><span class="dg">Recupero el tiempo del alma.</span></p>
+                <p><span class="dg">Activo mi ciclo galáctico.</span></p>
+                <p><span class="dg">Camino como mujer medicina."</span></p>
+                <br>
+                <p>Y cuando cruzas ese umbral…</p>
+                <p>ya no vuelves a mirar el tiempo igual.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SI ESTO RESONÓ -->
+<section class="section" style="background:linear-gradient(180deg,var(--bg-purple),var(--bg-deep));text-align:center;">
+    <div class="container">
+        <div class="moon-row fade-up">
+            <svg class="icon" aria-hidden="true"><use href="#ico-moon-new"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="#ico-moon-waxing-crescent"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="#ico-moon-first-quarter"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="#ico-moon-waxing-gibbous"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="#ico-moon-full"/></svg>
+        </div>
+        <h2 class="section-title fade-up"><svg class="icon" aria-hidden="true"><use href="#ico-moon-crescent"/></svg> Si esto resonó en tu alma<br><span class="gold">antes que en tu mente…</span></h2>
+        <div class="divider fade-up"><span><svg class="icon" aria-hidden="true"><use href="#ico-moon-full"/></svg></span></div>
+        <div class="big-quote fade-up"><p>ya sabes la respuesta.</p></div>
+        <div class="fade-up" style="margin-top:3rem;">
+            <a href="https://hotmart.com/es/marketplace/productos/hagsxd-grimorio-lunar-4jmdn/L101821733G?sck=HOTMART_PRODUCT_PAGE"
+               target="_blank" rel="noopener" class="btn-cta"><svg class="icon" aria-hidden="true"><use href="#ico-moon-crescent"/></svg> Sí, estoy lista para cruzar el umbral</a>
+        </div>
+    </div>
+</section>
+
+<!-- EL TIEMPO VA A PASAR -->
+<section class="section" style="background:var(--bg-deep);text-align:center;">
+    <div class="container">
+        <p class="section-label fade-up">Tu decisión de hoy</p>
+        <h2 class="section-title fade-up">El tiempo va a pasar…</h2>
+        <div class="divider fade-up"><span><svg class="icon" aria-hidden="true"><use href="#ico-moon-full"/></svg></span></div>
+        <div class="final-text fade-up">
+            <p>Dentro de un año estarás en un punto distinto.</p>
+            <p>La única pregunta es:</p>
+            <p class="f-hl">¿vas a llegar ahí en automático… o transformada?</p>
+            <p>El Grimorio Lunar es un compromiso con tu evolución.</p>
+            <p>Cada luna que atravieses con conciencia<br>será una versión más auténtica de ti.</p>
+            <p>Seguir igual también es una elección.</p>
+            <p>Pero si algo dentro de ti sabe que este es tu momento…<br>no lo postergues.</p>
+            <p class="f-hl">Porque la persona que serás dentro de 13 lunas<br>depende de lo que decidas hoy.</p>
+            <p class="f-str"><svg class="icon" aria-hidden="true"><use href="#ico-moon-full"/></svg> El llamado es profundo.</p>
+            <p class="f-str">Y lo profundo transforma.</p>
+        </div>
+        <div class="fade-up">
+            <a href="https://hotmart.com/es/marketplace/productos/hagsxd-grimorio-lunar-4jmdn/L101821733G?sck=HOTMART_PRODUCT_PAGE"
+               target="_blank" rel="noopener" class="btn-cta" style="font-size:1rem;padding:1.3rem 3.5rem;">
+                <svg class="icon" aria-hidden="true"><use href="#ico-moon-crescent"/></svg> El Grimorio ya te eligió — Haz tuyo ahora
+            </a>
+            <p style="color:var(--text-muted);font-family:'Josefin Sans',sans-serif;font-size:.78rem;letter-spacing:.1em;margin-top:1.4rem;">
+                Solo $14,99 USD &nbsp;·&nbsp; Acceso inmediato &nbsp;·&nbsp; PDF descargable
+            </p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p><svg class="icon" aria-hidden="true"><use href="#ico-moon-crescent"/></svg> Grimorio Lunar &nbsp;·&nbsp; Magia Ancestral de las 13 Lunas &nbsp;·&nbsp; © 2025 Angiemon</p>
+</footer>
+
+<script src="grimorio.js" defer></script>
+</body>
+</html>

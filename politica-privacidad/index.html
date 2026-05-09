@@ -21,56 +21,13 @@
     rel="stylesheet"
   />
 
-  <!-- CSS: reset → tokens → nav → componentes → página -->
+  <!-- CSS: reset → tokens → componentes → página -->
   <link rel="stylesheet" href="../css/reset.css" />
   <link rel="stylesheet" href="../css/variables.css" />
-  <link rel="stylesheet" href="../css/nav.css" />
   <link rel="stylesheet" href="../css/components.css" />
   <link rel="stylesheet" href="css/politica-privacidad.css" />
 </head>
 <body>
-
-  <!-- ══════════════════════════════════════════════
-       HEADER / NAV
-       ══════════════════════════════════════════════ -->
-  <header class="site-header" id="site-header" role="banner">
-    <div class="container header__inner">
-
-      <a href="../" class="header__logo" aria-label="AngieMon — Ir al inicio">
-        <span class="logo-mark" aria-hidden="true">✦</span>
-        <span class="logo-text">AngieMon</span>
-      </a>
-
-      <nav class="header__nav" aria-label="Navegación principal">
-        <ul class="nav__list" role="list">
-          <li><a href="../#bienvenida"      class="nav__link">Inicio</a></li>
-          <li><a href="../programas/"       class="nav__link">Programas</a></li>
-          <li><a href="../terapeutas/"      class="nav__link">Terapeutas</a></li>
-          <li><a href="../#terapias-online" class="nav__link">Terapias</a></li>
-          <li><a href="../#contacto"        class="nav__link nav__link--cta">Agendar</a></li>
-        </ul>
-      </nav>
-
-      <button class="nav__toggle" id="nav-toggle"
-              aria-expanded="false" aria-controls="mobile-nav"
-              aria-label="Abrir menú">
-        <span></span><span></span><span></span>
-      </button>
-
-    </div>
-  </header>
-
-  <!-- Mobile overlay nav (outside header to avoid backdrop-filter stacking context) -->
-  <nav class="mobile-nav" id="mobile-nav" aria-label="Menú móvil" aria-hidden="true">
-    <ul class="mobile-nav__list" role="list">
-      <li><a href="../#bienvenida"      class="mobile-nav__link">Inicio</a></li>
-      <li><a href="../programas/"       class="mobile-nav__link">Programas</a></li>
-      <li><a href="../terapeutas/"      class="mobile-nav__link">Terapeutas</a></li>
-      <li><a href="../#terapias-online" class="mobile-nav__link">Terapias</a></li>
-      <li><a href="../#contacto"        class="mobile-nav__link mobile-nav__link--cta">Agendar Sesión</a></li>
-    </ul>
-  </nav>
-
 
   <!-- ══════════════════════════════════════════════
        HERO
@@ -480,7 +437,6 @@
   <!-- ══════════════════════════════════════════════
        SCRIPTS
        ══════════════════════════════════════════════ -->
-  <script src="../js/main.js" defer></script>
   <script src="js/politica-privacidad.js" defer></script>
 </body>
 </html>
