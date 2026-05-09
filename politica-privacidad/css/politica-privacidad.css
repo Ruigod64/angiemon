@@ -15,9 +15,10 @@ body {
    ══════════════════════════════════════════════════ */
 .pp-hero {
   position: relative;
-  min-height: 54vh;
+  min-height: 100vh;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: center;
   padding-top: var(--header-h);
   padding-bottom: clamp(3rem, 8vw, 5rem);
   overflow: hidden;
@@ -29,7 +30,16 @@ body {
   background:
     radial-gradient(ellipse 70% 60% at 60% 30%,  rgba(212, 175, 55, 0.07) 0%, transparent 70%),
     radial-gradient(ellipse 50% 80% at 20% 80%,  rgba(212, 175, 55, 0.04) 0%, transparent 60%),
-    linear-gradient(180deg, var(--carbon-deep) 0%, var(--carbon) 100%);
+    url('../../assets/images/privacidad-banner.png') center / cover no-repeat;
+}
+
+@media (max-width: 1023px) {
+  .pp-hero__bg {
+    background:
+      radial-gradient(ellipse 70% 60% at 60% 30%,  rgba(212, 175, 55, 0.07) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 80% at 20% 80%,  rgba(212, 175, 55, 0.04) 0%, transparent 60%),
+      url('../../assets/images/privacidad-banner-mobile.png') center / cover no-repeat;
+  }
 }
 
 /* decorative horizontal rule at bottom */
