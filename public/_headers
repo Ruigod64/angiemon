@@ -1,4 +1,0 @@
-/*
-  X-Frame-Options: ALLOWALL
-  Content-Security-Policy: frame-ancestors 'self' https://sites.google.com https://*.sites.google.com *
-  Access-Control-Allow-Origin: *
