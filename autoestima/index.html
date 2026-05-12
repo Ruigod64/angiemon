@@ -34,31 +34,31 @@
     <!-- ❶ HERO ══════════════════════════════════════ -->
     <section class="hero" id="inicio" aria-label="Autoestima Indestructible">
 
-      <div class="hero__img-col">
-        <img src="../assets/images/Autoestima_indestructible.jpg"
-             alt="Autoestima Indestructible — Programa de transformación personal con Angélica Montelongo"
-             class="hero__img" loading="eager" fetchpriority="high" />
-        <div class="hero__img-overlay" aria-hidden="true"></div>
+      <img src="../assets/images/autoestima/banner.png"
+           alt="Autoestima Indestructible — Programa de transformación personal con Angélica Montelongo"
+           class="hero__bg" loading="eager" fetchpriority="high" />
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <div class="hero__content">
+        <p class="hero__eyebrow" id="hero-eyebrow">AngieMon · Código Cuántico</p>
+        <h1 class="hero__title" id="hero-title">
+          Autoestima
+          <em>Indestructible</em>
+        </h1>
+        <p class="hero__subtitle" id="hero-sub">
+          Un programa terapéutico de transformación profunda para reconstruir tu valor, sanar la relación contigo y aprender a sostenerte con dignidad, fuerza y amor propio.
+        </p>
+        <div class="hero__actions" id="hero-actions">
+          <a href="#hotmart" class="btn btn--gold btn--lg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            Quiero fortalecer mi autoestima
+          </a>
+          <a href="#programa" class="btn btn--outline-light">Ver el programa</a>
+        </div>
       </div>
 
-      <div class="hero__content-col">
-        <div class="hero__content">
-          <p class="hero__eyebrow" id="hero-eyebrow">AngieMon · Código Cuántico</p>
-          <h1 class="hero__title" id="hero-title">
-            Autoestima
-            <em>Indestructible</em>
-          </h1>
-          <p class="hero__subtitle" id="hero-sub">
-            Un programa terapéutico de transformación profunda para reconstruir tu valor, sanar la relación contigo y aprender a sostenerte con dignidad, fuerza y amor propio.
-          </p>
-          <div class="hero__actions" id="hero-actions">
-            <a href="#hotmart" class="btn btn--gold btn--lg">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-              Quiero fortalecer mi autoestima
-            </a>
-            <a href="#programa" class="btn btn--outline-light">Ver el programa</a>
-          </div>
-        </div>
+      <div class="hero__scroll" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
       </div>
 
     </section>
@@ -504,92 +504,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
-  <script>
-    gsap.registerPlugin(ScrollTrigger);
-
-    const noMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    if (!noMotion) {
-
-      // Hero entrance
-      gsap.timeline({ delay: 0.1 })
-        .to('#hero-eyebrow', { opacity: 1, duration: 0.7, ease: 'power2.out' })
-        .to('#hero-title',   { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' }, '-=0.3')
-        .to('#hero-sub',     { opacity: 1, duration: 0.7, ease: 'power2.out' }, '-=0.4')
-        .to('#hero-actions', { opacity: 1, duration: 0.6, ease: 'power2.out' }, '-=0.3')
-        .to('#wa-btn',       { opacity: 1, duration: 0.5 }, '-=0.2');
-
-      // gs-up
-      gsap.utils.toArray('.gs-up').forEach((el, i) => {
-        gsap.to(el, {
-          opacity: 1, y: 0, duration: 0.85, ease: 'power3.out',
-          delay: (i % 4) * 0.07,
-          scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
-        });
-      });
-
-      // gs-fade
-      gsap.utils.toArray('.gs-fade').forEach(el => {
-        gsap.to(el, {
-          opacity: 1, duration: 0.9, ease: 'power2.out',
-          scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
-        });
-      });
-
-      // gs-left
-      gsap.utils.toArray('.gs-left').forEach(el => {
-        gsap.to(el, {
-          opacity: 1, x: 0, duration: 0.9, ease: 'power3.out',
-          scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' },
-        });
-      });
-
-      // gs-right — stagger por índice
-      gsap.utils.toArray('.gs-right').forEach((el, i) => {
-        gsap.to(el, {
-          opacity: 1, x: 0, duration: 0.8, ease: 'power3.out',
-          delay: i * 0.06,
-          scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
-        });
-      });
-
-      // gs-scale — materiales cards
-      gsap.utils.toArray('.gs-scale').forEach((el, i) => {
-        gsap.to(el, {
-          opacity: 1, scale: 1, duration: 0.7, ease: 'back.out(1.5)',
-          delay: (i % 3) * 0.1,
-          scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
-        });
-      });
-
-      // Módulos — batch stagger
-      ScrollTrigger.batch('.modulo-card', {
-        start: 'top 88%',
-        onEnter: batch => gsap.to(batch, {
-          opacity: 1, y: 0, duration: 0.85, ease: 'power3.out', stagger: 0.13,
-        }),
-      });
-
-      // Node dot micro-interaction
-      document.querySelectorAll('.modulo-card').forEach(card => {
-        const dot = card.querySelector('.node-dot');
-        if (!dot) return;
-        card.addEventListener('mouseenter', () => gsap.to(dot, { scale: 1.2, duration: 0.22, ease: 'power2.out' }));
-        card.addEventListener('mouseleave', () => gsap.to(dot, { scale: 1,   duration: 0.22, ease: 'power2.inOut' }));
-      });
-
-    } else {
-      // Respect prefers-reduced-motion
-      document.querySelectorAll('.gs-up,.gs-fade,.gs-left,.gs-right,.gs-scale,.modulo-card').forEach(el => {
-        el.style.opacity = '1';
-        el.style.transform = 'none';
-      });
-      ['hero-eyebrow','hero-title','hero-sub','hero-actions','wa-btn'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.style.opacity = '1';
-      });
-    }
-  </script>
+  <script src="js/autoestima.js"></script>
 
 </body>
 </html>

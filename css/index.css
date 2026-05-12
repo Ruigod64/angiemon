@@ -46,6 +46,10 @@
     height: auto;
     object-fit: unset;
   }
+
+  .hero__cta {
+    bottom: 12%;
+  }
 }
 
 /* ── ❷ BIENVENIDA ────────────────────────────────── */
