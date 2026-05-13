@@ -13,13 +13,13 @@
 }
 
 /* ── Reveal Animations ────────────────────────────── */
-.reveal {
+.js-ready .reveal {
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 0.75s var(--ease), transform 0.75s var(--ease);
 }
 
-.reveal.revealed {
+.js-ready .reveal.revealed {
   opacity: 1;
   transform: translateY(0);
 }

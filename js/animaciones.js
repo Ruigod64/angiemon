@@ -128,9 +128,8 @@
     if (!els.length) return;
 
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const inIframe = window.self !== window.top;
 
-    if (prefersReduced || inIframe) {
+    if (prefersReduced) {
       els.forEach(el => el.classList.add('revealed'));
       return;
     }
