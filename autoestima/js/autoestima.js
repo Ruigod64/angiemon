@@ -9,7 +9,7 @@ if (noMotion || inIframe) {
     el.style.opacity = '1';
     el.style.transform = 'none';
   });
-  ['hero-eyebrow','hero-title','hero-sub','hero-actions','wa-btn'].forEach(id => {
+  ['hero-eyebrow','hero-title','hero-sub','hero-actions'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.style.opacity = '1';
   });
@@ -20,8 +20,7 @@ if (noMotion || inIframe) {
     .to('#hero-eyebrow', { opacity: 1, duration: 0.7, ease: 'power2.out' })
     .to('#hero-title',   { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' }, '-=0.3')
     .to('#hero-sub',     { opacity: 1, duration: 0.7, ease: 'power2.out' }, '-=0.4')
-    .to('#hero-actions', { opacity: 1, duration: 0.6, ease: 'power2.out' }, '-=0.3')
-    .to('#wa-btn',       { opacity: 1, duration: 0.5 }, '-=0.2');
+    .to('#hero-actions', { opacity: 1, duration: 0.6, ease: 'power2.out' }, '-=0.3');
 
   // gs-up
   gsap.utils.toArray('.gs-up').forEach((el, i) => {

@@ -465,6 +465,7 @@ strong { color: var(--dark); font-weight: 600; }
   line-height: 1.65;
   margin: 0;
 }
+.beneficio-item strong { color: var(--gold); }
 
 .beneficios__cta { text-align: center; margin-top: 3rem; }
 
@@ -629,6 +630,8 @@ strong { color: var(--dark); font-weight: 600; }
   background: var(--rose-pale);
   border-radius: 10px;
   border: 1px solid var(--rose-border);
+  list-style: none;
+  text-align: left;
 }
 .modulo-card__result svg { flex-shrink: 0; color: var(--rose-dark); margin-top: 1px; }
 .modulo-card__result p {
@@ -638,10 +641,47 @@ strong { color: var(--dark); font-weight: 600; }
   margin: 0;
 }
 
+.modulo-card__includes {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--rose-dark);
+  margin-bottom: 0.4rem;
+  opacity: 0.75;
+}
+
+/* Multi-item list variant */
+ul.modulo-card__result {
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1rem 1.2rem;
+}
+ul.modulo-card__result li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  text-align: left;
+}
+ul.modulo-card__result li svg {
+  flex-shrink: 0;
+  color: var(--rose-dark);
+  margin-top: 3px;
+}
+ul.modulo-card__result li span {
+  font-size: 0.85rem;
+  color: var(--rose-deep);
+  line-height: 1.52;
+}
+
 /* CTA entre módulos */
 .modulos__mid-cta {
   text-align: center;
   padding: 3rem 0 1rem;
+  position: relative;
+  z-index: 2;
+  background: var(--cream);
 }
 
 /* ══════════════════════════════════════════════════
@@ -1056,4 +1096,172 @@ strong { color: var(--dark); font-weight: 600; }
   }
   .hero__eyebrow, .hero__title, .hero__subtitle, .hero__actions,
   .whatsapp-float { opacity: 1 !important; }
+}
+
+/* ══════════════════════════════════════════════════
+   CARD VISUAL POLISH
+   ══════════════════════════════════════════════════ */
+.modulo-card__content {
+  position: relative;
+  overflow: hidden;
+}
+.modulo-card__content::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--r-lg);
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(196,160,168,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.modulo-card__content:hover {
+  box-shadow: 0 18px 56px rgba(196,160,168,0.22), 0 4px 16px rgba(196,160,168,0.10);
+}
+.modulo-card__num {
+  display: inline-block;
+  background: var(--rose-pale);
+  border: 1px solid var(--rose-border);
+  border-radius: 100px;
+  padding: 0.18rem 0.75rem;
+  margin-bottom: 0.65rem;
+}
+
+/* ══════════════════════════════════════════════════
+   MOBILE — ≤ 767px
+   ══════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+
+  /* ── Botones: eliminar nowrap, reducir padding ── */
+  .btn {
+    white-space: normal;
+    text-align: center;
+    line-height: 1.35;
+    padding: 0.85rem 1.6rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    min-height: 48px;
+  }
+  .btn--lg { padding: 0.9rem 1.8rem; font-size: 0.84rem; }
+
+  /* ── Hero ── */
+  .hero__content { padding: 0 1.25rem; }
+  .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.7rem;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+  .hero__actions .btn { width: 100%; justify-content: center; }
+
+  /* ── Identificacion ── */
+  .identificacion__inner { gap: 2rem; }
+  .identificacion__cta { text-align: center; }
+  .identificacion__cta .btn { width: 100%; max-width: 380px; }
+  .pain-item { padding: 0.9rem 1rem; gap: 0.75rem; }
+
+  /* ── Beneficios ── */
+  .beneficios__cta .btn { display: block; width: 100%; max-width: 380px; margin: 0 auto; }
+
+  /* ── Módulos ── */
+  .modulo-card__content { padding: 1.3rem 1.1rem; }
+  ul.modulo-card__result { padding: 0.85rem 1rem; gap: 0.28rem; }
+  ul.modulo-card__result li span { font-size: 0.82rem; }
+  .modulo-card__desc { font-size: 0.92rem; }
+  .modulos__mid-cta .btn { width: 100%; max-width: 320px; }
+
+  /* ── Materiales ── */
+  .materiales__grid { gap: 0.8rem; }
+  .material-item { padding: 1.5rem 1.1rem; }
+  .materiales__cta .btn { display: block; width: 100%; max-width: 380px; margin: 0 auto; }
+
+  /* ── Cierre ── */
+  .cierre__actions { flex-direction: column; align-items: stretch; }
+  .cierre__actions .btn { width: 100%; justify-content: center; }
+
+  /* ── Footer ── */
+  .footer__bottom { flex-direction: column; align-items: flex-start; gap: 0.45rem; }
+  .footer__legal { flex-direction: column; gap: 0.35rem; }
+}
+
+/* ══════════════════════════════════════════════════
+   MOBILE — ≤ 480px (pantallas pequeñas)
+   ══════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+
+  /* ── Secciones: padding vertical reducido ── */
+  .identificacion,
+  .beneficios,
+  .modulos,
+  .materiales,
+  .angelica,
+  .cierre { padding: clamp(3rem, 8vw, 5rem) 0; }
+
+  /* ── Botones aún más compactos ── */
+  .btn { padding: 0.8rem 1.4rem; font-size: 0.8rem; letter-spacing: 0.06em; }
+  .btn--lg { padding: 0.85rem 1.5rem; font-size: 0.8rem; }
+
+  /* ── Hero tipografía ── */
+  .hero__title { font-size: clamp(2rem, 9vw, 2.8rem); }
+  .hero__title em { font-size: clamp(2.4rem, 10vw, 3.2rem); }
+  .hero__subtitle { font-size: 1rem; line-height: 1.7; margin: 1.2rem auto 2rem; }
+
+  /* ── Headings ── */
+  .identificacion__heading { font-size: clamp(1.6rem, 6vw, 2rem); }
+  .beneficios__title { font-size: clamp(1.7rem, 7vw, 2.2rem); }
+  .modulos__title { font-size: clamp(1.7rem, 7vw, 2.2rem); }
+  .materiales__title { font-size: clamp(1.6rem, 7vw, 2.1rem); }
+  .angelica__name { font-size: clamp(1.5rem, 6vw, 2rem); }
+  .cierre__quote { font-size: clamp(1.15rem, 5vw, 1.5rem); }
+  .cierre__quote-mark { font-size: 5rem; }
+
+  /* ── Párrafos globales ── */
+  p { font-size: clamp(0.95rem, 4vw, 1.05rem); line-height: 1.75; }
+
+  /* ── Pain items ── */
+  .pain-item { gap: 0.7rem; padding: 0.8rem 0.9rem; }
+  .pain-item__icon { width: 32px; height: 32px; flex-shrink: 0; }
+  .pain-item p { font-size: 0.93rem; }
+
+  /* ── Beneficio items ── */
+  .beneficio-item { gap: 0.7rem; padding: 0.95rem 1rem; }
+  .beneficio-item__icon { width: 36px; height: 36px; flex-shrink: 0; }
+  .beneficio-item p { font-size: 0.93rem; }
+
+  /* ── Module cards ── */
+  .modulo-card { padding-left: 50px; margin-bottom: 1.8rem; }
+  .modulos__track::before { left: 16px; }
+  .node-dot { width: 34px; height: 34px; font-size: 0.62rem; box-shadow: 0 0 0 4px var(--cream); }
+  .modulo-card__content { padding: 1.1rem 0.95rem; }
+  .modulo-card__icon-wrap { width: 42px; height: 42px; border-radius: 11px; margin-bottom: 0.75rem; }
+  .modulo-card__title { font-size: 0.98rem; margin-bottom: 0.55rem; }
+  .modulo-card__desc { font-size: 0.88rem; line-height: 1.65; margin-bottom: 0.75rem; }
+  ul.modulo-card__result { padding: 0.7rem 0.85rem; gap: 0.22rem; }
+  ul.modulo-card__result li svg { width: 13px; height: 13px; }
+  ul.modulo-card__result li span { font-size: 0.79rem; }
+  div.modulo-card__result { padding: 0.7rem 0.85rem; }
+  div.modulo-card__result p { font-size: 0.83rem; }
+
+  /* ── Material items ── */
+  .material-item { padding: 1.3rem 1rem; }
+  .material-item__icon { width: 50px; height: 50px; border-radius: 14px; }
+  .material-item h4 { font-size: 0.95rem; }
+  .material-item p { font-size: 0.84rem; }
+
+  /* ── Angélica ── */
+  .angelica__photo-frame {
+    width: clamp(180px, 55vw, 260px);
+    height: clamp(230px, 70vw, 330px);
+  }
+  .angelica__role { font-size: 0.95rem; }
+  .angelica__bio p { font-size: 0.93rem; }
+  .badge { font-size: 0.72rem; padding: 0.35rem 0.85rem; }
+
+  /* ── WhatsApp ── */
+  .whatsapp-float { width: 50px; height: 50px; bottom: 1.1rem; right: 1.1rem; }
+
+  /* ── Footer ── */
+  .footer__copy { font-size: 0.72rem; }
+  .footer__legal a { font-size: 0.72rem; }
+  .footer__tagline { font-size: 0.9rem; }
 }

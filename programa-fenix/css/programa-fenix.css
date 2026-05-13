@@ -1656,3 +1656,160 @@ ul, ol { list-style: none; }
   .module-pill  { display: none; }
   .ofrece__grid { grid-template-columns: 1fr; }
 }
+
+/* ══════════════════════════════════════════════════
+   22. FOOTER
+   ══════════════════════════════════════════════════ */
+.site-footer {
+  background: var(--deep);
+  border-top: 1px solid var(--border-gold);
+  padding: 4rem 0 0;
+  position: relative;
+  overflow: hidden;
+}
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%; transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--amber), transparent);
+  opacity: 0.4;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  padding-bottom: 3rem;
+}
+@media (min-width: 640px) {
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1024px) {
+  .footer__grid { grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 3rem; }
+}
+
+/* Marca */
+.footer__brand-logo {
+  font-family: var(--font-d);
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--ivory);
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.9rem;
+  text-decoration: none;
+}
+.footer__brand-logo span:first-child {
+  color: var(--gold);
+  font-size: 1rem;
+}
+.footer__brand-tagline {
+  font-family: var(--font-s);
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.65;
+  max-width: 260px;
+}
+
+/* Nav columns */
+.footer__col-title {
+  font-family: var(--font-u);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 1.2rem;
+}
+.footer__nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.footer__nav-list a {
+  font-family: var(--font-u);
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.22s ease;
+}
+.footer__nav-list a:hover { color: var(--gold); }
+
+/* Contacto */
+.footer__contact-email {
+  font-family: var(--font-u);
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.45rem;
+  transition: color 0.22s ease;
+}
+.footer__contact-email:hover { color: var(--gold); }
+
+/* Redes sociales */
+.footer__social {
+  display: flex;
+  gap: 0.65rem;
+  margin-top: 1.2rem;
+  flex-wrap: wrap;
+}
+.footer__social-link {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 170, 0, 0.20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  text-decoration: none;
+  transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
+  cursor: pointer;
+}
+.footer__social-link:hover {
+  border-color: var(--amber);
+  color: var(--gold);
+  background: rgba(255, 150, 0, 0.08);
+}
+.footer__social-link:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* Bottom bar */
+.footer__bottom {
+  border-top: 1px solid rgba(250, 243, 232, 0.07);
+  padding: 1.4rem 0;
+}
+.footer__bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.footer__copy {
+  font-family: var(--font-u);
+  font-size: 0.75rem;
+  color: var(--dim);
+  margin: 0;
+}
+.footer__copy strong { color: var(--gold); }
+.footer__legal {
+  display: flex;
+  gap: 1.25rem;
+}
+.footer__legal a {
+  font-family: var(--font-u);
+  font-size: 0.75rem;
+  color: var(--dim);
+  text-decoration: none;
+  transition: color 0.22s ease;
+}
+.footer__legal a:hover { color: var(--amber); }

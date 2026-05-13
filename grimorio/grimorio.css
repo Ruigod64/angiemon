@@ -1023,3 +1023,170 @@ footer {
     .op-list { grid-template-columns: 1fr; }
     #sticky-cta .sticky-txt { display: none; }
 }
+
+/* ══════════════════════════════════════════════════
+   FOOTER
+   ══════════════════════════════════════════════════ */
+.site-footer {
+    background: var(--bg-dark);
+    border-top: 1px solid var(--border);
+    padding: 4rem 0 0;
+    position: relative;
+    overflow: hidden;
+}
+.site-footer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%; transform: translateX(-50%);
+    width: 55%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.5;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 5vw, 2.5rem);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-bottom: 3rem;
+}
+@media (min-width: 640px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1024px) {
+    .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 3rem; }
+}
+
+/* Marca */
+.footer-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: var(--text);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    margin-bottom: 0.9rem;
+    transition: color 0.25s ease;
+}
+.footer-logo:hover { color: var(--gold-light); }
+.footer-logo__moon {
+    width: 1.1em;
+    height: 1.1em;
+    color: var(--gold);
+    flex-shrink: 0;
+}
+.footer-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 260px;
+}
+
+/* Columnas nav */
+.footer-col-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+}
+.footer-nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+.footer-nav-list a {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.22s ease;
+}
+.footer-nav-list a:hover { color: var(--gold-light); }
+
+/* Contacto */
+.footer-contact-link {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.45rem;
+    transition: color 0.22s ease;
+}
+.footer-contact-link:hover { color: var(--gold-light); }
+
+/* Redes sociales */
+.footer-social {
+    display: flex;
+    gap: 0.65rem;
+    margin-top: 1.2rem;
+    flex-wrap: wrap;
+}
+.footer-social-link {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
+}
+.footer-social-link:hover {
+    border-color: var(--gold);
+    color: var(--gold-light);
+    background: rgba(201, 168, 76, 0.08);
+}
+.footer-social-link:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+}
+
+/* Bottom bar */
+.footer-bottom {
+    border-top: 1px solid rgba(245, 240, 232, 0.07);
+    padding: 1.4rem 0;
+}
+.footer-bottom-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+.footer-copy {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.75rem;
+    color: rgba(155, 143, 184, 0.5);
+    margin: 0;
+}
+.footer-copy strong { color: var(--gold); }
+.footer-legal {
+    display: flex;
+    gap: 1.25rem;
+}
+.footer-legal a {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.75rem;
+    color: rgba(155, 143, 184, 0.5);
+    text-decoration: none;
+    transition: color 0.22s ease;
+}
+.footer-legal a:hover { color: var(--gold); }
