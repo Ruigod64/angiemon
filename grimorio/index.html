@@ -244,6 +244,20 @@
         <p class="hero-desc">✨ No todos los libros se leen… algunos se viven.</p>
         <a href="https://hotmart.com/es/marketplace/productos/hagsxd-grimorio-lunar-4jmdn/L101821733G?sck=HOTMART_PRODUCT_PAGE"
            target="_blank" rel="noopener" class="btn-cta">✨ Quiero mi Grimorio Lunar</a>
+
+        <button class="hero-music" id="music-toggle" type="button" aria-label="Reproducir Guardianas del tiempo — Angélica Montelongo">
+          <span class="hero-music__btn" aria-hidden="true">
+            <svg class="hero-music__play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            <svg class="hero-music__pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+            <span class="hero-music__ring hero-music__ring--1" aria-hidden="true"></span>
+            <span class="hero-music__ring hero-music__ring--2" aria-hidden="true"></span>
+          </span>
+          <span class="hero-music__label">"Guardianas del tiempo" — Angélica Montelongo</span>
+        </button>
+
+        <audio id="grimorio-audio" loop preload="none">
+          <source src="../assets/audios/guardianas-del-tiempo.mp3" type="audio/mpeg" />
+        </audio>
     </div>
 </section>
 
@@ -829,5 +843,29 @@
 </footer>
 
 <script src="grimorio.js" defer></script>
+<script>
+(function () {
+  var btn = document.getElementById('music-toggle');
+  var audio = document.getElementById('grimorio-audio');
+  var playIcon = btn.querySelector('.hero-music__play');
+  var pauseIcon = btn.querySelector('.hero-music__pause');
+
+  btn.addEventListener('click', function () {
+    if (audio.paused) {
+      audio.play().catch(function () {});
+      playIcon.style.display = 'none';
+      pauseIcon.style.display = 'block';
+      btn.classList.add('hero-music--playing');
+      btn.setAttribute('aria-label', 'Pausar música');
+    } else {
+      audio.pause();
+      playIcon.style.display = 'block';
+      pauseIcon.style.display = 'none';
+      btn.classList.remove('hero-music--playing');
+      btn.setAttribute('aria-label', 'Reproducir Guardianas del tiempo — Angélica Montelongo');
+    }
+  });
+})();
+</script>
 </body>
 </html>

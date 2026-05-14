@@ -57,7 +57,21 @@
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       Únete Ahora
     </a>
+
+    <button class="hero__music" id="music-toggle" type="button" aria-label="Reproducir Soy Fénix — Angélica Montelongo">
+      <span class="hero__music-btn" aria-hidden="true">
+        <svg class="hero__music-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <svg class="hero__music-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        <span class="hero__music-ring hero__music-ring--1" aria-hidden="true"></span>
+        <span class="hero__music-ring hero__music-ring--2" aria-hidden="true"></span>
+      </span>
+      <span class="hero__music-label">"Soy Fénix" — Angélica Montelongo</span>
+    </button>
   </div>
+
+  <audio id="fenix-audio" loop preload="none">
+    <source src="../assets/audios/soy-fenix.mp3" type="audio/mpeg" />
+  </audio>
   <div class="hero__scroll" aria-hidden="true">
     <div class="hero__scroll-line"></div>
     <div class="hero__scroll-dot"></div>
@@ -687,6 +701,50 @@
   </div>
 </div>
 
+<!-- ══ SOBRE ANGÉLICA ════════════════════════════ -->
+<section class="mentor" aria-label="Sobre Angélica Montelongo">
+  <div class="container">
+    <div class="mentor__grid">
+
+      <div class="mentor__heading">
+        <p class="sec-label">Tu guía en este proceso</p>
+        <h2 class="sec-heading">Sobre Angélica<br/><em>Montelongo</em></h2>
+      </div>
+
+      <div class="mentor__photo-wrap">
+        <div class="mentor__photo-frame">
+          <img src="../assets/images/terapeutas/Angelica_Montelongo.jpeg" alt="Angélica Montelongo — Psicoterapeuta y mentora" class="mentor__photo" loading="lazy" />
+        </div>
+        <div class="mentor__tags" aria-label="Especialidades">
+          <span class="mentor__tag">Psicoterapeuta</span>
+          <span class="mentor__tag">Coach de vida</span>
+          <span class="mentor__tag">Escritora</span>
+          <span class="mentor__tag">PNL</span>
+          <span class="mentor__tag">Escritura terapéutica</span>
+          <span class="mentor__tag">Neurociencia emocional</span>
+        </div>
+      </div>
+
+      <div class="mentor__body">
+        <p class="mentor__text">Es escritora, psicoterapeuta, coach de vida y mentora especializada en procesos de transformación emocional, reprogramación mental, autoestima, sanación interior y expansión de conciencia.</p>
+
+        <p class="mentor__text">Su trabajo integra distintas disciplinas terapéuticas: <strong>psicoterapia integrativa, PNL, escritura terapéutica, trabajo emocional profundo, conciencia corporal, enfoque energético y crecimiento espiritual consciente</strong>, creando experiencias transformadoras en la vida de las personas.</p>
+
+        <p class="mentor__text">A lo largo de su trayectoria ha desarrollado programas, talleres, mentorías y espacios terapéuticos enfocados en ayudar a las personas a reconstruirse emocionalmente, comprender sus patrones inconscientes, fortalecer su autoestima, sanar heridas internas y reconectar con su esencia auténtica.</p>
+
+        <p class="mentor__text">Su enfoque une profundidad emocional, herramientas terapéuticas prácticas, neurociencia emocional, espiritualidad consciente y trabajo energético desde una perspectiva humana, profesional y cercana. Su propósito: crear experiencias capaces de generar conciencia, transformación interior y un verdadero renacimiento personal.</p>
+
+        <blockquote class="mentor__quote">
+          "Porque sanar no es convertirte en alguien diferente.<br/>
+          <em>Es volver a encontrarte contigo misma.</em>"
+        </blockquote>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 <!-- ══ QUÉ OFRECE ════════════════════════════════ -->
 <section class="ofrece" aria-label="¿Qué ofrece la membresía?">
   <div class="container">
@@ -1189,6 +1247,32 @@
 
 </footer>
 
+
+<!-- Music toggle -->
+<script>
+(function () {
+  var btn = document.getElementById('music-toggle');
+  var audio = document.getElementById('fenix-audio');
+  var playIcon = btn.querySelector('.hero__music-play');
+  var pauseIcon = btn.querySelector('.hero__music-pause');
+
+  btn.addEventListener('click', function () {
+    if (audio.paused) {
+      audio.play().catch(function () {});
+      playIcon.style.display = 'none';
+      pauseIcon.style.display = 'block';
+      btn.classList.add('hero__music--playing');
+      btn.setAttribute('aria-label', 'Pausar música');
+    } else {
+      audio.pause();
+      playIcon.style.display = 'block';
+      pauseIcon.style.display = 'none';
+      btn.classList.remove('hero__music--playing');
+      btn.setAttribute('aria-label', 'Reproducir Soy Fénix — Angélica Montelongo');
+    }
+  });
+})();
+</script>
 
 <!-- GSAP CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>

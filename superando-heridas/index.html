@@ -72,6 +72,20 @@
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         Quiero comenzar a sanar
       </a>
+
+      <button class="hero-music" id="music-toggle" type="button" aria-label="Reproducir Suelto, perdono y me libero — Angélica Montelongo">
+        <span class="hero-music__btn" aria-hidden="true">
+          <svg class="hero-music__play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <svg class="hero-music__pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          <span class="hero-music__ring hero-music__ring--1" aria-hidden="true"></span>
+          <span class="hero-music__ring hero-music__ring--2" aria-hidden="true"></span>
+        </span>
+        <span class="hero-music__label">"Suelto, perdono y me libero" — Angélica Montelongo</span>
+      </button>
+
+      <audio id="heridas-audio" loop preload="none">
+        <source src="../assets/audios/suelto-perdono.mp3" type="audio/mpeg" />
+      </audio>
     </div>
 
 
@@ -931,6 +945,30 @@
      JS
 ══════════════════════════════════════════ -->
 <script src="js/heridas.js"></script>
+<script>
+(function () {
+  var btn = document.getElementById('music-toggle');
+  var audio = document.getElementById('heridas-audio');
+  var playIcon = btn.querySelector('.hero-music__play');
+  var pauseIcon = btn.querySelector('.hero-music__pause');
+
+  btn.addEventListener('click', function () {
+    if (audio.paused) {
+      audio.play().catch(function () {});
+      playIcon.style.display = 'none';
+      pauseIcon.style.display = 'block';
+      btn.classList.add('hero-music--playing');
+      btn.setAttribute('aria-label', 'Pausar música');
+    } else {
+      audio.pause();
+      playIcon.style.display = 'block';
+      pauseIcon.style.display = 'none';
+      btn.classList.remove('hero-music--playing');
+      btn.setAttribute('aria-label', 'Reproducir Suelto, perdono y me libero — Angélica Montelongo');
+    }
+  });
+})();
+</script>
 
 </body>
 </html>

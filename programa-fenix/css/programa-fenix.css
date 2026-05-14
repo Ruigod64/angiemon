@@ -315,6 +315,72 @@ ul, ol { list-style: none; }
 .hero__cta svg { transition: transform 0.2s var(--ease-f); }
 .hero__cta:hover svg { transform: translateX(4px); }
 
+/* ── Music button ───────────────────────────────── */
+.hero__music {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: 2.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--ivory);
+  padding: 0;
+  font-family: var(--font-u);
+}
+.hero__music-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 170, 0, 0.5);
+  background: rgba(255, 170, 0, 0.08);
+  color: var(--gold);
+  flex-shrink: 0;
+  transition: background 0.25s var(--ease-f), border-color 0.25s var(--ease-f), box-shadow 0.25s var(--ease-f);
+}
+.hero__music:hover .hero__music-btn {
+  background: rgba(255, 170, 0, 0.15);
+  border-color: var(--gold);
+  box-shadow: 0 0 18px rgba(255, 170, 0, 0.3);
+}
+.hero__music--playing .hero__music-btn {
+  background: linear-gradient(135deg, var(--gold-light), var(--amber), var(--bright));
+  border-color: transparent;
+  color: var(--void);
+  box-shadow: 0 0 32px rgba(255, 150, 0, 0.55), 0 0 60px rgba(255, 85, 0, 0.3);
+}
+.hero__music-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 170, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+}
+.hero__music-ring--1 { width: 68px; height: 68px; }
+.hero__music-ring--2 { width: 86px; height: 86px; }
+.hero__music--playing .hero__music-ring--1 { animation: music-pulse 2s ease-out infinite; }
+.hero__music--playing .hero__music-ring--2 { animation: music-pulse 2s ease-out 0.6s infinite; }
+@keyframes music-pulse {
+  0%   { opacity: 0.6; transform: scale(0.8); }
+  100% { opacity: 0;   transform: scale(1);   }
+}
+.hero__music-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+.hero__music:hover .hero__music-label,
+.hero__music--playing .hero__music-label {
+  color: var(--gold);
+}
+
 .hero__scroll {
   position: absolute;
   bottom: 2rem;
@@ -782,7 +848,136 @@ ul, ol { list-style: none; }
 }
 .contenido-item svg { flex-shrink: 0; color: var(--amber); margin-top: 2px; }
 
-/* ── 13. ¿Qué ofrece? ───────────────────────────── */
+/* ── 13. Sobre Angélica ─────────────────────────── */
+.mentor {
+  padding-block: clamp(4.5rem, 10vw, 8rem);
+  background: var(--deep);
+  position: relative;
+  overflow: hidden;
+}
+.mentor::before {
+  content: '';
+  position: absolute;
+  top: -120px; right: -120px;
+  width: 480px; height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,100,0,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.mentor__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  align-items: start;
+}
+@media (min-width: 820px) {
+  .mentor__grid {
+    grid-template-columns: 340px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "photo heading"
+      "photo body";
+    column-gap: clamp(3rem, 6vw, 5rem);
+    row-gap: 0;
+    align-items: start;
+  }
+  .mentor__photo-wrap { grid-area: photo; order: 0; }
+  .mentor__heading    { grid-area: heading; }
+  .mentor__body       { grid-area: body; }
+}
+
+.mentor__photo-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+}
+.mentor__photo-frame {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px var(--border-gold),
+    0 24px 60px rgba(0,0,0,0.55),
+    0 0 40px rgba(255,120,0,0.12);
+}
+.mentor__photo-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--r-lg);
+  box-shadow: inset 0 0 0 1px rgba(255,170,0,0.15);
+  pointer-events: none;
+}
+.mentor__photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: var(--r-lg);
+  filter: saturate(0.92);
+}
+
+.mentor__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  max-width: 300px;
+}
+.mentor__tag {
+  font-family: var(--font-u);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber);
+  border: 1px solid rgba(255,150,0,0.3);
+  border-radius: var(--r-xl);
+  padding: 0.3rem 0.75rem;
+  background: rgba(255,100,0,0.06);
+  white-space: nowrap;
+}
+
+.mentor__heading {
+  display: flex;
+  flex-direction: column;
+}
+
+.mentor__body {
+  display: flex;
+  flex-direction: column;
+}
+.mentor__text {
+  font-family: var(--font-s);
+  font-size: clamp(1.05rem, 2.1vw, 1.2rem);
+  line-height: 1.78;
+  color: var(--muted);
+  margin-top: 1.2rem;
+}
+.mentor__text strong { color: var(--ivory); font-weight: 500; }
+
+.mentor__quote {
+  margin-top: 2.4rem;
+  padding: 1.6rem 2rem 1.6rem 2.2rem;
+  border-left: 2px solid var(--flame);
+  background: var(--surface);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  font-family: var(--font-s);
+  font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+  line-height: 1.65;
+  color: var(--ivory);
+  font-style: normal;
+}
+.mentor__quote em {
+  color: var(--gold);
+  font-style: italic;
+}
+
+/* ── 14. ¿Qué ofrece? ───────────────────────────── */
 .ofrece {
   padding-block: clamp(4rem, 9vw, 7rem);
 }
