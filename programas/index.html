@@ -33,12 +33,12 @@
 
 
   <!-- ══════════════════════════════════════════════
-       HERO PLACEHOLDER
-       Imagen pendiente — reemplazar esta sección
-       completa por el bloque con img cuando llegue.
+       HERO
        ══════════════════════════════════════════════ -->
   <section class="prog-hero" aria-label="Programas de transformación AngieMon">
-    <canvas class="hero__canvas" aria-hidden="true"></canvas>
+    <div class="prog-hero__bg" aria-hidden="true">
+      <img src="../assets/images/banner-programa.jpeg" alt="" class="prog-hero__bg-img" />
+    </div>
     <div class="prog-hero__overlay" aria-hidden="true"></div>
 
     <div class="container prog-hero__content">
@@ -55,17 +55,22 @@
 
 
   <!-- ══════════════════════════════════════════════
-       PROGRAMAS — Pantallas de fondo completo
+       PROGRAMAS — Fondo + Info separados
        ══════════════════════════════════════════════ -->
 
   <!-- ══ 1. PROGRAMA FÉNIX ══════════════════════════ -->
-  <section class="prog-panel" id="fenix" aria-label="Programa Fénix — ReEvolución Interior">
+  <section class="prog-panel" id="fenix" aria-label="Programa Fénix — fondo visual">
     <div class="prog-panel__bg" aria-hidden="true">
-      <img src="../assets/images/fenix/fondo.png" alt="" class="prog-panel__bg-img" loading="lazy" />
+      <picture>
+        <source media="(max-width: 767px)" srcset="../assets/images/fenix/banner-mobile.jpeg" />
+        <img src="../assets/images/fenix/fondo-1.jpeg" alt="" class="prog-panel__bg-img" loading="lazy" />
+      </picture>
     </div>
     <div class="prog-panel__overlay" aria-hidden="true"></div>
+  </section>
 
-    <div class="prog-panel__content">
+  <section class="prog-info" aria-label="Programa Fénix — información">
+    <div class="container prog-info__inner">
       <p class="prog-panel__tag reveal">Transformación Profunda</p>
       <p class="prog-panel__meta reveal">12 módulos · 48 clases</p>
       <h2 class="prog-panel__title reveal">Programa Fénix — <em>ReEvolución Interior</em></h2>
@@ -110,13 +115,18 @@
 
 
   <!-- ══ 2. SUPERA LAS 5 HERIDAS ════════════════════ -->
-  <section class="prog-panel" id="heridas" aria-label="Supera las 5 Heridas que Sabotean tu Vida">
+  <section class="prog-panel" id="heridas" aria-label="Supera las 5 Heridas — fondo visual">
     <div class="prog-panel__bg" aria-hidden="true">
-      <img src="../assets/images/heridas/banner.png" alt="" class="prog-panel__bg-img" loading="lazy" />
+      <picture>
+        <source media="(max-width: 767px)" srcset="../assets/images/heridas/banner-mobile.jpeg" />
+        <img src="../assets/images/heridas/fondo-1.jpeg" alt="" class="prog-panel__bg-img" loading="lazy" />
+      </picture>
     </div>
     <div class="prog-panel__overlay" aria-hidden="true"></div>
+  </section>
 
-    <div class="prog-panel__content">
+  <section class="prog-info" aria-label="Supera las 5 Heridas — información">
+    <div class="container prog-info__inner">
       <p class="prog-panel__tag reveal">Sanación Emocional</p>
       <p class="prog-panel__meta reveal">5 heridas · Proceso profundo</p>
       <h2 class="prog-panel__title reveal">Supera las 5 Heridas que <em>Sabotean tu Vida</em></h2>
@@ -160,13 +170,18 @@
 
 
   <!-- ══ 3. GRIMORIO LUNAR ══════════════════════════ -->
-  <section class="prog-panel prog-panel--moon" id="grimorio" aria-label="Grimorio Lunar — Diario de las 13 Lunas">
+  <section class="prog-panel prog-panel--moon" id="grimorio" aria-label="Grimorio Lunar — fondo visual">
     <div class="prog-panel__bg" aria-hidden="true">
-      <img src="../assets/images/grimorio/banner-grimorio.png" alt="" class="prog-panel__bg-img" loading="lazy" />
+      <picture>
+        <source media="(max-width: 767px)" srcset="../assets/images/grimorio/fondo-mobile.jpeg" />
+        <img src="../assets/images/grimorio/fondo-1.jpeg" alt="" class="prog-panel__bg-img" loading="lazy" />
+      </picture>
     </div>
     <div class="prog-panel__overlay" aria-hidden="true"></div>
+  </section>
 
-    <div class="prog-panel__content">
+  <section class="prog-info" aria-label="Grimorio Lunar — información">
+    <div class="container prog-info__inner">
       <p class="prog-panel__tag reveal">Rituales · 13 Lunas · Ebook</p>
       <p class="prog-panel__meta reveal">+500 páginas · 13 portales</p>
       <h2 class="prog-panel__title reveal">Grimorio Lunar — <em>Diario de las 13 Lunas</em></h2>
@@ -210,13 +225,15 @@
 
 
   <!-- ══ 4. AUTOESTIMA INDESTRUCTIBLE ══════════════ -->
-  <section class="prog-panel" id="autoestima" aria-label="Autoestima Indestructible">
+  <section class="prog-panel" id="autoestima" aria-label="Autoestima Indestructible — fondo visual">
     <div class="prog-panel__bg" aria-hidden="true">
       <img src="../assets/images/autoestima/banner.png" alt="" class="prog-panel__bg-img" loading="lazy" />
     </div>
     <div class="prog-panel__overlay" aria-hidden="true"></div>
+  </section>
 
-    <div class="prog-panel__content">
+  <section class="prog-info" aria-label="Autoestima Indestructible — información">
+    <div class="container prog-info__inner">
       <p class="prog-panel__tag reveal">Crecimiento Personal</p>
       <p class="prog-panel__meta reveal">Proceso transformador</p>
       <h2 class="prog-panel__title reveal">Autoestima <em>Indestructible</em></h2>
@@ -259,13 +276,15 @@
 
 
   <!-- ══ 5. CÓDIGO CUÁNTICO ════════════════════════ -->
-  <section class="prog-panel" id="cuantico" aria-label="Código Cuántico">
+  <section class="prog-panel" id="cuantico" aria-label="Código Cuántico — fondo visual">
     <div class="prog-panel__bg" aria-hidden="true">
       <img src="../assets/images/cuantico/banner.png" alt="" class="prog-panel__bg-img" loading="lazy" />
     </div>
     <div class="prog-panel__overlay" aria-hidden="true"></div>
+  </section>
 
-    <div class="prog-panel__content">
+  <section class="prog-info" aria-label="Código Cuántico — información">
+    <div class="container prog-info__inner">
       <p class="prog-panel__tag reveal">Ciencia · Vibración · Consciencia</p>
       <h2 class="prog-panel__title reveal">Código <em>Cuántico</em></h2>
 

@@ -10,8 +10,7 @@
 
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   1. HERO PLACEHOLDER
-   (se reemplaza cuando llegue la imagen)
+   1. HERO
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 .prog-hero {
   position: relative;
@@ -24,12 +23,17 @@
   background: var(--carbon-deep);
 }
 
-.prog-hero .hero__canvas {
+.prog-hero__bg {
   position: absolute;
   inset: 0;
+  z-index: 1;
+}
+
+.prog-hero__bg-img {
   width: 100%;
   height: 100%;
-  pointer-events: none;
+  object-fit: cover;
+  object-position: center;
 }
 
 .prog-hero__overlay {
@@ -304,7 +308,22 @@
 
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   6. SECCIÓN METODOLOGÍA
+   6. SECCIONES DE INFO DE PROGRAMAS
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.prog-info {
+  padding: clamp(3.5rem, 7vw, 5.5rem) 0;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.prog-info__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   7. SECCIÓN METODOLOGÍA
    (fondo marfil — contraste con sección oscura)
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 .prog-method {
@@ -386,7 +405,7 @@
 
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   7. CTA FINAL
+   8. CTA FINAL
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 .prog-cta {
   background: var(--carbon-deep);
