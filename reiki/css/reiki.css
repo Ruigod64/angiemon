@@ -920,6 +920,72 @@ p { font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif); font-s
 }
 .footer__legal a:hover { color: var(--sage); }
 
+/* ── FOOTER CANONICAL (appended) ────────────────── */
+.footer {
+  background: var(--carbon-deep, var(--bg-deep, var(--bg, #111)));
+  padding-top: clamp(3rem, 6vw, 5rem);
+}
+.footer__inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 2.5rem 3rem;
+  padding-bottom: 3rem;
+}
+@media (max-width: 900px) {
+  .footer__inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 540px) {
+  .footer__inner { grid-template-columns: 1fr; }
+}
+.footer__logo {
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--ivory, var(--text, #f5f1e8));
+  margin-bottom: 0.5rem;
+}
+.footer__nav-title {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold, #d4af37);
+  margin-bottom: 1rem;
+}
+.footer__nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.footer__nav-list a {
+  font-size: 0.88rem;
+  color: rgba(245,241,232,0.6);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer__nav-list a:hover { color: var(--ivory, #f5f1e8); }
+.footer__contact-item {
+  font-size: 0.88rem;
+  color: rgba(245,241,232,0.6);
+  margin-bottom: 0.4rem;
+}
+.footer__contact-item a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer__contact-item a:hover { color: var(--gold-light, #e8cc6a); }
+.footer__bottom .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
 
 /* ══════════════════════════════════════════════════
    SECCIONES MÓDULO — IMAGEN COMPLETA
