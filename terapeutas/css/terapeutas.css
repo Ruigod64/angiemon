@@ -14,9 +14,9 @@
   justify-content: center;
   overflow: hidden;
   background-color: var(--carbon-deep);
-  background-image: url('../../assets/images/terapias.png');
+  background-image: url('../../assets/images/terapeutas/banner.jpeg');
   background-size: cover;
-  background-position: center -80px;
+  background-position: center;
   background-repeat: no-repeat;
 }
 
@@ -84,6 +84,20 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text-dim-dark);
+}
+
+@keyframes tp-hero-in {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.tp-hero-fade {
+  opacity: 0;
+  animation: tp-hero-in 0.85s var(--ease, cubic-bezier(.4,0,.2,1)) var(--delay, 0s) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tp-hero-fade { animation: none; opacity: 1; }
 }
 
 /* ── INTRO ─────────────────────────────────────────── */
@@ -1112,7 +1126,10 @@
 /* ── Tablet pequeño / mobile landscape (≤ 767px) ───── */
 @media (max-width: 767px) {
   .tp-hero {
-    min-height: 55vh;
+    min-height: 100dvh;
+    background-image: url('../../assets/images/terapeutas/banner-mobile.jpeg');
+    background-position: center top;
+    background-size: cover;
   }
 
   .tp-hero__content {
@@ -1159,6 +1176,11 @@
 
 /* ── Mobile (≤ 639px) ──────────────────────────────── */
 @media (max-width: 639px) {
+  /* Cards: ratio retrato para ver la foto completa */
+  .tp-card__img-wrap {
+    aspect-ratio: 3 / 4;
+  }
+
   /* Section label con líneas: apila verticalmente
      evita overflow de texto largo (white-space:nowrap) */
   .tp-section-label {

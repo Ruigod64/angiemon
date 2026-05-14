@@ -954,6 +954,215 @@ p { font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif); font-s
   }
 }
 
+/* ══════════════════════════════════════════════════
+   MÓDULOS VISUALES — CARDS CON IMAGEN
+   ══════════════════════════════════════════════════ */
+.modulos-visual {
+  background: var(--reiki-bg-alt);
+  padding: clamp(5rem, 10vw, 8rem) 0;
+}
+
+.modulos-visual__header {
+  text-align: center;
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.modulos-visual__heading {
+  font-family: var(--font-display, 'Cinzel', serif);
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  font-weight: 600;
+  color: var(--warm-text);
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  margin-top: 0.5rem;
+}
+
+.modulos-visual__heading em {
+  display: block;
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--sage-dark);
+  font-size: 0.9em;
+  margin-top: 0.2rem;
+}
+
+.modulos-visual__grid {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3rem, 5vw, 5rem);
+}
+
+/* ── Tarjeta nivel ─────────────────────────────────── */
+.nivel-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--sage-border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nivel-card:hover {
+  border-color: var(--sage);
+  box-shadow: 0 20px 60px rgba(138, 171, 138, 0.14);
+}
+
+/* ── Imagen ─────────────────────────────────────────── */
+.nivel-card__media {
+  width: 100%;
+  overflow: hidden;
+}
+
+.nivel-card__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.nivel-card:hover .nivel-card__img {
+  transform: scale(1.03);
+}
+
+/* ── Cuerpo ─────────────────────────────────────────── */
+.nivel-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+}
+
+@media (min-width: 768px) {
+  .nivel-card__body {
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+    padding: clamp(2.5rem, 4vw, 4rem);
+  }
+
+  .nivel-card__left  { flex: 1.2; padding-right: clamp(2rem, 3.5vw, 3.5rem); }
+  .nivel-card__right {
+    flex: 0.8;
+    border-left: 1px solid var(--sage-border);
+    padding-left: clamp(2rem, 3.5vw, 3.5rem);
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+}
+
+/* ── Lado izquierdo ─────────────────────────────────── */
+.nivel-card__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--sage-pale);
+  border: 1px solid var(--sage-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sage-dark);
+  margin-bottom: 1rem;
+}
+
+.nivel-card__num {
+  display: block;
+  font-family: var(--font-sans, 'Raleway', sans-serif);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 0.45rem;
+}
+
+.nivel-card__title {
+  font-family: var(--font-display, 'Cinzel', serif);
+  font-size: clamp(1.35rem, 3vw, 2.1rem);
+  font-weight: 600;
+  color: var(--warm-text);
+  letter-spacing: 0.03em;
+  line-height: 1.15;
+  margin-bottom: 0.35rem;
+}
+
+.nivel-card__title em {
+  display: block;
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--sage-dark);
+  font-size: 0.88em;
+  margin-top: 0.15rem;
+}
+
+.nivel-card__subtitle {
+  font-family: var(--font-sans, 'Raleway', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--warm-dim);
+  margin-bottom: 1rem;
+}
+
+.nivel-card__desc {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: clamp(0.97rem, 1.6vw, 1.08rem);
+  color: var(--warm-muted);
+  line-height: 1.82;
+}
+
+/* ── Lado derecho ───────────────────────────────────── */
+.nivel-card__result {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  padding: 1.25rem 1.35rem;
+  background: var(--sage-pale);
+  border-radius: 10px;
+  border: 1px solid rgba(138, 171, 138, 0.2);
+}
+
+.nivel-card__result-icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--sage);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-top: 0.1rem;
+}
+
+.nivel-card__result p {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: 0.97rem;
+  color: var(--warm-text);
+  line-height: 1.75;
+}
+
+.nivel-card__result strong {
+  color: var(--sage-dark);
+  font-weight: 600;
+}
+
+.nivel-card__cta {
+  align-self: flex-start;
+}
+
+@media (max-width: 767px) {
+  .nivel-card__right { display: flex; flex-direction: column; gap: 1.25rem; }
+  .nivel-card__cta { align-self: stretch; justify-content: center; }
+}
+
+
 /* ── Divisor decorativo ───────────────────────────── */
 .section-divider {
   display: flex;
@@ -970,3 +1179,171 @@ p { font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif); font-s
   background: currentColor;
 }
 .section-divider svg { flex-shrink: 0; }
+
+
+/* ══════════════════════════════════════════════════
+   BENEFICIOS
+   ══════════════════════════════════════════════════ */
+.beneficios {
+  background: var(--reiki-bg-alt);
+  padding: clamp(5rem, 10vw, 8rem) 0;
+}
+
+.beneficios__header {
+  text-align: center;
+  margin-bottom: clamp(3rem, 6vw, 4.5rem);
+}
+
+.beneficios__heading {
+  font-family: var(--font-display, 'Cinzel', serif);
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  font-weight: 600;
+  color: var(--warm-text);
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.beneficios__heading em {
+  display: block;
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--sage-dark);
+  font-size: 0.9em;
+}
+
+.beneficios__subheading {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: var(--warm-muted);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-style: italic;
+}
+
+/* ── Grid de beneficios ─────────────────────────── */
+.beneficios__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 600px) {
+  .beneficios__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── Item individual ────────────────────────────── */
+.beneficio-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.2rem 1.4rem;
+  background: #fff;
+  border: 1px solid var(--sage-border);
+  border-radius: 12px;
+  cursor: default;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.beneficio-item:hover {
+  border-color: var(--sage);
+  box-shadow: 0 8px 24px rgba(138, 171, 138, 0.14);
+  transform: translateY(-2px);
+}
+
+.beneficio-item__icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--sage-pale);
+  border: 1px solid var(--sage-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sage-dark);
+}
+
+.beneficio-item__text {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: clamp(0.97rem, 1.6vw, 1.08rem);
+  color: var(--warm-muted);
+  line-height: 1.65;
+  margin: 0;
+  padding-top: 0.45rem;
+}
+
+.beneficio-item__text strong {
+  color: var(--warm-text);
+  font-weight: 600;
+}
+
+/* ── Certificado destacado ──────────────────────── */
+.beneficios__cert {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.cert-card {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  padding: 1.75rem 2.25rem;
+  background: linear-gradient(135deg, #fdf8e8 0%, #fffbf0 100%);
+  border: 1.5px solid rgba(212, 175, 55, 0.38);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(212, 175, 55, 0.10), 0 0 0 4px rgba(212, 175, 55, 0.05);
+}
+
+@media (max-width: 560px) {
+  .cert-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+}
+
+.cert-card__icon {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.10);
+  border: 1.5px solid rgba(212, 175, 55, 0.32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a8891e;
+}
+
+.cert-card__title {
+  font-family: var(--font-display, 'Cinzel', serif);
+  font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+  font-weight: 600;
+  color: #a8891e;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+
+.cert-card__desc {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: clamp(0.97rem, 1.6vw, 1.08rem);
+  color: var(--warm-muted);
+  line-height: 1.78;
+  margin: 0;
+}
+
+.cert-card__desc strong {
+  color: #a8891e;
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .beneficio-item { transition: none; }
+}

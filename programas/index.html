@@ -37,7 +37,10 @@
        ══════════════════════════════════════════════ -->
   <section class="prog-hero" aria-label="Programas de transformación AngieMon">
     <div class="prog-hero__bg" aria-hidden="true">
-      <img src="../assets/images/banner-programa.jpeg" alt="" class="prog-hero__bg-img" />
+      <picture>
+        <source media="(max-width: 767px)" srcset="../assets/images/programas/banner-mobile.png" />
+        <img src="../assets/images/programas/banner.png" alt="" class="prog-hero__bg-img" />
+      </picture>
     </div>
     <div class="prog-hero__overlay" aria-hidden="true"></div>
 
@@ -55,272 +58,156 @@
 
 
   <!-- ══════════════════════════════════════════════
-       PROGRAMAS — Fondo + Info separados
+       PROGRAMAS — Grid de tarjetas
        ══════════════════════════════════════════════ -->
+  <section class="prog-cards-section" aria-label="Programas de transformación">
+    <div class="container">
+      <div class="prog-cards-grid">
 
-  <!-- ══ 1. PROGRAMA FÉNIX ══════════════════════════ -->
-  <section class="prog-panel" id="fenix" aria-label="Programa Fénix — fondo visual">
-    <div class="prog-panel__bg" aria-hidden="true">
-      <picture>
-        <source media="(max-width: 767px)" srcset="../assets/images/fenix/banner-mobile.jpeg" />
-        <img src="../assets/images/fenix/fondo-1.jpeg" alt="" class="prog-panel__bg-img" loading="lazy" />
-      </picture>
-    </div>
-    <div class="prog-panel__overlay" aria-hidden="true"></div>
-  </section>
+        <!-- ── 1. PROGRAMA FÉNIX ──────────────────── -->
+        <article class="prog-card reveal" id="fenix">
+          <div class="prog-card__media">
+            <img src="../assets/images/fenix/fondo-1.jpeg" alt="Programa Fénix Re-Evolución Interior" class="prog-card__img" loading="lazy" />
+          </div>
+          <div class="prog-card__body">
+            <p class="prog-card__meta">12 módulos · 48 clases</p>
+            <h2 class="prog-card__title">Programa Fénix<em>Re-Evolución Interior</em></h2>
+            <p class="prog-card__hook">Renace cuando decides dejar de vivir entre las cenizas.</p>
+            <p class="prog-card__desc">Una experiencia profunda de transformación emocional, mental, energética y espiritual para reconstruirte desde la raíz. Confronta, despierta, sana y transforma la manera en que te percibes, te relacionas y construyes tu realidad.</p>
+            <ul class="prog-card__bullets" aria-label="Incluye">
+              <li>12 módulos transformacionales y 48 clases estructuradas</li>
+              <li>PNL, neurociencia emocional y sanación energética</li>
+              <li>Autoestima, heridas emocionales, límites y propósito de vida</li>
+              <li>Reprogramación mental y expansión de conciencia</li>
+              <li>Ejercicios terapéuticos y escritura de transformación interna</li>
+            </ul>
+            <a href="https://hotmart.com/es/marketplace/productos/curso-de-escritura-terapeutica/F97949175N?sck=HOTMART_PRODUCT_PAGE" class="btn btn--gold prog-card__cta" target="_blank" rel="noopener noreferrer" aria-label="Inscríbete en el Programa Fénix en Hotmart">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              Inscríbete en Hotmart
+            </a>
+          </div>
+        </article>
 
-  <section class="prog-info" aria-label="Programa Fénix — información">
-    <div class="container prog-info__inner">
-      <p class="prog-panel__tag reveal">Transformación Profunda</p>
-      <p class="prog-panel__meta reveal">12 módulos · 48 clases</p>
-      <h2 class="prog-panel__title reveal">Programa Fénix — <em>ReEvolución Interior</em></h2>
+        <!-- ── 2. SUPERA LAS 5 HERIDAS ───────────── -->
+        <article class="prog-card reveal" id="heridas">
+          <div class="prog-card__media">
+            <img src="../assets/images/heridas/fondo-1.jpeg" alt="Sana las 5 Heridas que Sabotean tu Vida" class="prog-card__img" loading="lazy" />
+          </div>
+          <div class="prog-card__body">
+            <p class="prog-card__meta">1 clase · Ebook · 15 días de ejercicios · 7 bonus</p>
+            <h2 class="prog-card__title">Sana las 5 Heridas<em>que Sabotean tu Vida</em></h2>
+            <p class="prog-card__hook">Sanar significa dejar de permitir que tu historia decida por ti.</p>
+            <p class="prog-card__desc">Reconoce, comprende y comienza a sanar las 5 heridas más profundas — rechazo, abandono, humillación, traición e injusticia — que pueden estar saboteando tus relaciones y tu vida sin que lo notes.</p>
+            <ul class="prog-card__bullets" aria-label="Incluye">
+              <li>Clase poderosa y terapéutica sobre las 5 heridas emocionales</li>
+              <li>Ebook de integración emocional</li>
+              <li>15 días de ejercicios terapéuticos guiados</li>
+              <li>7 bonus especiales de transformación</li>
+              <li>Trabajo de patrones relacionales y dependencia emocional</li>
+            </ul>
+            <a href="https://hotmart.com/es/marketplace/productos/superar-las-5-heridas-que-sabotean-tu-vida/L101592875L?sck=HOTMART_PRODUCT_PAGE" class="btn btn--gold prog-card__cta" target="_blank" rel="noopener noreferrer" aria-label="Inscríbete en Sana las 5 Heridas en Hotmart">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              Inscríbete en Hotmart
+            </a>
+          </div>
+        </article>
 
-      <div class="prog-panel__descs reveal">
-        <p>El Programa Fénix es un viaje de reevolución interior. Más que un curso,
-          es un proceso para romper los patrones que te han mantenido atrapado,
-          desmontar el autosabotaje desde su raíz y reconstruir tu identidad
-          desde un lugar de poder y autenticidad.</p>
-        <p>A lo largo de 12 módulos y 48 clases, trabajarás capas que otros métodos
-          no tocan: creencias heredadas, mecanismos de defensa inconscientes y
-          programas mentales que sabotean tu vida sin que lo notes.</p>
-      </div>
+        <!-- ── 3. GRIMORIO LUNAR ──────────────────── -->
+        <article class="prog-card prog-card--moon reveal" id="grimorio">
+          <div class="prog-card__media">
+            <img src="../assets/images/grimorio/fondo-1.jpeg" alt="Grimorio Lunar El Poder de Recordar Quién Eres" class="prog-card__img" loading="lazy" />
+          </div>
+          <div class="prog-card__body">
+            <p class="prog-card__meta">+500 páginas · 13 portales lunares</p>
+            <h2 class="prog-card__title">Grimorio Lunar<em>El Poder de Recordar Quién Eres</em></h2>
+            <p class="prog-card__hook">La magia real no está afuera. Está dentro de ti esperando ser recordada.</p>
+            <p class="prog-card__desc">Un viaje profundo hacia la magia ancestral, la manifestación consciente y los rituales sagrados. Aprende a trabajar con las 13 lunas, los elementos, hierbas, velas y cuarzos para transformar tu vida desde adentro.</p>
+            <ul class="prog-card__bullets" aria-label="Incluye">
+              <li>13 portales lunares y rituales energéticos guiados</li>
+              <li>Trabajo con hierbas, velas, piedras y elementos mágicos</li>
+              <li>Altares, baños rituales, decretos y limpiezas energéticas</li>
+              <li>Sanación del linaje femenino y rito del útero</li>
+              <li>Manifestación desde coherencia emocional y espiritual</li>
+            </ul>
+            <a href="https://hotmart.com/es/marketplace/productos/hagsxd-grimorio-lunar-4jmdn/L101821733G?sck=HOTMART_PRODUCT_PAGE" class="btn btn--gold prog-card__cta" target="_blank" rel="noopener noreferrer" aria-label="Inscríbete en el Grimorio Lunar en Hotmart">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              Inscríbete en Hotmart
+            </a>
+          </div>
+        </article>
 
-      <ul class="prog-panel__bullets reveal" aria-label="Puntos clave del programa">
-        <li class="prog-panel__bullet">
-          <svg class="prog-panel__bullet-icon" width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><path d="M4 0L8 4L4 8L0 4Z"/></svg>
-          Rompe patrones de pensamiento y conducta repetitivos
-        </li>
-        <li class="prog-panel__bullet">
-          <svg class="prog-panel__bullet-icon" width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><path d="M4 0L8 4L4 8L0 4Z"/></svg>
-          Desmonta el autosabotaje desde la raíz
-        </li>
-        <li class="prog-panel__bullet">
-          <svg class="prog-panel__bullet-icon" width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><path d="M4 0L8 4L4 8L0 4Z"/></svg>
-          Reconstruye tu identidad con consciencia y poder
-        </li>
-        <li class="prog-panel__bullet">
-          <svg class="prog-panel__bullet-icon" width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><path d="M4 0L8 4L4 8L0 4Z"/></svg>
-          Acceso de por vida al contenido y actualizaciones
-        </li>
-      </ul>
+        <!-- ── 4. AUTOESTIMA INDESTRUCTIBLE ────────── -->
+        <article class="prog-card reveal" id="autoestima">
+          <div class="prog-card__media">
+            <img src="../assets/images/autoestima/fondo.jpeg" alt="Autoestima Indestructible" class="prog-card__img" loading="lazy" />
+          </div>
+          <div class="prog-card__body">
+            <p class="prog-card__meta">10 clases · 10 audios · 10 manuales</p>
+            <h2 class="prog-card__title">Autoestima<em>Indestructible</em></h2>
+            <p class="prog-card__hook">El programa que reconstruye la mujer que olvidaste ser.</p>
+            <p class="prog-card__desc">Diseñado para confrontar las heridas que destruyeron tu valor, romper los patrones que te hicieron dudar de ti misma y reconstruir tu identidad desde la raíz. No para sobrevivir — para elegirte de verdad.</p>
+            <ul class="prog-card__bullets" aria-label="Incluye">
+              <li>10 clases profundas y transformadoras</li>
+              <li>10 audios de reprogramación e hipnosis terapéutica</li>
+              <li>10 manuales con ejercicios de trabajo personal</li>
+              <li>Reconstrucción mental y regulación emocional real</li>
+              <li>Reprogramación subconsciente y poder personal</li>
+            </ul>
+            <a href="https://hotmart.com/es/marketplace/productos/hagsxd-autoestima-indestructible-uc9a2/N104782343A?sck=HOTMART_PRODUCT_PAGE" class="btn btn--gold prog-card__cta" target="_blank" rel="noopener noreferrer" aria-label="Inscríbete en Autoestima Indestructible en Hotmart">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              Inscríbete en Hotmart
+            </a>
+          </div>
+        </article>
 
-      <div class="prog-panel__cta reveal">
-        <a href="https://www.angiemon.com/programa-fénix" class="btn btn--gold btn--lg" aria-label="Conoce más sobre el Programa Fénix">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          Conoce más
-        </a>
-      </div>
-    </div>
-  </section>
+        <!-- ── 5. CÓDIGO CUÁNTICO ─────────────────── -->
+        <article class="prog-card reveal" id="cuantico">
+          <div class="prog-card__media">
+            <img src="../assets/images/cuantico/fondo-1.jpeg" alt="Código Cuántico" class="prog-card__img" loading="lazy" />
+          </div>
+          <div class="prog-card__body">
+            <p class="prog-card__meta">12 clases · Mente · Cuerpo · Alma</p>
+            <h2 class="prog-card__title">Código<em>Cuántico</em></h2>
+            <p class="prog-card__hook">No vienes a creer. Vienes a recordar quién eres.</p>
+            <p class="prog-card__desc">Una experiencia de reconfiguración interna que integra neuroplasticidad, liberación somática, activación energética, geometría sagrada y expansión de conciencia para transformar la relación que tienes contigo misma y con la realidad que habitas.</p>
+            <ul class="prog-card__bullets" aria-label="Incluye">
+              <li>12 clases transformadoras: Mente, Cuerpo y Alma</li>
+              <li>Anclajes bioneurales de sanación cuántica</li>
+              <li>Meditaciones, activaciones y visualizaciones guiadas</li>
+              <li>Merkaba, geometría sagrada y cuerpos sutiles</li>
+              <li>Creación de tu Código Maestro Personal</li>
+            </ul>
+            <a href="#" class="btn btn--gold prog-card__cta" target="_blank" rel="noopener noreferrer" aria-label="Inscríbete en Código Cuántico en Hotmart">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              Inscríbete en Hotmart
+            </a>
+          </div>
+        </article>
 
+        <!-- ── 6. REIKI ────────────────────────────── -->
+        <article class="prog-card reveal" id="reiki">
+          <div class="prog-card__media">
+            <img src="../assets/images/reiki/fondo.jpeg" alt="Reiki Usui El Arte Supremo de Sanar" class="prog-card__img" loading="lazy" />
+          </div>
+          <div class="prog-card__body">
+            <p class="prog-card__meta">4 niveles · Formación completa hasta Maestro Reiki</p>
+            <h2 class="prog-card__title">Reiki Usui<em>El Arte Supremo de Sanar</em></h2>
+            <p class="prog-card__hook">Sanar no es aliviar el dolor. Es recordar la armonía que siempre vivió en ti.</p>
+            <p class="prog-card__desc">Aprende a comprender la energía desde una perspectiva profesional, espiritual y terapéutica. Los 4 niveles del Reiki Usui te llevarán desde tu primer despertar energético hasta convertirte en Maestro Reiki.</p>
+            <ul class="prog-card__bullets" aria-label="Incluye">
+              <li>4 manuales profundamente desarrollados por nivel</li>
+              <li>Clases estructuradas y prácticas energéticas guiadas</li>
+              <li>Formación completa hasta Maestro Reiki</li>
+              <li>Protocolos profesionales y material de sesiones</li>
+              <li>Certificado por nivel avalado por Certiproof</li>
+            </ul>
+            <a href="#" class="btn btn--gold prog-card__cta" target="_blank" rel="noopener noreferrer" aria-label="Inscríbete en Reiki Usui en Hotmart">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              Inscríbete en Hotmart
+            </a>
+          </div>
+        </article>
 
-  <!-- ══ 2. SUPERA LAS 5 HERIDAS ════════════════════ -->
-  <section class="prog-panel" id="heridas" aria-label="Supera las 5 Heridas — fondo visual">
-    <div class="prog-panel__bg" aria-hidden="true">
-      <picture>
-        <source media="(max-width: 767px)" srcset="../assets/images/heridas/banner-mobile.jpeg" />
-        <img src="../assets/images/heridas/fondo-1.jpeg" alt="" class="prog-panel__bg-img" loading="lazy" />
-      </picture>
-    </div>
-    <div class="prog-panel__overlay" aria-hidden="true"></div>
-  </section>
-
-  <section class="prog-info" aria-label="Supera las 5 Heridas — información">
-    <div class="container prog-info__inner">
-      <p class="prog-panel__tag reveal">Sanación Emocional</p>
-      <p class="prog-panel__meta reveal">5 heridas · Proceso profundo</p>
-      <h2 class="prog-panel__title reveal">Supera las 5 Heridas que <em>Sabotean tu Vida</em></h2>
-
-      <div class="prog-panel__descs reveal">
-        <p>Abandono, rechazo, traición, humillación, injusticia. Estas cinco heridas
-          no son solo recuerdos del pasado — son programas activos que hoy dan forma
-          a tus relaciones, decisiones y respuestas emocionales.</p>
-        <p>Este programa te guía a identificar qué heridas están más activas en ti
-          y a sanarlas desde la raíz, liberándote de patrones relacionales
-          que se repiten una y otra vez.</p>
-      </div>
-
-      <ul class="prog-panel__bullets reveal" aria-label="Puntos clave del programa">
-        <li class="prog-panel__bullet">
-          <svg class="prog-panel__bullet-icon" width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><path d="M4 0L8 4L4 8L0 4Z"/></svg>
-          Identifica las heridas que dirigen tu vida sin saberlo
-        </li>
-        <li class="prog-panel__bullet">
-          <svg class="prog-panel__bullet-icon" width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><path d="M4 0L8 4L4 8L0 4Z"/></svg>
-          Comprende cómo se manifiestan en tus relaciones y conducta
-        </li>
-        <li class="prog-panel__bullet">
-          <svg class="prog-panel__bullet-icon" width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><path d="M4 0L8 4L4 8L0 4Z"/></svg>
-          Sana los patrones activos que te frenan y se repiten
-        </li>
-        <li class="prog-panel__bullet">
-          <svg class="prog-panel__bullet-icon" width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><path d="M4 0L8 4L4 8L0 4Z"/></svg>
-          Herramientas prácticas para integrar en el día a día
-        </li>
-      </ul>
-
-      <div class="prog-panel__cta reveal">
-        <a href="https://www.angiemon.com/supera-las-heridas" class="btn btn--gold btn--lg" aria-label="Conoce más sobre Supera las 5 Heridas">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          Conoce más
-        </a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══ 3. GRIMORIO LUNAR ══════════════════════════ -->
-  <section class="prog-panel prog-panel--moon" id="grimorio" aria-label="Grimorio Lunar — fondo visual">
-    <div class="prog-panel__bg" aria-hidden="true">
-      <picture>
-        <source media="(max-width: 767px)" srcset="../assets/images/grimorio/fondo-mobile.jpeg" />
-        <img src="../assets/images/grimorio/fondo-1.jpeg" alt="" class="prog-panel__bg-img" loading="lazy" />
-      </picture>
-    </div>
-    <div class="prog-panel__overlay" aria-hidden="true"></div>
-  </section>
-
-  <section class="prog-info" aria-label="Grimorio Lunar — información">
-    <div class="container prog-info__inner">
-      <p class="prog-panel__tag reveal">Rituales · 13 Lunas · Ebook</p>
-      <p class="prog-panel__meta reveal">+500 páginas · 13 portales</p>
-      <h2 class="prog-panel__title reveal">Grimorio Lunar — <em>Diario de las 13 Lunas</em></h2>
-
-      <div class="prog-panel__descs reveal">
-        <p>El Grimorio Lunar es una guía viva de más de 500 páginas para acompañarte
-          durante un ciclo completo de 13 lunas. No es solo un diario — es un portal.
-          Cada luna, un proceso. Cada ciclo, una transformación.</p>
-        <p>Diseñado para quienes desean volver al ritmo sagrado del tiempo,
-          reconectar con la sabiduría cíclica femenina y vivir con mayor
-          consciencia e intención.</p>
-      </div>
-
-      <ul class="prog-panel__bullets reveal" aria-label="Puntos clave del programa">
-        <li class="prog-panel__bullet">
-          <svg class="prog-panel__bullet-icon" width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><path d="M4 0L8 4L4 8L0 4Z"/></svg>
-          Ebook de +500 páginas de contenido profundo
-        </li>
-        <li class="prog-panel__bullet">
-          <svg class="prog-panel__bullet-icon" width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><path d="M4 0L8 4L4 8L0 4Z"/></svg>
-          13 lunas, 13 portales de transformación guiada
-        </li>
-        <li class="prog-panel__bullet">
-          <svg class="prog-panel__bullet-icon" width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><path d="M4 0L8 4L4 8L0 4Z"/></svg>
-          Prácticas, rituales y reflexiones para cada ciclo lunar
-        </li>
-        <li class="prog-panel__bullet">
-          <svg class="prog-panel__bullet-icon" width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><path d="M4 0L8 4L4 8L0 4Z"/></svg>
-          Reconexión con el ritmo sagrado y la sabiduría femenina
-        </li>
-      </ul>
-
-      <div class="prog-panel__cta reveal">
-        <a href="https://www.angiemon.com/grimorio-lunar" class="btn btn--gold btn--lg" aria-label="Conoce más sobre el Grimorio Lunar">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          Conoce más
-        </a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══ 4. AUTOESTIMA INDESTRUCTIBLE ══════════════ -->
-  <section class="prog-panel" id="autoestima" aria-label="Autoestima Indestructible — fondo visual">
-    <div class="prog-panel__bg" aria-hidden="true">
-      <img src="../assets/images/autoestima/banner.png" alt="" class="prog-panel__bg-img" loading="lazy" />
-    </div>
-    <div class="prog-panel__overlay" aria-hidden="true"></div>
-  </section>
-
-  <section class="prog-info" aria-label="Autoestima Indestructible — información">
-    <div class="container prog-info__inner">
-      <p class="prog-panel__tag reveal">Crecimiento Personal</p>
-      <p class="prog-panel__meta reveal">Proceso transformador</p>
-      <h2 class="prog-panel__title reveal">Autoestima <em>Indestructible</em></h2>
-
-      <div class="prog-panel__descs reveal">
-        <p>Tu autoestima no es lo que sientes cuando todo va bien. Es la solidez
-          que tienes cuando la vida te tambalea. Este programa reconstruye tu
-          identidad desde la raíz: no con afirmaciones superficiales, sino con
-          trabajo real sobre tu estructura mental y regulación emocional.</p>
-        <p>Porque la seguridad interna no se encuentra — se construye.</p>
-      </div>
-
-      <ul class="prog-panel__bullets reveal" aria-label="Puntos clave del programa">
-        <li class="prog-panel__bullet">
-          <svg class="prog-panel__bullet-icon" width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><path d="M4 0L8 4L4 8L0 4Z"/></svg>
-          Reconstruye tu identidad desde los cimientos reales
-        </li>
-        <li class="prog-panel__bullet">
-          <svg class="prog-panel__bullet-icon" width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><path d="M4 0L8 4L4 8L0 4Z"/></svg>
-          Trabaja estructura mental y regulación emocional
-        </li>
-        <li class="prog-panel__bullet">
-          <svg class="prog-panel__bullet-icon" width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><path d="M4 0L8 4L4 8L0 4Z"/></svg>
-          Desarrolla poder personal y seguridad interna genuina
-        </li>
-        <li class="prog-panel__bullet">
-          <svg class="prog-panel__bullet-icon" width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><path d="M4 0L8 4L4 8L0 4Z"/></svg>
-          Aprende a sostenerte cuando la vida te desafía
-        </li>
-      </ul>
-
-      <div class="prog-panel__cta reveal">
-        <a href="https://www.angiemon.com/autoestima-indestructible" class="btn btn--gold btn--lg" aria-label="Conoce más sobre Autoestima Indestructible">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          Conoce más
-        </a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══ 5. CÓDIGO CUÁNTICO ════════════════════════ -->
-  <section class="prog-panel" id="cuantico" aria-label="Código Cuántico — fondo visual">
-    <div class="prog-panel__bg" aria-hidden="true">
-      <img src="../assets/images/cuantico/banner.png" alt="" class="prog-panel__bg-img" loading="lazy" />
-    </div>
-    <div class="prog-panel__overlay" aria-hidden="true"></div>
-  </section>
-
-  <section class="prog-info" aria-label="Código Cuántico — información">
-    <div class="container prog-info__inner">
-      <p class="prog-panel__tag reveal">Ciencia · Vibración · Consciencia</p>
-      <h2 class="prog-panel__title reveal">Código <em>Cuántico</em></h2>
-
-      <div class="prog-panel__descs reveal">
-        <p>En el universo, todo es energía, vibración y consciencia. Código Cuántico
-          nace de la intersección entre la física cuántica, la neurociencia y las
-          tradiciones espirituales milenarias — para ofrecerte una comprensión
-          revolucionaria de cómo crear tu realidad desde adentro.</p>
-        <p>Mente, cuerpo y alma trabajando como un solo sistema de transformación.
-          Una experiencia de aprendizaje diferente a todo lo que has vivido.</p>
-      </div>
-
-      <ul class="prog-panel__bullets reveal" aria-label="Puntos clave del programa">
-        <li class="prog-panel__bullet">
-          <svg class="prog-panel__bullet-icon" width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><path d="M4 0L8 4L4 8L0 4Z"/></svg>
-          Intersección entre ciencia, vibración y conciencia
-        </li>
-        <li class="prog-panel__bullet">
-          <svg class="prog-panel__bullet-icon" width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><path d="M4 0L8 4L4 8L0 4Z"/></svg>
-          Neurociencia aplicada al cambio profundo y sostenido
-        </li>
-        <li class="prog-panel__bullet">
-          <svg class="prog-panel__bullet-icon" width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><path d="M4 0L8 4L4 8L0 4Z"/></svg>
-          Integración real de mente, cuerpo y alma
-        </li>
-        <li class="prog-panel__bullet">
-          <svg class="prog-panel__bullet-icon" width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><path d="M4 0L8 4L4 8L0 4Z"/></svg>
-          Herramientas cuánticas para crear tu realidad consciente
-        </li>
-      </ul>
-
-      <div class="prog-panel__cta reveal">
-        <a href="https://www.angiemon.com/código-cuántico" class="btn btn--gold btn--lg" aria-label="Conoce más sobre Código Cuántico">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          Más información
-        </a>
       </div>
     </div>
   </section>
@@ -423,6 +310,18 @@
 
     </div>
   </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       LIGHTBOX
+       ══════════════════════════════════════════════ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada" hidden>
+    <button class="lightbox__close" id="lightboxClose" aria-label="Cerrar imagen">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
+    <img class="lightbox__img" id="lightboxImg" src="" alt="" />
+  </div>
 
 
   <!-- ══════════════════════════════════════════════

@@ -1024,6 +1024,136 @@
   line-height: 1.85;
 }
 
+/* ── ❹‒❼ SERVICIOS — Grid de tarjetas ──────────────── */
+.sv-cards-section {
+  background: var(--carbon-deep);
+  padding: clamp(4rem, 8vw, 7rem) 0;
+}
+
+/* Grid: 1 col mobile → 2 col tablet → 1 col (full-width) desktop */
+.sv-cards-grid {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+
+@media (min-width: 640px) and (max-width: 1099px) {
+  .sv-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(1.5rem, 3vw, 2rem);
+  }
+}
+
+.sv-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--carbon-mid);
+  border: 1px solid rgba(212, 175, 55, 0.13);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.sv-card:hover {
+  border-color: rgba(212, 175, 55, 0.35);
+  box-shadow: 0 28px 72px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(212, 175, 55, 0.16);
+}
+
+.sv-card__media {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.sv-card__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.9s var(--ease);
+}
+
+.sv-card:hover .sv-card__img {
+  transform: scale(1.04);
+}
+
+/* Velo inferior: imagen funde con el cuerpo */
+.sv-card__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 45%, rgba(37, 37, 37, 0.65) 100%);
+  pointer-events: none;
+}
+
+/* Cuerpo: 1 col mobile → 2 col desktop */
+.sv-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+}
+
+@media (min-width: 1100px) {
+  .sv-card__body {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    column-gap: clamp(2.5rem, 4vw, 4.5rem);
+    align-items: center;
+    padding: clamp(2.5rem, 4vw, 4rem);
+  }
+
+  .sv-card__label   { grid-column: 1; }
+  .sv-card__heading { grid-column: 1; }
+
+  .sv-card__desc {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    align-self: center;
+    border-left: 1px solid rgba(212, 175, 55, 0.12);
+    padding-left: clamp(2rem, 3.5vw, 3.5rem);
+  }
+}
+
+.sv-card__label {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(212, 175, 55, 0.55);
+  margin-bottom: 0.65rem;
+}
+
+.sv-card__heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 3.2vw, 2.6rem);
+  font-weight: 600;
+  color: var(--ivory);
+  letter-spacing: 0.03em;
+  line-height: 1.12;
+  margin-bottom: 0.75rem;
+}
+
+.sv-card__heading em {
+  display: block;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 0.78em;
+  color: var(--gold-light);
+  margin-top: 0.2rem;
+}
+
+.sv-card__desc {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: var(--text-muted-dark);
+  line-height: 1.85;
+  margin: 0;
+}
+
 /* ── ❽ PSICOTERAPIA ──────────────────────────────── */
 .psicoterapia {
   background: var(--carbon);

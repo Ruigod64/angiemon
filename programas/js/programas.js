@@ -1,41 +1,49 @@
 /* ══════════════════════════════════════════════════
    AngieMon — programas.js
    Comportamiento exclusivo de /programas
-   SOLID: Single-responsibility — sólo lógica propia
-          de esta página.  Depende de animaciones.js
-          para reveal; no duplica su funcionalidad.
    ══════════════════════════════════════════════════ */
 
 (() => {
   'use strict';
 
-  /* ── Stagger de entrada en el grid de programas ── */
-  function initGridStagger() {
-    const cards = document.querySelectorAll('.prog-grid .programa-card');
-    if (!cards.length) return;
+  /* ── Lightbox ─────────────────────────────────── */
+  function initLightbox() {
+    const lightbox  = document.getElementById('lightbox');
+    const lb_img    = document.getElementById('lightboxImg');
+    const lb_close  = document.getElementById('lightboxClose');
+    const lb_back   = document.getElementById('lightboxBackdrop');
+    if (!lightbox) return;
 
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) return;
+    function open(img) {
+      lb_img.src = img.src;
+      lb_img.alt = img.alt;
+      lightbox.hidden = false;
+      document.body.style.overflow = 'hidden';
+      lb_close.focus();
+    }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          const card = entry.target;
-          const idx  = Array.from(cards).indexOf(card);
-          card.style.transitionDelay = `${idx * 80}ms`;
-          card.classList.add('revealed');
-          observer.unobserve(card);
-        }
+    function close() {
+      lightbox.hidden = true;
+      lb_img.src = '';
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.prog-card__media').forEach(media => {
+      media.addEventListener('click', () => {
+        const img = media.querySelector('.prog-card__img');
+        if (img) open(img);
       });
-    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    });
 
-    cards.forEach(card => {
-      card.classList.add('reveal');
-      observer.observe(card);
+    lb_close.addEventListener('click', close);
+    lb_back.addEventListener('click', close);
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && !lightbox.hidden) close();
     });
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    initGridStagger();
+    initLightbox();
   });
 })();
