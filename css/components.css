@@ -223,16 +223,15 @@
 
 .programa-card__img-wrap {
   position: relative;
-  aspect-ratio: 4 / 3;
+  width: 100%;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--carbon-soft), var(--carbon-mid));
-  flex-shrink: 0;
+  line-height: 0;
 }
 
 .programa-card__img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  display: block;
   transition: transform 0.7s var(--ease);
 }
 
