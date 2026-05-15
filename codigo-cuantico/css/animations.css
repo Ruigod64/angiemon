@@ -1,0 +1,121 @@
+/* ══════════════════════════════════════════
+   CÓDIGO CUÁNTICO — Animations
+   CSS animations + estados iniciales GSAP
+══════════════════════════════════════════ */
+
+/* ── Keyframes ──────────────────────────── */
+@keyframes scrollPulse {
+  0%, 100% { opacity: .3; transform: scaleY(.85); }
+  50%       { opacity: 1;  transform: scaleY(1); }
+}
+
+@keyframes goldShimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+@keyframes slowSpin {
+  from { transform: translateX(-50%) rotate(0deg); }
+  to   { transform: translateX(-50%) rotate(360deg); }
+}
+
+@keyframes geomSpin {
+  from { transform: translateX(-50%) rotate(0deg); }
+  to   { transform: translateX(-50%) rotate(360deg); }
+}
+
+@keyframes auraPulse {
+  0%, 100% { box-shadow: 0 0 22px rgba(229,169,60,.16); }
+  50%       { box-shadow: 0 0 44px rgba(229,169,60,.36); }
+}
+
+@keyframes floatDot {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* ── Scroll indicator ───────────────────── */
+.hero__scroll-line {
+  animation: scrollPulse 2.4s ease-in-out infinite;
+}
+
+/* ── Hero title shimmer ─────────────────── */
+.hero__title-gold {
+  background-size: 200% auto;
+  animation: goldShimmer 7s linear infinite;
+}
+
+/* ── Sacred geometry rotation ───────────── */
+.final-geometry {
+  animation: geomSpin 55s linear infinite;
+}
+
+/* ── Divisor dorado pulso ───────────────── */
+.gold-divider {
+  animation: auraPulse 3.5s ease-in-out infinite;
+}
+
+/* ── Pillar icon float ──────────────────── */
+.pillar--featured .pillar__icon {
+  animation: floatDot 3.8s ease-in-out infinite;
+}
+
+/* ── Transiciones de tarjetas ───────────── */
+.mod-card,
+.class-card {
+  will-change: transform;
+}
+
+/* ── GSAP — estados iniciales ───────────────
+   Elementos gestionados por GSAP arrancan
+   con visibility:hidden via autoAlpha.
+   Se ponen aquí para evitar flash en carga.
+─────────────────────────────────────────── */
+.js-reveal,
+.js-stagger > * {
+  visibility: hidden;
+}
+
+/* Cuando GSAP anima estos elementos,
+   establece visibility:visible automáticamente
+   gracias al uso de autoAlpha */
+
+/* ── Efecto hover glow en botones CTA ────── */
+.cta-btn--primary,
+.cta-btn--final {
+  transition:
+    transform 260ms ease-out,
+    box-shadow 260ms ease-out;
+}
+
+.cta-btn--violet {
+  transition:
+    transform 260ms ease-out,
+    box-shadow 260ms ease-out;
+}
+
+/* ── Partículas CSS flotantes ───────────── */
+.cosmos-particle {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatParticle var(--dur, 9s) ease-in-out infinite var(--delay, 0s);
+}
+
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10%, 90% { opacity: var(--op, .25); }
+  50% {
+    transform: translateY(-110px) translateX(var(--drift, 18px));
+  }
+}
+
+/* ── Focus visible global ───────────────── */
+:focus-visible {
+  outline: 2px solid #E5A93C;
+  outline-offset: 3px;
+}
