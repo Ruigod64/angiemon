@@ -1,0 +1,325 @@
+/* ══════════════════════════════════════════════════
+   AngieMon · Canciones
+   Paleta: Marrón-negro cálido · Ámbar · Marfil cálido
+   ══════════════════════════════════════════════════ */
+
+/* ── Tokens de color propios de esta página ──────── */
+:root {
+  --amber:         #c9943a;
+  --amber-light:   #ddb05a;
+  --amber-pale:    #f0ddb8;
+  --amber-glow:    rgba(201, 148, 58, 0.14);
+  --amber-border:  rgba(201, 148, 58, 0.28);
+  --cobre-deep:    #0e0703;
+  --cobre:         #180d05;
+  --cobre-mid:     #251308;
+  --cobre-soft:    #361c0c;
+  --text-warm:     #f0ddb8;
+  --text-warm-dim: rgba(240, 221, 184, 0.60);
+  --text-warm-off: rgba(240, 221, 184, 0.35);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cobre-deep);
+  color: var(--text-warm);
+  overflow-x: hidden;
+}
+
+/* ── Animaciones de aparición ────────────────────── */
+.anim-from-bottom {
+  transition:
+    opacity  0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: opacity, transform;
+}
+
+.anim-from-bottom { opacity: 0; transform: translateY(45px); }
+.anim-visible     { opacity: 1 !important; transform: none !important; }
+
+/* ════════════════════════════════════════════════
+   HERO
+   ════════════════════════════════════════════════ */
+
+.canciones-hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 340px;
+  overflow: hidden;
+}
+
+.canciones-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.canciones-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* Fade sutil al fondo de la página */
+.canciones-hero__fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 35%;
+  background: linear-gradient(to bottom, transparent, var(--cobre-deep));
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ════════════════════════════════════════════════
+   SECCIÓN CANCIONES
+   ════════════════════════════════════════════════ */
+
+.canciones-seccion {
+  background: var(--cobre-deep);
+  padding: var(--space-xl) 0 var(--space-2xl);
+  position: relative;
+}
+
+.canciones-seccion::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--amber), transparent);
+}
+
+/* ── Encabezado ──────────────────────────────────── */
+.canciones-intro {
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.canciones-intro .section-label {
+  color: var(--amber);
+}
+
+.canciones-intro .section-heading--light {
+  color: var(--text-warm);
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.canciones-intro .section-heading--light em {
+  color: var(--amber-light);
+}
+
+.canciones-intro .ornament-divider::before,
+.canciones-intro .ornament-divider::after {
+  background: linear-gradient(to right, transparent, var(--amber-border), transparent);
+}
+
+.canciones-intro .ornament-divider span {
+  color: var(--amber);
+}
+
+/* ── Grid de canciones ───────────────────────────── */
+.canciones-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.75rem, 3vw, 3rem);
+}
+
+/* ── Card de canción ─────────────────────────────── */
+.cancion-card {
+  background: var(--cobre-mid);
+  border: 1px solid var(--amber-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform  0.5s var(--ease),
+    box-shadow 0.5s var(--ease),
+    border-color 0.35s var(--ease);
+  cursor: default;
+}
+
+.cancion-card:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.6),
+    0 0 0 1px var(--amber),
+    0 0 50px rgba(201, 148, 58, 0.10);
+  border-color: var(--amber);
+}
+
+/* Imagen cuadrada */
+.cancion-card__img-wrap {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.cancion-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.7s var(--ease);
+}
+
+.cancion-card:hover .cancion-card__img {
+  transform: scale(1.04);
+}
+
+/* Overlay suave sobre imagen */
+.cancion-card__img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(14, 7, 3, 0.80) 0%,
+    rgba(14, 7, 3, 0.10) 45%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* Badge de programa */
+.cancion-card__badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--amber);
+  background: rgba(14, 7, 3, 0.80);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--amber-border);
+  border-radius: var(--radius-xl);
+  padding: 0.35rem 0.85rem;
+  z-index: 1;
+}
+
+/* Cuerpo */
+.cancion-card__body {
+  padding: 1.5rem 1.6rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  flex: 1;
+}
+
+.cancion-card__programa {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+
+.cancion-card__title {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  color: var(--text-warm);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+}
+
+.cancion-card__desc {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--text-warm-dim);
+  line-height: 1.8;
+  flex-grow: 1;
+}
+
+/* Botón escuchar */
+.cancion-card__cta {
+  margin-top: 0.85rem;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.5rem;
+  border-radius: var(--radius-xl);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  background: transparent;
+  border: 1.5px solid var(--amber-border);
+  color: var(--amber-light);
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    color var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.cancion-card__cta:hover {
+  background: var(--amber);
+  border-color: var(--amber);
+  color: var(--cobre-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201, 148, 58, 0.38);
+}
+
+.cancion-card__cta svg {
+  transition: transform var(--transition);
+}
+
+.cancion-card__cta:hover svg {
+  transform: translateX(3px);
+}
+
+/* Próximamente */
+.cancion-card__cta--soon {
+  border-color: rgba(240, 221, 184, 0.12);
+  color: var(--text-warm-off);
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ════════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════════ */
+
+@media (max-width: 700px) {
+  .canciones-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .canciones-hero {
+    aspect-ratio: unset;
+    height: 100vh;
+    min-height: unset;
+  }
+}
+
+/* ════════════════════════════════════════════════
+   REDUCED MOTION
+   ════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-from-bottom { opacity: 1; transform: none; transition: none; }
+  .cancion-card:hover { transform: none; }
+  .cancion-card__img  { transition: none; }
+}

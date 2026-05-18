@@ -13,7 +13,7 @@
 
   <title>Libros — AngieMon · Código Cuántico</title>
 
-  <!-- Fonts -->
+  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -21,7 +21,11 @@
     rel="stylesheet"
   />
 
-  <!-- Styles -->
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Estilos -->
   <link rel="stylesheet" href="../css/reset.css" />
   <link rel="stylesheet" href="../css/variables.css" />
   <link rel="stylesheet" href="../css/components.css" />
@@ -29,24 +33,353 @@
 </head>
 <body>
 
-  <!-- Header / Nav -->
-  <header class="site-header">
-    <!-- TODO: insertar nav compartido -->
-  </header>
-
   <main id="main-content">
 
-    <section class="libros-hero" aria-label="Libros de AngieMon">
-      <div class="container">
-        <p class="section-label">Recursos</p>
-        <h1>Libros<br/><em>de Transformación</em></h1>
+    <!-- ══════════════════════════════════════════════
+         HERO
+         ══════════════════════════════════════════════ -->
+    <section class="libros-hero" aria-label="Colección de Libros de AngieMon">
+      <div class="hero__bg">
+        <img
+          src="../assets/images/libros/banner-169.png"
+          alt=""
+          aria-hidden="true"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__content">
+        <p class="section-label hero__label">Recursos</p>
+        <div class="hero__ornament" aria-hidden="true">
+          <span class="hero__ornament-star">✦ ✦ ✦</span>
+        </div>
+        <h1 class="hero__title">
+          Libros<br />
+          <em>de Transformación</em>
+        </h1>
+        <p class="hero__subtitle">
+          Palabras que sanan &nbsp;·&nbsp; Historias que transforman &nbsp;·&nbsp; Reflexiones que despiertan
+        </p>
+        <div class="hero__scroll" aria-hidden="true">
+          <span class="hero__scroll-line"></span>
+          <span class="hero__scroll-text">Explorar</span>
+        </div>
       </div>
     </section>
 
-    <section class="libros-grid" aria-label="Catálogo de libros">
+    <!-- ══════════════════════════════════════════════
+         CATÁLOGO DE LIBROS
+         ══════════════════════════════════════════════ -->
+    <section class="libros-seccion" aria-label="Catálogo de libros">
       <div class="container">
-        <!-- TODO: grid de libros -->
-      </div>
+
+        <header class="section-header libros-intro">
+          <p class="section-label section-label--light">Catálogo</p>
+          <h2 class="section-heading section-heading--light">
+            Nuestra <em>Colección</em>
+          </h2>
+          <div class="ornament-divider" aria-hidden="true"><span>✦</span></div>
+        </header>
+
+        <div class="libros-lista">
+
+          <!-- ── 1. 365 Reflexiones ── imagen izquierda ── -->
+          <article class="libro-item" aria-label="Libro: 365 Reflexiones">
+            <div class="libro-item__img-wrap">
+              <img
+                class="libro-item__img"
+                src="../assets/images/libros/365 Reflexiones.jpeg"
+                alt="Portada del libro 365 Reflexiones de Angélica Montelongo"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <div class="libro-item__content">
+              <span class="libro-item__num" aria-hidden="true">01</span>
+              <p class="libro-item__badge">Desarrollo Personal</p>
+              <h3 class="libro-item__title">365 Reflexiones</h3>
+              <p class="libro-item__tagline">Un pensamiento para cada día</p>
+              <div class="libro-item__divider" aria-hidden="true"></div>
+              <p class="libro-item__desc">
+                Un libro creado para acompañarte día a día con reflexiones profundas capaces de sanar, inspirar y despertar conciencia. Cada página es una pausa para reconectar contigo, fortalecer tu interior y recordar que incluso en los momentos más difíciles… tu alma sigue teniendo luz. Encontrarás mensajes sobre amor propio, sanación emocional, resiliencia, propósito de vida, espiritualidad y transformación personal.
+              </p>
+              <p class="libro-item__destacado">
+                ✨ Porque a veces, una sola reflexión puede cambiar tu manera de ver la vida.
+              </p>
+              <a href="https://www.amazon.com.mx/365-Reflexiones-pensamiento-para-Spanish/dp/B0CH26VPLY/ref=tmm_hrd_swatch_0?_encoding=UTF8&dib_tag=AUTHOR&dib=eyJ2IjoiMSJ9.HE_pKpiqCcZ54209Zsw96djbEw8mF0IKzcVrOx45a8-SzYxPcLFnsB3cuOYpJ__U.grZBFX3w-U4haOuvxvfdjPu4EYTEqG6v99KFBfQSdXU" class="libro-item__cta" target="_blank" rel="noopener noreferrer" aria-label="Ver libro: 365 Reflexiones en Amazon">
+                Ver libro
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- ── 2. Los Secretos de Ailoria ── imagen derecha ── -->
+          <article class="libro-item libro-item--reverse" aria-label="Libro: Los Secretos de Ailoria">
+            <div class="libro-item__img-wrap">
+              <img
+                class="libro-item__img"
+                src="../assets/images/libros/Los Secretos de Ailoria.jpeg"
+                alt="Portada del libro Los Secretos de Ailoria"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="libro-item__content">
+              <span class="libro-item__num" aria-hidden="true">02</span>
+              <p class="libro-item__badge">Fantasía</p>
+              <h3 class="libro-item__title">Los Secretos de Ailoria</h3>
+              <p class="libro-item__tagline">Aventura, amistad y magia</p>
+              <div class="libro-item__divider" aria-hidden="true"></div>
+              <p class="libro-item__desc">
+                Una historia de aventura, amistad y magia donde la luz y la oscuridad se enfrentan en un mundo lleno de secretos, poderes ocultos y destinos entrelazados. Los Secretos de Ailoria es una novela que te transportará a un universo fascinante donde cada decisión puede cambiarlo todo y donde el verdadero poder nace del valor, la unión y la esperanza.
+              </p>
+              <p class="libro-item__destacado">
+                ✨ Misterio, emoción y fantasía épica en una historia imposible de olvidar.
+              </p>
+              <a href="https://www.amazon.com.mx/Secretos-Ailoria-Mundo-Mágico-Spanish/dp/B0D3QF3HPL/ref=tmm_hrd_swatch_0?_encoding=UTF8&dib_tag=AUTHOR&dib=eyJ2IjoiMSJ9.HE_pKpiqCcZ54209Zsw96djbEw8mF0IKzcVrOx45a8-SzYxPcLFnsB3cuOYpJ__U.grZBFX3w-U4haOuvxvfdjPu4EYTEqG6v99KFBfQSdXU" class="libro-item__cta" target="_blank" rel="noopener noreferrer" aria-label="Ver libro: Los Secretos de Ailoria en Amazon">
+                Ver libro
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- ── 3. 5 Heridas ── imagen izquierda ── -->
+          <article class="libro-item" aria-label="Libro: Cómo Identificar las 5 Heridas de la Infancia">
+            <div class="libro-item__img-wrap">
+              <img
+                class="libro-item__img"
+                src="../assets/images/libros/Como Identificar las 5 Heridas de la Infancia.jpeg"
+                alt="Portada del libro Cómo Identificar las 5 Heridas de la Infancia"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="libro-item__content">
+              <span class="libro-item__num" aria-hidden="true">03</span>
+              <p class="libro-item__badge">Sanación Emocional</p>
+              <h3 class="libro-item__title">Cómo Identificar las 5 Heridas de la Infancia</h3>
+              <p class="libro-item__tagline">Reconoce, comprende y sana desde la raíz</p>
+              <div class="libro-item__divider" aria-hidden="true"></div>
+              <p class="libro-item__desc">
+                Un libro profundo y transformador que te ayudará a reconocer las heridas emocionales que marcaron tu vida, comprender cómo siguen afectando tus relaciones, tu autoestima y tus decisiones… y comenzar a sanar desde la raíz. A través de reflexiones, conciencia y autoconocimiento, descubrirás cómo liberar patrones que ya no te pertenecen para reconstruirte con más amor, libertad y plenitud.
+              </p>
+              <p class="libro-item__destacado">
+                ✨ Porque entender tu pasado puede ser el inicio de tu verdadera transformación.
+              </p>
+              <a href="https://www.amazon.com.mx/Cómo-identificar-las-heridas-Infancia-ebook/dp/B0F434XXM8?ref_=ast_author_dp_rw&th=1&psc=1&dib=eyJ2IjoiMSJ9.HE_pKpiqCcZ54209Zsw96djbEw8mF0IKzcVrOx45a8-SzYxPcLFnsB3cuOYpJ__U.grZBFX3w-U4haOuvxvfdjPu4EYTEqG6v99KFBfQSdXU&dib_tag=AUTHOR" class="libro-item__cta" target="_blank" rel="noopener noreferrer" aria-label="Ver libro: 5 Heridas de la Infancia en Amazon">
+                Ver libro
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- ── 4. Alas Rotas ── imagen derecha ── -->
+          <article class="libro-item libro-item--reverse" aria-label="Libro: Alas Rotas">
+            <div class="libro-item__img-wrap">
+              <img
+                class="libro-item__img"
+                src="../assets/images/libros/Alas Rotas.jpeg"
+                alt="Portada del libro Alas Rotas"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="libro-item__content">
+              <span class="libro-item__num" aria-hidden="true">04</span>
+              <p class="libro-item__badge">Novela</p>
+              <h3 class="libro-item__title">Alas Rotas</h3>
+              <p class="libro-item__tagline">El poder de volver a levantarse</p>
+              <div class="libro-item__divider" aria-hidden="true"></div>
+              <p class="libro-item__desc">
+                Una novela intensa y profundamente emocional sobre el dolor, las cadenas invisibles del alma y el poder de volver a levantarse incluso después de haber sido destruido por dentro. Alas Rotas es una historia de resiliencia, oscuridad y transformación que tocará las partes más profundas del corazón, recordándote que incluso cuando todo parece perdido… siempre existe una forma de volver a volar.
+              </p>
+              <p class="libro-item__destacado">
+                ✨ Porque a veces, sanar significa romper aquello que te mantenía prisionero.
+              </p>
+              <span class="libro-item__cta libro-item__cta--soon" aria-label="Alas Rotas — Próximamente">
+                Próximamente
+              </span>
+            </div>
+          </article>
+
+          <!-- ── 5. Honrar la Vida ── imagen izquierda ── -->
+          <article class="libro-item" aria-label="Libro: Honrar la Vida a Través de la Muerte">
+            <div class="libro-item__img-wrap">
+              <img
+                class="libro-item__img"
+                src="../assets/images/libros/Honrar la Vida a Través de la Muerte.jpeg"
+                alt="Portada del libro Honrar la Vida a Través de la Muerte"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="libro-item__content">
+              <span class="libro-item__num" aria-hidden="true">05</span>
+              <p class="libro-item__badge">Duelo &amp; Sanación</p>
+              <h3 class="libro-item__title">Honrar la Vida a Través de la Muerte</h3>
+              <p class="libro-item__tagline">Sanar el duelo desde el amor y no desde el miedo</p>
+              <div class="libro-item__divider" aria-hidden="true"></div>
+              <p class="libro-item__desc">
+                Una obra profunda y transformadora que acompaña al lector en el proceso de sanar el duelo desde el amor y no desde el miedo. A través de reflexiones, conciencia y sensibilidad emocional, este libro te ayudará a honrar a quienes ya no están, liberar el dolor que permanece en el alma y permitir que la vida vuelva a florecer dentro de ti. Un viaje íntimo hacia la aceptación, la paz y la transformación interior.
+              </p>
+              <p class="libro-item__destacado">
+                ✨ Aprenderás que despedirse también puede ser un acto de amor, gratitud y renacimiento.
+              </p>
+              <span class="libro-item__cta libro-item__cta--soon" aria-label="Honrar la Vida a Través de la Muerte — Próximamente">
+                Próximamente
+              </span>
+            </div>
+          </article>
+
+          <!-- ── 6. Decretos del Alma ── imagen derecha ── -->
+          <article class="libro-item libro-item--reverse" aria-label="Libro: Decretos del Alma">
+            <div class="libro-item__img-wrap">
+              <img
+                class="libro-item__img"
+                src="../assets/images/libros/Decretos del Alma.jpeg"
+                alt="Portada del libro Decretos del Alma"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="libro-item__content">
+              <span class="libro-item__num" aria-hidden="true">06</span>
+              <p class="libro-item__badge">Espiritualidad</p>
+              <h3 class="libro-item__title">Decretos del Alma</h3>
+              <p class="libro-item__tagline">Reconecta con tu poder interior</p>
+              <div class="libro-item__divider" aria-hidden="true"></div>
+              <p class="libro-item__desc">
+                Un libro creado para ayudarte a reconectar con tu poder interior, transformar tu energía y manifestar una realidad más consciente a través de la intención, la palabra y la conexión con tu esencia. Decretos del Alma no es solo un libro de afirmaciones — es un portal de transformación diseñado para despertar tu conciencia, elevar tu vibración y recordarte que el verdadero poder siempre ha vivido dentro de ti.
+              </p>
+              <p class="libro-item__destacado">
+                ✨ Cada decreto es una llave. Cada palabra, una nueva posibilidad.
+              </p>
+              <span class="libro-item__cta libro-item__cta--soon" aria-label="Decretos del Alma — Próximamente">
+                Próximamente
+              </span>
+            </div>
+          </article>
+
+          <!-- ── 7. Dones como Terapeuta ── imagen izquierda ── -->
+          <article class="libro-item" aria-label="Libro: Cómo Trabajar y Vivir de tus Dones como Terapeuta">
+            <div class="libro-item__img-wrap">
+              <img
+                class="libro-item__img"
+                src="../assets/images/libros/Como Trabajar y Vivir de tus Dones como Terapeuta.jpeg"
+                alt="Portada del libro Cómo Trabajar y Vivir de tus Dones como Terapeuta"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="libro-item__content">
+              <span class="libro-item__num" aria-hidden="true">07</span>
+              <p class="libro-item__badge">Para Terapeutas</p>
+              <h3 class="libro-item__title">Cómo Trabajar y Vivir de tus Dones como Terapeuta</h3>
+              <p class="libro-item__tagline">Para terapeutas, coaches y almas de servicio</p>
+              <div class="libro-item__divider" aria-hidden="true"></div>
+              <p class="libro-item__desc">
+                Este libro no solo te ayudará a reconocer el valor de tus dones, sino también a desarrollar la mentalidad, la visión y la estructura necesaria para vivir de aquello que amas, ayudando a otros sin traicionarte a ti misma(o). Aprenderás a fortalecer tu identidad como terapeuta, conectar con tu esencia, proyectar autoridad, crear un servicio alineado contigo y dejar de ver tus dones como un hobby para comenzar a construir una vida con propósito, estabilidad y expansión.
+              </p>
+              <p class="libro-item__destacado">
+                ✨ Porque tus dones no llegaron a ti para esconderse… llegaron para transformar vidas.
+              </p>
+              <span class="libro-item__cta libro-item__cta--soon" aria-label="Cómo Trabajar y Vivir de tus Dones como Terapeuta — Próximamente">
+                Próximamente
+              </span>
+            </div>
+          </article>
+
+          <!-- ── 8. 365 Reflections (English) ── imagen derecha ── -->
+          <article class="libro-item libro-item--reverse" aria-label="Libro: 365 Reflections">
+            <div class="libro-item__img-wrap">
+              <img
+                class="libro-item__img"
+                src="../assets/images/libros/365 Reflections.jpeg"
+                alt="Portada del libro 365 Reflections — A Thought for Each Day"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="libro-item__content">
+              <span class="libro-item__num" aria-hidden="true">08</span>
+              <p class="libro-item__badge">English Edition</p>
+              <h3 class="libro-item__title">365 Reflections</h3>
+              <p class="libro-item__tagline">A Thought for Each Day</p>
+              <div class="libro-item__divider" aria-hidden="true"></div>
+              <p class="libro-item__desc">
+                A powerful collection of daily reflections created to inspire your mind, heal your heart, and reconnect you with your inner peace. Each page is an invitation to pause, breathe, reflect, and transform the way you see yourself and your life. Through meaningful thoughts and conscious guidance, this book will accompany you on a journey of clarity, emotional growth, self-love, and spiritual connection.
+              </p>
+              <p class="libro-item__destacado">
+                ✨ A daily reminder that even the smallest reflection can awaken a new version of you.
+              </p>
+              <a href="https://www.amazon.com.mx/365-REFLECTIONS-THOUGHT-EACH-DAY/dp/B0CX4PPFLJ/ref=tmm_hrd_swatch_0?_encoding=UTF8&dib_tag=AUTHOR&dib=eyJ2IjoiMSJ9.HE_pKpiqCcZ54209Zsw96djbEw8mF0IKzcVrOx45a8-SzYxPcLFnsB3cuOYpJ__U.grZBFX3w-U4haOuvxvfdjPu4EYTEqG6v99KFBfQSdXU" class="libro-item__cta" target="_blank" rel="noopener noreferrer" aria-label="Ver libro: 365 Reflections en Amazon">
+                Ver libro
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- ── 9. Cuentos de Medianoche ── imagen izquierda ── -->
+          <article class="libro-item" aria-label="Libro: Cuentos de Medianoche">
+            <div class="libro-item__img-wrap">
+              <img
+                class="libro-item__img"
+                src="../assets/images/libros/Cuentos de Medianoche.jpeg"
+                alt="Portada del libro Cuentos de Medianoche"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="libro-item__content">
+              <span class="libro-item__num" aria-hidden="true">09</span>
+              <p class="libro-item__badge">Cuentos</p>
+              <h3 class="libro-item__title">Cuentos de Medianoche</h3>
+              <p class="libro-item__tagline">Historias que despiertan la imaginación</p>
+              <div class="libro-item__divider" aria-hidden="true"></div>
+              <p class="libro-item__desc">
+                Entre castillos, criaturas fantásticas y secretos ocultos en la oscuridad, cada historia despertará tu imaginación y te hará viajar a escenarios llenos de aventura, emoción y asombro. Este libro reúne relatos envolventes capaces de tocar el corazón tanto de jóvenes como de adultos, combinando fantasía, suspenso y enseñanzas profundas que permanecen contigo incluso después de cerrar la última página.
+              </p>
+              <p class="libro-item__destacado">
+                ✨ Si alguna vez soñaste con perderte en historias mágicas que te hagan sentir, imaginar y creer nuevamente en lo imposible… este libro fue escrito para ti.
+              </p>
+              <span class="libro-item__cta libro-item__cta--soon" aria-label="Cuentos de Medianoche — Próximamente">
+                Próximamente
+              </span>
+            </div>
+          </article>
+
+          <!-- ── 10. Destellos del Alma ── imagen derecha ── -->
+          <article class="libro-item libro-item--reverse" aria-label="Libro: Destellos del Alma">
+            <div class="libro-item__img-wrap">
+              <img
+                class="libro-item__img"
+                src="../assets/images/libros/Destellos del Alma.jpeg"
+                alt="Portada del libro Destellos del Alma"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="libro-item__content">
+              <span class="libro-item__num" aria-hidden="true">10</span>
+              <p class="libro-item__badge">Transformación</p>
+              <h3 class="libro-item__title">Destellos del Alma</h3>
+              <p class="libro-item__tagline">Aceptación, perdón y evolución interior</p>
+              <div class="libro-item__divider" aria-hidden="true"></div>
+              <p class="libro-item__desc">
+                Destellos del Alma es un viaje profundo de aceptación, perdón y evolución interior. Este libro fue creado para quienes están cansados de cargar heridas, culpas y versiones rotas de sí mismos. Descubrirás cómo soltar el pasado, reconciliarte contigo y volver a recordar quién eres realmente. Cada página es una invitación a sanar, despertar tu luz interior y reconstruirte desde el amor, la conciencia y la verdad.
+              </p>
+              <p class="libro-item__destacado">
+                ✨ Porque a veces, el mayor acto de amor no es encontrar a alguien más… sino regresar a ti.
+              </p>
+              <span class="libro-item__cta libro-item__cta--soon" aria-label="Destellos del Alma — Próximamente">
+                Próximamente
+              </span>
+            </div>
+          </article>
+
+        </div><!-- /libros-lista -->
+      </div><!-- /container -->
     </section>
 
   </main>
@@ -57,7 +390,6 @@
   <footer class="footer" role="contentinfo">
     <div class="container footer__inner">
 
-      <!-- Marca -->
       <div class="footer__brand">
         <p class="footer__logo">
           <span aria-hidden="true">✦</span> AngieMon
@@ -65,7 +397,6 @@
         <p class="footer__tagline">Código Cuántico · Conciencia que Transforma</p>
       </div>
 
-      <!-- Servicios -->
       <nav class="footer__nav" aria-label="Servicios en el pie de página">
         <h3 class="footer__nav-title">Servicios</h3>
         <ul class="footer__nav-list" role="list">
@@ -80,7 +411,6 @@
         </ul>
       </nav>
 
-      <!-- Recursos -->
       <nav class="footer__nav" aria-label="Recursos en el pie de página">
         <h3 class="footer__nav-title">Recursos</h3>
         <ul class="footer__nav-list" role="list">
@@ -94,7 +424,6 @@
         </ul>
       </nav>
 
-      <!-- Contacto + Redes -->
       <div class="footer__contact">
         <h3 class="footer__nav-title">Conecta</h3>
         <p class="footer__contact-item">
@@ -103,7 +432,6 @@
         <p class="footer__contact-item">
           <a href="mailto:info@angiemon.com">info@angiemon.com</a>
         </p>
-
         <div class="footer__social" role="list" aria-label="Redes sociales">
           <a class="social-link" href="https://www.instagram.com/terapeuta.angiemon/" role="listitem" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -125,7 +453,6 @@
 
     </div>
 
-    <!-- Bottom bar -->
     <div class="footer__bottom">
       <div class="container">
         <p class="footer__copy">
@@ -142,5 +469,6 @@
 
   <script src="../js/main.js"></script>
   <script src="js/libros.js"></script>
+
 </body>
 </html>
