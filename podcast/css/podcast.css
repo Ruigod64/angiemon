@@ -153,6 +153,80 @@
   margin-top: 0.75rem;
 }
 
+/* ── INTRO ─────────────────────────────────────────── */
+.podcast-intro {
+  max-width: 720px;
+  margin: 0 auto clamp(3.5rem, 6vw, 5rem);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.podcast-intro__ornament {
+  color: rgba(255, 183, 197, 0.35);
+  line-height: 0;
+}
+
+.podcast-intro__quote {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 0 0.5rem;
+  border-left: 2px solid rgba(255, 183, 197, 0.22);
+  border-right: 2px solid rgba(255, 183, 197, 0.22);
+}
+
+.podcast-intro__quote p {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.85;
+  color: rgba(255, 183, 197, 0.72);
+}
+
+.podcast-intro__quote p em {
+  color: #f9a8bc;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.podcast-intro__author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255, 183, 197, 0.15);
+  width: 100%;
+}
+
+.podcast-intro__name {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #f9a8bc;
+}
+
+.podcast-intro__email {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: rgba(255, 183, 197, 0.45);
+  text-decoration: none;
+  transition: color 0.25s var(--ease);
+}
+
+.podcast-intro__email:hover {
+  color: #f9a8bc;
+}
+
 /* ── GRID ──────────────────────────────────────────── */
 .podcast-grid {
   display: grid;
@@ -182,7 +256,16 @@
   position: relative;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  background: #1e1015;
+  background: #2a0f1a;
+  border: 1px solid rgba(255, 183, 197, 0.22);
+  padding: 0.55rem;
+  transition: border-color 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+
+.ep-card:hover .ep-card__img {
+  border-color: rgba(255, 183, 197, 0.55);
+  box-shadow: 0 0 0 1px rgba(255, 183, 197, 0.12),
+              0 12px 40px rgba(180, 50, 90, 0.25);
 }
 
 .ep-card__img img {
