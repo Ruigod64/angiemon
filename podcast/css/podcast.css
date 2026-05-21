@@ -1,0 +1,373 @@
+/* ══════════════════════════════════════════════════
+   AngieMon — Podcast · Secretos del Corazón
+   Depende de: ../css/variables.css, ../css/components.css
+   ══════════════════════════════════════════════════ */
+
+/* ── HERO ──────────────────────────────────────────── */
+.podcast-hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: #0e0709;
+}
+
+.podcast-hero__bg {
+  position: absolute;
+  inset: 0;
+}
+
+.podcast-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.podcast-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, rgba(14,7,9,0.88) 40%, rgba(14,7,9,0.18) 100%),
+    linear-gradient(to top, rgba(14,7,9,0.96) 0%, rgba(100,20,40,0.25) 55%, transparent 100%);
+  z-index: 1;
+}
+
+.podcast-hero__content {
+  position: relative;
+  z-index: 2;
+  padding-bottom: clamp(4rem, 8vw, 6rem);
+  padding-top: 8rem;
+  max-width: 680px;
+}
+
+.podcast-hero__show {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #1DB954;
+  margin-bottom: 1rem;
+}
+
+.podcast-hero__show svg {
+  flex-shrink: 0;
+}
+
+.podcast-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 9vw, 7rem);
+  font-weight: 600;
+  line-height: 1.0;
+  color: var(--ivory);
+  letter-spacing: 0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.podcast-hero__title em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--gold-light);
+  display: block;
+}
+
+.podcast-hero__desc {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--text-muted-dark);
+  margin-bottom: 2rem;
+}
+
+.podcast-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #000;
+  background: #1DB954;
+  padding: 0.9rem 1.8rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.podcast-hero__cta:hover {
+  background: #1ed760;
+  transform: translateY(-2px);
+}
+
+.podcast-hero__cta:focus-visible {
+  outline: 2px solid #1DB954;
+  outline-offset: 3px;
+}
+
+/* ── EPISODIOS ─────────────────────────────────────── */
+.podcast-episodios {
+  background: #120b0e;
+  padding: clamp(5rem, 10vw, 8rem) 0 clamp(4rem, 8vw, 7rem);
+}
+
+.podcast-episodios__header {
+  text-align: center;
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.podcast-episodios__heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 600;
+  color: var(--ivory);
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+}
+
+.podcast-episodios__heading em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  color: #f9a8bc;
+}
+
+.podcast-episodios__count {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted-dark);
+  margin-top: 0.75rem;
+}
+
+/* ── GRID ──────────────────────────────────────────── */
+.podcast-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+/* ── EPISODE CARD ──────────────────────────────────── */
+.ep-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: transform 0.35s var(--ease);
+  will-change: transform, opacity;
+}
+
+.ep-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Imagen cuadrada con overlay de play */
+.ep-card__img {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #1e1015;
+}
+
+.ep-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.65s var(--ease), filter 0.35s var(--ease);
+}
+
+.ep-card:hover .ep-card__img img {
+  transform: scale(1.07);
+  filter: brightness(0.65);
+}
+
+/* Play button overlay */
+.ep-card__play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+}
+
+.ep-card:hover .ep-card__play {
+  opacity: 1;
+}
+
+.ep-card__play-btn {
+  width: 52px;
+  height: 52px;
+  background: #1DB954;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 28px rgba(29, 185, 84, 0.5);
+  transform: scale(0.85);
+  transition: transform 0.3s var(--ease);
+}
+
+.ep-card:hover .ep-card__play-btn {
+  transform: scale(1);
+}
+
+/* Metadata debajo de la imagen */
+.ep-card__meta {
+  padding: 0.7rem 0.15rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.ep-card__num {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #f9a8bc;
+}
+
+.ep-card__title {
+  font-family: var(--font-display);
+  font-size: clamp(0.75rem, 1.1vw, 0.9rem);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--ivory);
+  line-height: 1.3;
+  transition: color 0.25s var(--ease);
+}
+
+.ep-card:hover .ep-card__title {
+  color: var(--gold-light);
+}
+
+/* ══════════════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .podcast-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(0.85rem, 2vw, 1.25rem);
+  }
+
+  .podcast-hero__content {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .podcast-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .ep-card {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .ep-card__img {
+    flex: 0 0 90px;
+    aspect-ratio: 1 / 1;
+  }
+
+  .ep-card__meta {
+    padding: 0;
+  }
+
+  .ep-card__title {
+    font-size: 0.9rem;
+  }
+
+  .ep-card:hover {
+    transform: none;
+  }
+}
+
+/* ══════════════════════════════════════════════════
+   FOOTER — Override a paleta rosa sakura
+   ══════════════════════════════════════════════════ */
+
+.footer {
+  background: #0b0608;
+  border-top: 1px solid rgba(255, 183, 197, 0.16);
+  --gold: #f9a8bc;
+  --gold-light: #ffd6e2;
+  --gold-border: rgba(255, 183, 197, 0.16);
+}
+
+.footer__logo {
+  color: #f9a8bc;
+}
+
+.footer__tagline {
+  color: rgba(255, 183, 197, 0.5);
+}
+
+.footer__nav-title {
+  color: #f9a8bc;
+}
+
+.footer__nav-list a {
+  color: rgba(255, 183, 197, 0.52);
+}
+
+.footer__nav-list a:hover {
+  color: #ffd6e2;
+}
+
+.footer__contact-item {
+  color: rgba(255, 183, 197, 0.52);
+}
+
+.footer__contact-item a:hover {
+  color: #f9a8bc;
+}
+
+.social-link {
+  color: rgba(255, 183, 197, 0.5);
+  border-color: rgba(255, 183, 197, 0.14);
+}
+
+.social-link:hover {
+  color: #f9a8bc;
+  border-color: rgba(255, 183, 197, 0.45);
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255, 183, 197, 0.1);
+}
+
+.footer__copy {
+  color: rgba(255, 183, 197, 0.38);
+}
+
+.footer__legal a {
+  color: rgba(255, 183, 197, 0.42);
+}
+
+.footer__legal a:hover {
+  color: #f9a8bc;
+}

@@ -1,0 +1,237 @@
+/* ══════════════════════════════════════════════════
+   AngieMon — Talleres Gratuitos
+   Estilos específicos de la página /talleres-gratuitos
+   Depende de: ../css/variables.css, ../css/components.css
+   Responsive: 375px · 640px · 768px · 1100px
+   ══════════════════════════════════════════════════ */
+
+/* ── HERO ──────────────────────────────────────────── */
+.talleres-hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--carbon-deep);
+  background-image: url('../../assets/images/talleres/banner.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.talleres-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    170deg,
+    rgba(17, 17, 17, 0.45) 0%,
+    rgba(17, 17, 17, 0.68) 55%,
+    rgba(17, 17, 17, 0.90) 100%
+  );
+}
+
+.talleres-hero .container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 5rem var(--container-pad) 4rem;
+}
+
+.talleres-hero .section-label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+}
+
+.talleres-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 9vw, 7rem);
+  font-weight: 600;
+  line-height: 1.05;
+  color: var(--ivory);
+  letter-spacing: 0.02em;
+}
+
+.talleres-hero h1 em {
+  font-style: italic;
+  font-family: var(--font-serif);
+  font-weight: 300;
+  color: var(--gold-light);
+}
+
+/* ══════════════════════════════════════════════════
+   TALLERES GRID — Sección principal
+   ══════════════════════════════════════════════════ */
+
+.talleres-grid {
+  background: var(--carbon);
+  padding-top: clamp(4rem, 8vw, 6rem);
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.talleres-grid__header {
+  text-align: center;
+  margin-bottom: clamp(3rem, 7vw, 5rem);
+}
+
+.talleres-grid__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--ivory);
+  letter-spacing: 0.03em;
+}
+
+.talleres-grid__title em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--gold-light);
+}
+
+/* ══════════════════════════════════════════════════
+   TALLER FEATURE — Card + texto exterior
+   ══════════════════════════════════════════════════ */
+
+.taller-feature {
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: center;
+  padding: clamp(3.5rem, 7vw, 5.5rem) 0;
+  border-top: 1px solid var(--gold-border);
+}
+
+/* ── Card: borde dorado, imagen completa ─────────── */
+.taller-feature__card {
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  background: var(--carbon-deep);
+  overflow: hidden;
+  will-change: transform, opacity;
+  transition: border-color 0.4s var(--ease),
+              box-shadow   0.4s var(--ease);
+}
+
+.taller-feature:hover .taller-feature__card {
+  border-color: rgba(212, 175, 55, 0.75);
+  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.18),
+              0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+.taller-feature__card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 1.2s var(--ease);
+}
+
+.taller-feature:hover .taller-feature__card img {
+  transform: scale(1.04);
+}
+
+/* ── Cuerpo: texto fuera de la card ──────────────── */
+.taller-feature__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.taller-feature__num {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(212, 175, 55, 0.1);
+  letter-spacing: -0.04em;
+  pointer-events: none;
+  user-select: none;
+  margin-bottom: 0.1rem;
+}
+
+.taller-feature__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-weight: 600;
+  line-height: 1.08;
+  color: var(--ivory);
+  letter-spacing: 0.02em;
+  margin: 0.4rem 0 0.9rem;
+}
+
+.taller-feature__title em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--gold-light);
+}
+
+.taller-feature__desc {
+  font-family: var(--font-serif);
+  font-size: clamp(0.88rem, 1.05vw, 1rem);
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--text-muted-dark);
+  margin-bottom: 1.5rem;
+}
+
+/* ── CTA ────────────────────────────────────────── */
+.taller-feature__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  align-self: flex-start;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--carbon-deep);
+  background: var(--gold);
+  padding: 1rem 2rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--transition), gap var(--transition);
+}
+
+.taller-feature__cta:hover {
+  background: var(--gold-light);
+  gap: 1rem;
+}
+
+.taller-feature__cta:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* ══════════════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .taller-feature {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding: clamp(2.5rem, 6vw, 4rem) 0;
+  }
+
+  .taller-feature__num {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .taller-feature__cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Videos → ver css/clases-videos.css */

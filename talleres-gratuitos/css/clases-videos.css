@@ -1,0 +1,175 @@
+/* ══════════════════════════════════════════════════
+   AngieMon — Talleres Gratuitos · Clases (Videos)
+   Estilos exclusivos del bloque de clases embebidas
+   ══════════════════════════════════════════════════ */
+
+/* ── Bloque contenedor ──────────────────────────── */
+.taller-clases {
+  padding: clamp(3.5rem, 7vw, 5.5rem) 0;
+  border-top: 1px solid var(--gold-border);
+}
+
+.taller-clases__header {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+/* ── Grids: 2 col (default) y 3 col (--wide) ───── */
+.taller-clases__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.taller-clases__grid--wide {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* ── Clase individual ───────────────────────────── */
+.taller-clase {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
+}
+
+.taller-clase.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Embed wrapper (ratio 16:9) ─────────────────── */
+.taller-clase__embed {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--carbon-deep);
+}
+
+/* ── Thumbnail façade (click → iframe) ─────────── */
+.yt-facade {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.yt-facade img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s var(--ease);
+}
+
+.yt-facade:hover img {
+  transform: scale(1.04);
+}
+
+.yt-facade__play {
+  position: relative;
+  z-index: 2;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  line-height: 0;
+  transition: transform 0.2s var(--ease), filter 0.2s var(--ease);
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.6));
+}
+
+.yt-facade:hover .yt-facade__play {
+  transform: scale(1.12);
+  filter: drop-shadow(0 6px 24px rgba(0, 0, 0, 0.7));
+}
+
+/* ── iframe (aparece al hacer click) ───────────── */
+.taller-clase__embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ── Meta (número · título · link) ─────────────── */
+.taller-clase__meta {
+  padding-top: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.taller-clase__num {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.taller-clase__title {
+  font-family: var(--font-display);
+  font-size: clamp(0.82rem, 1.1vw, 1rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--ivory);
+  line-height: 1.35;
+}
+
+.taller-clase__yt-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted-dark);
+  text-decoration: none;
+  margin-top: 0.15rem;
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.taller-clase__yt-link:hover {
+  color: var(--gold-light);
+}
+
+.taller-clase__yt-link:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ══════════════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════════════ */
+
+@media (max-width: 900px) {
+  .taller-clases__grid--wide {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .taller-clases__grid,
+  .taller-clases__grid--wide {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .taller-clase {
+    opacity: 1;
+    transform: none;
+  }
+
+  .taller-clase__title {
+    font-size: 0.9rem;
+  }
+}

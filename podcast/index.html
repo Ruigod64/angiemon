@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="AngieMon — Podcast de sanación, conciencia y transformación personal." />
-  <meta name="theme-color" content="#1a1a1a" />
+  <meta name="description" content="Secretos del Corazón — El podcast de AngieMon. Historias que sanan, conmueven y transforman." />
+  <meta name="theme-color" content="#0a0a0a" />
 
-  <meta property="og:title" content="Podcast — AngieMon" />
-  <meta property="og:description" content="Escucha el podcast de AngieMon y transforma tu vida desde adentro." />
+  <meta property="og:title" content="Secretos del Corazón — Podcast de AngieMon" />
+  <meta property="og:description" content="Historias que sanan, conmueven y transforman. Escucha el podcast en Spotify." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.angiemon.com/podcast" />
 
@@ -36,16 +36,396 @@
 
   <main id="main-content">
 
-    <section class="podcast-hero" aria-label="Podcast de AngieMon">
-      <div class="container">
-        <p class="section-label">Recursos</p>
-        <h1>Podcast<br/><em>Código Cuántico</em></h1>
+    <!-- ══════════════════════════════════════════════
+         HERO
+         ══════════════════════════════════════════════ -->
+    <section class="podcast-hero" aria-label="Podcast Secretos del Corazón">
+      <div class="podcast-hero__bg">
+        <img
+          src="../assets/images/podcast/banner.jpeg"
+          alt=""
+          aria-hidden="true"
+          fetchpriority="high"
+        />
+      </div>
+      <div class="podcast-hero__overlay" aria-hidden="true"></div>
+      <div class="container podcast-hero__content">
+        <p class="podcast-hero__show">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#1DB954" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+          Disponible en Spotify
+        </p>
+        <h1 class="podcast-hero__title">
+          Secretos<br/><em>del Corazón</em>
+        </h1>
+        <p class="podcast-hero__desc">
+          Historias reales de amor, pérdida, redención y esperanza.<br/>
+          Un podcast que toca el alma y transforma desde adentro.
+        </p>
+        <a
+          href="https://open.spotify.com/show/secretos-del-corazon"
+          class="podcast-hero__cta"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+          Seguir en Spotify
+        </a>
       </div>
     </section>
 
-    <section class="podcast-episodios" aria-label="Episodios del podcast">
+    <!-- ══════════════════════════════════════════════
+         EPISODIOS
+         ══════════════════════════════════════════════ -->
+    <section class="podcast-episodios" aria-label="Episodios de Secretos del Corazón">
       <div class="container">
-        <!-- TODO: lista de episodios -->
+
+        <div class="podcast-episodios__header reveal">
+          <p class="section-label">Temporada 1</p>
+          <h2 class="podcast-episodios__heading">
+            Secretos del <em>Corazón</em>
+          </h2>
+          <span class="podcast-episodios__count">16 episodios</span>
+        </div>
+
+        <div class="podcast-grid" role="list">
+
+          <!-- EP 01 -->
+          <a class="ep-card" role="listitem"
+            href="https://open.spotify.com/episode/4dSby5p9YVv96xRqzbkS9E"
+            target="_blank" rel="noopener noreferrer"
+            aria-label="Escuchar episodio 1: Amor propio en Spotify">
+            <div class="ep-card__img">
+              <img src="https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f04aa10ff76a9b4b665d4c50d"
+                alt="Secretos del Corazón — Episodio 1: Amor propio"
+                loading="lazy" decoding="async" />
+              <div class="ep-card__play" aria-hidden="true">
+                <div class="ep-card__play-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="ep-card__meta">
+              <span class="ep-card__num">EP. 01</span>
+              <h3 class="ep-card__title">Amor propio</h3>
+            </div>
+          </a>
+
+          <!-- EP 02 -->
+          <a class="ep-card" role="listitem"
+            href="https://open.spotify.com/episode/7pArR0kFQbP6jZmCR24gnk"
+            target="_blank" rel="noopener noreferrer"
+            aria-label="Escuchar episodio 2: El amor trasciende la muerte en Spotify">
+            <div class="ep-card__img">
+              <img src="https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f04a44dc23322e0f0774177a2"
+                alt="Secretos del Corazón — Episodio 2: El amor trasciende la muerte"
+                loading="lazy" decoding="async" />
+              <div class="ep-card__play" aria-hidden="true">
+                <div class="ep-card__play-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="ep-card__meta">
+              <span class="ep-card__num">EP. 02</span>
+              <h3 class="ep-card__title">El amor trasciende la muerte</h3>
+            </div>
+          </a>
+
+          <!-- EP 03 -->
+          <a class="ep-card" role="listitem"
+            href="https://open.spotify.com/episode/212M6yF0iT0OBldrrMotKX"
+            target="_blank" rel="noopener noreferrer"
+            aria-label="Escuchar episodio 3: La odisea de un alma solitaria en Spotify">
+            <div class="ep-card__img">
+              <img src="https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f4864eb6b0d90c66e0dc9338e"
+                alt="Secretos del Corazón — Episodio 3: La odisea de un alma solitaria"
+                loading="lazy" decoding="async" />
+              <div class="ep-card__play" aria-hidden="true">
+                <div class="ep-card__play-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="ep-card__meta">
+              <span class="ep-card__num">EP. 03</span>
+              <h3 class="ep-card__title">La odisea de un alma solitaria</h3>
+            </div>
+          </a>
+
+          <!-- EP 04 -->
+          <a class="ep-card" role="listitem"
+            href="https://open.spotify.com/episode/3OTOwtUsNVPywTYtd1Pi87"
+            target="_blank" rel="noopener noreferrer"
+            aria-label="Escuchar episodio 4: Corazón roto en Spotify">
+            <div class="ep-card__img">
+              <img src="https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f031c85ff2303f8ccb4af1124"
+                alt="Secretos del Corazón — Episodio 4: Corazón roto"
+                loading="lazy" decoding="async" />
+              <div class="ep-card__play" aria-hidden="true">
+                <div class="ep-card__play-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="ep-card__meta">
+              <span class="ep-card__num">EP. 04</span>
+              <h3 class="ep-card__title">Corazón roto</h3>
+            </div>
+          </a>
+
+          <!-- EP 05 -->
+          <a class="ep-card" role="listitem"
+            href="https://open.spotify.com/episode/3HLXih5lt8JUo1mK6Vv0VD"
+            target="_blank" rel="noopener noreferrer"
+            aria-label="Escuchar episodio 5: La redención del amor en Spotify">
+            <div class="ep-card__img">
+              <img src="https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f031c85ff2303f8ccb4af1124"
+                alt="Secretos del Corazón — Episodio 5: La redención del amor"
+                loading="lazy" decoding="async" />
+              <div class="ep-card__play" aria-hidden="true">
+                <div class="ep-card__play-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="ep-card__meta">
+              <span class="ep-card__num">EP. 05</span>
+              <h3 class="ep-card__title">La redención del amor</h3>
+            </div>
+          </a>
+
+          <!-- EP 06 -->
+          <a class="ep-card" role="listitem"
+            href="https://open.spotify.com/episode/1O6xSC7H32OnOiQtu3mIJv"
+            target="_blank" rel="noopener noreferrer"
+            aria-label="Escuchar episodio 6: Corazón de León en Spotify">
+            <div class="ep-card__img">
+              <img src="https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f4864eb6b0d90c66e0dc9338e"
+                alt="Secretos del Corazón — Episodio 6: Corazón de León"
+                loading="lazy" decoding="async" />
+              <div class="ep-card__play" aria-hidden="true">
+                <div class="ep-card__play-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="ep-card__meta">
+              <span class="ep-card__num">EP. 06</span>
+              <h3 class="ep-card__title">Corazón de León</h3>
+            </div>
+          </a>
+
+          <!-- EP 07 -->
+          <a class="ep-card" role="listitem"
+            href="https://open.spotify.com/episode/07p0KL7lBatZOgBRvqlZTh"
+            target="_blank" rel="noopener noreferrer"
+            aria-label="Escuchar episodio 7: Renacer de las sombras en Spotify">
+            <div class="ep-card__img">
+              <img src="https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f4864eb6b0d90c66e0dc9338e"
+                alt="Secretos del Corazón — Episodio 7: Renacer de las sombras"
+                loading="lazy" decoding="async" />
+              <div class="ep-card__play" aria-hidden="true">
+                <div class="ep-card__play-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="ep-card__meta">
+              <span class="ep-card__num">EP. 07</span>
+              <h3 class="ep-card__title">Renacer de las sombras</h3>
+            </div>
+          </a>
+
+          <!-- EP 08 -->
+          <a class="ep-card" role="listitem"
+            href="https://open.spotify.com/episode/1f19bE4UZtTwvmdn3B7Jbp"
+            target="_blank" rel="noopener noreferrer"
+            aria-label="Escuchar episodio 8: La segunda canción en Spotify">
+            <div class="ep-card__img">
+              <img src="https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f4864eb6b0d90c66e0dc9338e"
+                alt="Secretos del Corazón — Episodio 8: La segunda canción"
+                loading="lazy" decoding="async" />
+              <div class="ep-card__play" aria-hidden="true">
+                <div class="ep-card__play-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="ep-card__meta">
+              <span class="ep-card__num">EP. 08</span>
+              <h3 class="ep-card__title">La segunda canción</h3>
+            </div>
+          </a>
+
+          <!-- EP 09 -->
+          <a class="ep-card" role="listitem"
+            href="https://open.spotify.com/episode/5H8rmJXQ3sONn1hL8E1BwE"
+            target="_blank" rel="noopener noreferrer"
+            aria-label="Escuchar episodio 9: Rompiendo el silencio en Spotify">
+            <div class="ep-card__img">
+              <img src="https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f4864eb6b0d90c66e0dc9338e"
+                alt="Secretos del Corazón — Episodio 9: Rompiendo el silencio"
+                loading="lazy" decoding="async" />
+              <div class="ep-card__play" aria-hidden="true">
+                <div class="ep-card__play-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="ep-card__meta">
+              <span class="ep-card__num">EP. 09</span>
+              <h3 class="ep-card__title">Rompiendo el silencio</h3>
+            </div>
+          </a>
+
+          <!-- EP 10 -->
+          <a class="ep-card" role="listitem"
+            href="https://open.spotify.com/episode/1PfvHoclCEoN4ENU8784Tf"
+            target="_blank" rel="noopener noreferrer"
+            aria-label="Escuchar episodio 10: Estelas de amor en Spotify">
+            <div class="ep-card__img">
+              <img src="https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f4864eb6b0d90c66e0dc9338e"
+                alt="Secretos del Corazón — Episodio 10: Estelas de amor"
+                loading="lazy" decoding="async" />
+              <div class="ep-card__play" aria-hidden="true">
+                <div class="ep-card__play-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="ep-card__meta">
+              <span class="ep-card__num">EP. 10</span>
+              <h3 class="ep-card__title">Estelas de amor</h3>
+            </div>
+          </a>
+
+          <!-- EP 11 -->
+          <a class="ep-card" role="listitem"
+            href="https://open.spotify.com/episode/7iQRIsrns2zWdZOQvIfoKR"
+            target="_blank" rel="noopener noreferrer"
+            aria-label="Escuchar episodio 11: Violencia doméstica en Spotify">
+            <div class="ep-card__img">
+              <img src="https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f4864eb6b0d90c66e0dc9338e"
+                alt="Secretos del Corazón — Episodio 11: Violencia doméstica"
+                loading="lazy" decoding="async" />
+              <div class="ep-card__play" aria-hidden="true">
+                <div class="ep-card__play-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="ep-card__meta">
+              <span class="ep-card__num">EP. 11</span>
+              <h3 class="ep-card__title">Violencia doméstica</h3>
+            </div>
+          </a>
+
+          <!-- EP 12 -->
+          <a class="ep-card" role="listitem"
+            href="https://open.spotify.com/episode/0xS2dvs0tgQK00UGnl7SO4"
+            target="_blank" rel="noopener noreferrer"
+            aria-label="Escuchar episodio 12: Juventud en éxtasis en Spotify">
+            <div class="ep-card__img">
+              <img src="https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f4864eb6b0d90c66e0dc9338e"
+                alt="Secretos del Corazón — Episodio 12: Juventud en éxtasis"
+                loading="lazy" decoding="async" />
+              <div class="ep-card__play" aria-hidden="true">
+                <div class="ep-card__play-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="ep-card__meta">
+              <span class="ep-card__num">EP. 12</span>
+              <h3 class="ep-card__title">Juventud en éxtasis</h3>
+            </div>
+          </a>
+
+          <!-- EP 13 -->
+          <a class="ep-card" role="listitem"
+            href="https://open.spotify.com/episode/1NVYGFusZCDM9gw88QMZuG"
+            target="_blank" rel="noopener noreferrer"
+            aria-label="Escuchar episodio 13: Voces de esperanza en Spotify">
+            <div class="ep-card__img">
+              <img src="https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f4864eb6b0d90c66e0dc9338e"
+                alt="Secretos del Corazón — Episodio 13: Voces de esperanza"
+                loading="lazy" decoding="async" />
+              <div class="ep-card__play" aria-hidden="true">
+                <div class="ep-card__play-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="ep-card__meta">
+              <span class="ep-card__num">EP. 13</span>
+              <h3 class="ep-card__title">Voces de esperanza</h3>
+            </div>
+          </a>
+
+          <!-- EP 14 -->
+          <a class="ep-card" role="listitem"
+            href="https://open.spotify.com/episode/2hQcCUJoefLTEmlKmhgW89"
+            target="_blank" rel="noopener noreferrer"
+            aria-label="Escuchar episodio 14: De Otoños a Primaveras en Spotify">
+            <div class="ep-card__img">
+              <img src="https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f4864eb6b0d90c66e0dc9338e"
+                alt="Secretos del Corazón — Episodio 14: De Otoños a Primaveras"
+                loading="lazy" decoding="async" />
+              <div class="ep-card__play" aria-hidden="true">
+                <div class="ep-card__play-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="ep-card__meta">
+              <span class="ep-card__num">EP. 14</span>
+              <h3 class="ep-card__title">De Otoños a Primaveras</h3>
+            </div>
+          </a>
+
+          <!-- EP 15 -->
+          <a class="ep-card" role="listitem"
+            href="https://open.spotify.com/episode/0KGI42erYBrgGr6oXNTxQ3"
+            target="_blank" rel="noopener noreferrer"
+            aria-label="Escuchar episodio 15: Malos padres en Spotify">
+            <div class="ep-card__img">
+              <img src="https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f4864eb6b0d90c66e0dc9338e"
+                alt="Secretos del Corazón — Episodio 15: Malos padres"
+                loading="lazy" decoding="async" />
+              <div class="ep-card__play" aria-hidden="true">
+                <div class="ep-card__play-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="ep-card__meta">
+              <span class="ep-card__num">EP. 15</span>
+              <h3 class="ep-card__title">Malos padres</h3>
+            </div>
+          </a>
+
+          <!-- EP 16 -->
+          <a class="ep-card" role="listitem"
+            href="https://open.spotify.com/episode/6EX3RioUGeygd7jUiCjtXB"
+            target="_blank" rel="noopener noreferrer"
+            aria-label="Escuchar episodio 16: Amores tóxicos en Spotify">
+            <div class="ep-card__img">
+              <img src="https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f4864eb6b0d90c66e0dc9338e"
+                alt="Secretos del Corazón — Episodio 16: Amores tóxicos"
+                loading="lazy" decoding="async" />
+              <div class="ep-card__play" aria-hidden="true">
+                <div class="ep-card__play-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="ep-card__meta">
+              <span class="ep-card__num">EP. 16</span>
+              <h3 class="ep-card__title">Amores tóxicos</h3>
+            </div>
+          </a>
+
+        </div>
       </div>
     </section>
 
@@ -141,6 +521,9 @@
   </footer>
 
   <script src="../js/main.js"></script>
+  <script src="../js/animaciones.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="js/podcast.js"></script>
 </body>
 </html>
