@@ -167,6 +167,42 @@ p { font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif); font-s
 
 .btn--lg { padding: 1.1rem 2.6rem; font-size: 0.95rem; }
 
+/* ── CTA responsive (mobile) ──────────────────────── */
+@media (max-width: 600px) {
+  .btn {
+    /* permitir que el texto se ajuste en vez de desbordar */
+    white-space: normal;
+    text-align: center;
+    line-height: 1.3;
+    padding: 0.95rem 1.4rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.07em;
+    min-height: 50px;
+  }
+  .btn--lg {
+    padding: 1.05rem 1.6rem;
+    font-size: 0.85rem;
+  }
+
+  /* grupos de CTA: apilados y a ancho completo */
+  .hero__actions,
+  .cierre__actions {
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+  }
+  .hero__actions .btn,
+  .cierre__actions .btn,
+  .incluye__cta-wrap .btn,
+  .modulos .btn {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  /* CTA dentro de las cards de nivel */
+  .nivel-card__cta { width: 100%; }
+}
+
 /* ══════════════════════════════════════════════════
    ❶ NAV
    ══════════════════════════════════════════════════ */
